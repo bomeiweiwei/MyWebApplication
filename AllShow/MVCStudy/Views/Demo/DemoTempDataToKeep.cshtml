@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "DemoTempDataToKeep";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    TempData.Keep();//沒有這行，重新整理時會GG
+}
+
+<h2>DemoTempDataToKeep</h2>
+<ul>
+    @foreach (var item in TempData["product"] as List<PRODUCT>)
+    {
+        <li>@item.proName</li>
+    }
+</ul>
+<br />
+<ul>
+    @foreach (var item in TempData["products"] as List<PRODUCT>)
+    {
+        <li>@item.proName</li>
+    }
+</ul>

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "DemoViewDataModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Message>
+<h2>DemoViewDataModel</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.e_mail</li>
+    }
+</ul>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="279ee1646b7048a59adeb2a06172e1e8" Name="Diagram1">
+        <EntityTypeShape EntityType="AllShowModel.ADVERTISEMENT" Width="1.5" PointX="13.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.ANNOUNCEMENT" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.AUTHORITYFUNCTION" Width="1.5" PointX="3.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.EMPLOYEE" Width="1.5" PointX="5.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.MEMBER" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.MEMBERLIST" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.Message" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.ORDERLIST" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.PRODUCT" Width="1.5" PointX="12.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.PRODUCTCLASS" Width="1.5" PointX="10.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.SHCLASS" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.SHOP" Width="1.5" PointX="8" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AllShowModel.SHOPORDER" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="AllShowModel.FK__ADVERTISE__empNo__7E02B4CC" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__ADVERTISEM__shNo__7EF6D905" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__ANNOUNCEM__EMPNO__7755B73D" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__SHOP__EMPNO__531856C7" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__MEMBERLIS__memNo__6AEFE058" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__SHOPORDER__order__12FDD1B2" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__ORDERLIST__proNo__16CE6296" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__ORDERLIST__shopo__15DA3E5D" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__PRODUCT__proClas__09746778" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__PRODUCT__shNo__0880433F" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__PRODUCTCLA__SHNO__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__SHOP__SHCLASSNO__18B6AB08" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FK__SHOPORDER__shNo__1209AD79" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.AUTHORITY" ManuallyRouted="false" />
+        <AssociationConnector Association="AllShowModel.FAVORITESHOPLIST" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

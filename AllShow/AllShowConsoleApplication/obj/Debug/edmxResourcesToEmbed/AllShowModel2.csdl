@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AllShowModel2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AllShowModel2Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlogSet" EntityType="AllShowModel2.Blog" />
+    <EntitySet Name="BlogArticleSet" EntityType="AllShowModel2.BlogArticle" />
+    <AssociationSet Name="BlogBlogArticle" Association="AllShowModel2.BlogBlogArticle">
+      <End Role="Blog" EntitySet="BlogSet" />
+      <End Role="BlogArticle" EntitySet="BlogArticleSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OwnerID" Type="Guid" Nullable="false" />
+    <Property Name="Caption" Type="String" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="BlogArticle" Relationship="AllShowModel2.BlogBlogArticle" FromRole="Blog" ToRole="BlogArticle" />
+  </EntityType>
+  <EntityType Name="BlogArticle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogID" Type="Guid" Nullable="false" />
+    <Property Name="Subject" Type="String" Nullable="false" />
+    <Property Name="Body" Type="String" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+    <Property Name="DateModified" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Blog" Relationship="AllShowModel2.BlogBlogArticle" FromRole="BlogArticle" ToRole="Blog" />
+  </EntityType>
+  <Association Name="BlogBlogArticle">
+    <End Type="AllShowModel2.Blog" Role="Blog" Multiplicity="1" />
+    <End Type="AllShowModel2.BlogArticle" Role="BlogArticle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogArticle">
+        <PropertyRef Name="BlogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

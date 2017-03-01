@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address_1">
+    <Key>
+      <PropertyRef Name="a1_id" />
+    </Key>
+    <Property Name="a1_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Address_2">
+    <Key>
+      <PropertyRef Name="a2_id" />
+    </Key>
+    <Property Name="a2_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="district_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="a1_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Address_3">
+    <Key>
+      <PropertyRef Name="a3_id" />
+    </Key>
+    <Property Name="a3_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="a1_id" Type="int" Nullable="false" />
+    <Property Name="a2_id" Type="int" Nullable="false" />
+    <Property Name="street_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Calendar_Schedule">
+    <Key>
+      <PropertyRef Name="CS_id" />
+    </Key>
+    <Property Name="CS_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CS_time" Type="smalldatetime" Nullable="false" />
+    <Property Name="CS_title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CS_summary" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="db_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="real_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="sex" Type="nvarchar" MaxLength="2" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="rank" Type="int" Nullable="false" />
+    <Property Name="UpdateRight" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="DeleteRight" Type="nchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drink_Order_D">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="drink_id" Type="int" />
+    <Property Name="drink_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ice_degree" Type="nvarchar" MaxLength="50" />
+    <Property Name="sweet_degree" Type="nvarchar" MaxLength="50" />
+    <Property Name="drink_no" Type="int" />
+    <Property Name="meno" Type="nvarchar" MaxLength="50" />
+    <Property Name="approved" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drink_Order_M">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order_time" Type="datetime" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="memo" Type="nvarchar" MaxLength="150" />
+    <Property Name="have_paid" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drink_Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="drink_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="drink_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="drink_price" Type="int" />
+    <Property Name="drink_cost" Type="int" />
+  </EntityType>
+  <EntityType Name="FileUpload_DB">
+    <Key>
+      <PropertyRef Name="FileUpload_DB_id" />
+    </Key>
+    <Property Name="FileUpload_DB_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileUpload_time" Type="datetime" />
+    <Property Name="test_id" Type="int" Nullable="false" />
+    <Property Name="FileUpload_FileName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FileUpload_Memo" Type="nvarchar" MaxLength="250" />
+    <Property Name="FileUpload_User" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Food_Calorie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="food_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="food_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="food_Calorie" Type="int" />
+  </EntityType>
+  <EntityType Name="Food_Menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="food_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="food_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="News_Test">
+    <Key>
+      <PropertyRef Name="test_id" />
+    </Key>
+    <Property Name="test_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test_guid" Type="uniqueidentifier" />
+    <Property Name="test_time" Type="datetime" />
+    <Property Name="test_class" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="summary" Type="nvarchar" MaxLength="250" />
+    <Property Name="article" Type="nvarchar(max)" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+    <Property Name="hit_no" Type="int" Nullable="false" />
+    <Property Name="get_no" Type="int" Nullable="false" />
+    <Property Name="email_no" Type="int" Nullable="false" />
+    <Property Name="approved" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="News_Test_Class">
+    <Key>
+      <PropertyRef Name="Test_Class_id" />
+    </Key>
+    <Property Name="Test_Class_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test_class" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="test_class_1" Type="nvarchar" MaxLength="50" />
+    <Property Name="test_class_2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="News_Test_Talk">
+    <Key>
+      <PropertyRef Name="test_talk_id" />
+    </Key>
+    <Property Name="test_talk_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test_id" Type="int" Nullable="false" />
+    <Property Name="test_time" Type="datetime" />
+    <Property Name="article" Type="nvarchar" MaxLength="250" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="News_User">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Real_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_Account" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="User_Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="User_Rank" Type="int" Nullable="false" />
+    <Property Name="User_email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Question_D1">
+    <Key>
+      <PropertyRef Name="D1_id" />
+    </Key>
+    <Property Name="D1_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="M_id" Type="int" Nullable="false" />
+    <Property Name="D1_title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="D1_summary" Type="nvarchar" MaxLength="150" />
+    <Property Name="D1_type" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="D1_mustKeyin" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question_D2">
+    <Key>
+      <PropertyRef Name="D2_id" />
+    </Key>
+    <Property Name="D2_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="D1_id" Type="int" Nullable="false" />
+    <Property Name="M_id" Type="int" Nullable="false" />
+    <Property Name="answer1" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer2" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer3" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer4" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer5" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer6" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer7" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer8" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer9" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer10" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer11" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer12" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer13" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer14" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer15" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_all" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question_M">
+    <Key>
+      <PropertyRef Name="M_id" />
+    </Key>
+    <Property Name="M_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="M_title" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="M_summary" Type="nvarchar" MaxLength="250" />
+    <Property Name="M_enable" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_class">
+    <Key>
+      <PropertyRef Name="student_id" />
+    </Key>
+    <Property Name="student_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sd_id" Type="int" Nullable="false" />
+    <Property Name="student_year" Type="int" />
+    <Property Name="student_class" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="student_department">
+    <Key>
+      <PropertyRef Name="sd_id" />
+    </Key>
+    <Property Name="sd_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_department" Type="nvarchar" MaxLength="50" />
+    <Property Name="department_leader" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test_time" Type="datetime" />
+    <Property Name="class" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="120" />
+    <Property Name="summary" Type="nvarchar" MaxLength="200" />
+    <Property Name="article" Type="nvarchar(max)" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+    <Property Name="hit_no" Type="int" />
+    <Property Name="get_no" Type="int" />
+    <Property Name="email_no" Type="int" />
+    <Property Name="approved" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.test_ad' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="test_ad">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad_time_start" Type="smalldatetime" />
+    <Property Name="ad_time_end" Type="smalldatetime" />
+    <Property Name="ad_images" Type="nvarchar" MaxLength="50" />
+    <Property Name="ad_url" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="test_class">
+    <Key>
+      <PropertyRef Name="test_class_id" />
+    </Key>
+    <Property Name="test_class_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test_class" Type="varchar" MaxLength="50" />
+    <Property Name="test_class1" Type="varchar" MaxLength="50" />
+    <Property Name="test_class2" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="test_only">
+    <Key>
+      <PropertyRef Name="test_no" />
+    </Key>
+    <Property Name="test_no" Type="int" Nullable="false" />
+    <Property Name="test_title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="test_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="test_talk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test_id" Type="int" Nullable="false" />
+    <Property Name="test_time" Type="datetime" />
+    <Property Name="article" Type="nvarchar(max)" />
+    <Property Name="author" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="test_timestamp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="test_time" Type="smalldatetime" />
+    <Property Name="test_TS" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="test1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="test" Type="nvarchar" MaxLength="50" />
+    <Property Name="time_st" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Vote_1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vote_1" Type="int" Nullable="false" />
+    <Property Name="vote_2" Type="int" Nullable="false" />
+    <Property Name="vote_3" Type="int" Nullable="false" />
+    <Property Name="vote_4" Type="int" Nullable="false" />
+    <Property Name="vote_5" Type="int" Nullable="false" />
+    <Property Name="vote_6" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vote_2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vote_id" Type="int" />
+    <Property Name="vote_date" Type="datetime" />
+    <Property Name="vote_to" Type="nvarchar" MaxLength="50" />
+    <Property Name="vote_ip" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Vote_Auto">
+    <Key>
+      <PropertyRef Name="vote_id" />
+    </Key>
+    <Property Name="vote_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vote_time" Type="datetime" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="question_1" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_1" Type="int" Nullable="false" />
+    <Property Name="question_2" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_2" Type="int" Nullable="false" />
+    <Property Name="question_3" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_3" Type="int" Nullable="false" />
+    <Property Name="question_4" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_4" Type="int" Nullable="false" />
+    <Property Name="question_5" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_5" Type="int" Nullable="false" />
+    <Property Name="question_6" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_6" Type="int" Nullable="false" />
+    <Property Name="question_7" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_7" Type="int" Nullable="false" />
+    <Property Name="question_8" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_8" Type="int" Nullable="false" />
+    <Property Name="question_9" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_9" Type="int" Nullable="false" />
+    <Property Name="question_10" Type="nvarchar" MaxLength="50" />
+    <Property Name="answer_10" Type="int" Nullable="false" />
+    <Property Name="question_all" Type="int" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_Applications' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationName" />
+      <PropertyRef Name="LoweredApplicationName" />
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_MembershipUsers' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_MembershipUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PasswordFormat" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="IsLockedOut" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="LastLoginDate" />
+      <PropertyRef Name="LastPasswordChangedDate" />
+      <PropertyRef Name="LastLockoutDate" />
+      <PropertyRef Name="FailedPasswordAttemptCount" />
+      <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_Profiles' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+    <Property Name="DataSize" Type="int" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_Roles' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_Roles">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="LoweredRoleName" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_Users' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_UsersInRoles' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_WebPartState_Paths' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_WebPartState_Paths">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="Path" />
+      <PropertyRef Name="LoweredPath" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredPath" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_WebPartState_Shared' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_WebPartState_Shared">
+    <Key>
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DataSize" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test.dbo.vw_aspnet_WebPartState_User' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vw_aspnet_WebPartState_User">
+    <Key>
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="DataSize" Type="int" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="testModelStoreContainer">
+    <EntitySet Name="Address_1" EntityType="Self.Address_1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Address_2" EntityType="Self.Address_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Address_3" EntityType="Self.Address_3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Calendar_Schedule" EntityType="Self.Calendar_Schedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="db_user" EntityType="Self.db_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drink_Order_D" EntityType="Self.Drink_Order_D" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drink_Order_M" EntityType="Self.Drink_Order_M" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drink_Product" EntityType="Self.Drink_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileUpload_DB" EntityType="Self.FileUpload_DB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Food_Calorie" EntityType="Self.Food_Calorie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Food_Menu" EntityType="Self.Food_Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News_Test" EntityType="Self.News_Test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News_Test_Class" EntityType="Self.News_Test_Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News_Test_Talk" EntityType="Self.News_Test_Talk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News_User" EntityType="Self.News_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question_D1" EntityType="Self.Question_D1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question_D2" EntityType="Self.Question_D2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question_M" EntityType="Self.Question_M" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_class" EntityType="Self.student_class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_department" EntityType="Self.student_department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_class" EntityType="Self.test_class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_only" EntityType="Self.test_only" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_talk" EntityType="Self.test_talk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_timestamp" EntityType="Self.test_timestamp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test1" EntityType="Self.test1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vote_1" EntityType="Self.Vote_1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vote_2" EntityType="Self.Vote_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vote_Auto" EntityType="Self.Vote_Auto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="test_ad" EntityType="Self.test_ad" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [test_ad].[ad_id] AS [ad_id], 
+    [test_ad].[ad_time_start] AS [ad_time_start], 
+    [test_ad].[ad_time_end] AS [ad_time_end], 
+    [test_ad].[ad_images] AS [ad_images], 
+    [test_ad].[ad_url] AS [ad_url]
+    FROM [dbo].[test_ad] AS [test_ad]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Applications].[ApplicationName] AS [ApplicationName], 
+    [vw_aspnet_Applications].[LoweredApplicationName] AS [LoweredApplicationName], 
+    [vw_aspnet_Applications].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Applications].[Description] AS [Description]
+    FROM [dbo].[vw_aspnet_Applications] AS [vw_aspnet_Applications]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="Self.vw_aspnet_MembershipUsers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_MembershipUsers].[UserId] AS [UserId], 
+    [vw_aspnet_MembershipUsers].[PasswordFormat] AS [PasswordFormat], 
+    [vw_aspnet_MembershipUsers].[MobilePIN] AS [MobilePIN], 
+    [vw_aspnet_MembershipUsers].[Email] AS [Email], 
+    [vw_aspnet_MembershipUsers].[LoweredEmail] AS [LoweredEmail], 
+    [vw_aspnet_MembershipUsers].[PasswordQuestion] AS [PasswordQuestion], 
+    [vw_aspnet_MembershipUsers].[PasswordAnswer] AS [PasswordAnswer], 
+    [vw_aspnet_MembershipUsers].[IsApproved] AS [IsApproved], 
+    [vw_aspnet_MembershipUsers].[IsLockedOut] AS [IsLockedOut], 
+    [vw_aspnet_MembershipUsers].[CreateDate] AS [CreateDate], 
+    [vw_aspnet_MembershipUsers].[LastLoginDate] AS [LastLoginDate], 
+    [vw_aspnet_MembershipUsers].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
+    [vw_aspnet_MembershipUsers].[LastLockoutDate] AS [LastLockoutDate], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
+    [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptWindowStart] AS [FailedPasswordAnswerAttemptWindowStart], 
+    [vw_aspnet_MembershipUsers].[Comment] AS [Comment], 
+    [vw_aspnet_MembershipUsers].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_MembershipUsers].[UserName] AS [UserName], 
+    [vw_aspnet_MembershipUsers].[MobileAlias] AS [MobileAlias], 
+    [vw_aspnet_MembershipUsers].[IsAnonymous] AS [IsAnonymous], 
+    [vw_aspnet_MembershipUsers].[LastActivityDate] AS [LastActivityDate]
+    FROM [dbo].[vw_aspnet_MembershipUsers] AS [vw_aspnet_MembershipUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Profiles" EntityType="Self.vw_aspnet_Profiles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Profiles].[UserId] AS [UserId], 
+    [vw_aspnet_Profiles].[LastUpdatedDate] AS [LastUpdatedDate], 
+    [vw_aspnet_Profiles].[DataSize] AS [DataSize]
+    FROM [dbo].[vw_aspnet_Profiles] AS [vw_aspnet_Profiles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Roles" EntityType="Self.vw_aspnet_Roles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Roles].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Roles].[RoleId] AS [RoleId], 
+    [vw_aspnet_Roles].[RoleName] AS [RoleName], 
+    [vw_aspnet_Roles].[LoweredRoleName] AS [LoweredRoleName], 
+    [vw_aspnet_Roles].[Description] AS [Description]
+    FROM [dbo].[vw_aspnet_Roles] AS [vw_aspnet_Roles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_Users" EntityType="Self.vw_aspnet_Users" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_Users].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_Users].[UserId] AS [UserId], 
+    [vw_aspnet_Users].[UserName] AS [UserName], 
+    [vw_aspnet_Users].[LoweredUserName] AS [LoweredUserName], 
+    [vw_aspnet_Users].[MobileAlias] AS [MobileAlias], 
+    [vw_aspnet_Users].[IsAnonymous] AS [IsAnonymous], 
+    [vw_aspnet_Users].[LastActivityDate] AS [LastActivityDate]
+    FROM [dbo].[vw_aspnet_Users] AS [vw_aspnet_Users]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="Self.vw_aspnet_UsersInRoles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_UsersInRoles].[UserId] AS [UserId], 
+    [vw_aspnet_UsersInRoles].[RoleId] AS [RoleId]
+    FROM [dbo].[vw_aspnet_UsersInRoles] AS [vw_aspnet_UsersInRoles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="Self.vw_aspnet_WebPartState_Paths" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_Paths].[ApplicationId] AS [ApplicationId], 
+    [vw_aspnet_WebPartState_Paths].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_Paths].[Path] AS [Path], 
+    [vw_aspnet_WebPartState_Paths].[LoweredPath] AS [LoweredPath]
+    FROM [dbo].[vw_aspnet_WebPartState_Paths] AS [vw_aspnet_WebPartState_Paths]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="Self.vw_aspnet_WebPartState_Shared" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_Shared].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_Shared].[DataSize] AS [DataSize], 
+    [vw_aspnet_WebPartState_Shared].[LastUpdatedDate] AS [LastUpdatedDate]
+    FROM [dbo].[vw_aspnet_WebPartState_Shared] AS [vw_aspnet_WebPartState_Shared]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="Self.vw_aspnet_WebPartState_User" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_aspnet_WebPartState_User].[PathId] AS [PathId], 
+    [vw_aspnet_WebPartState_User].[UserId] AS [UserId], 
+    [vw_aspnet_WebPartState_User].[DataSize] AS [DataSize], 
+    [vw_aspnet_WebPartState_User].[LastUpdatedDate] AS [LastUpdatedDate]
+    FROM [dbo].[vw_aspnet_WebPartState_User] AS [vw_aspnet_WebPartState_User]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

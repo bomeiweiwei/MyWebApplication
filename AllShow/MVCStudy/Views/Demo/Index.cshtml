@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+ViewData傳資料&nbsp;
+@Html.ActionLink("ViewData傳資料", "DemoViewData", "Demo")
+<br />
+ViewBag傳資料&nbsp;
+@Html.ActionLink("ViewBag傳資料", "DemoViewBag", "Demo")
+<br />
+超連結傳資料&nbsp;
+@Html.ActionLink("超連結傳資料", "DemoData", "Demo")
+<br />
+表單傳資料&nbsp;
+@Html.ActionLink("表單傳資料", "DemoForm", "Demo")
+<br />
+ViewData傳Model&nbsp;
+@Html.ActionLink("ViewData傳Model", "DemoViewData_Model1", "Demo")
+<br />
+ViewData傳Model，使用ViewData.Model&nbsp;
+@Html.ActionLink("ViewData傳Model", "DemoViewData_Model2", "Demo")
+<br />
+直接傳Model，不使用ViewData.Model&nbsp;
+@Html.ActionLink("ViewData傳Model", "DemoViewDataModel", "Demo")
+<br />
+ViewBag傳Model&nbsp;
+@Html.ActionLink("ViewBag傳Model", "DemoViewBag_Model", "Demo")
+<br />
+TempData&nbsp;
+@Html.ActionLink("TempData", "DemoTempData", "Demo")
+<br />
+表單傳資料 + TempData檢查輸入&nbsp;
+@Html.ActionLink("TempData檢查輸入", "DemoInput", "Demo")
+<br />
+TempData顯示Product資料&nbsp;
+@Html.ActionLink("TempData顯示Product資料", "DemoTempDataProduct", "Demo")
+<br />
+多model傳遞(include)&nbsp;
+@Html.ActionLink("多model傳遞", "DemoInclude", "Demo")
+<br />
+多model傳遞(viewmodel)&nbsp;
+@Html.ActionLink("多model傳遞", "DemoViewModel", "Demo")
+<br />
+model傳遞(Form)&nbsp;
+@Html.ActionLink("model傳遞", "DemoFormUseModel", "Demo")

@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testModelStoreContainer" CdmEntityContainer="testEntities">
+    <EntitySetMapping Name="Address_1">
+      <EntityTypeMapping TypeName="testModel.Address_1">
+        <MappingFragment StoreEntitySet="Address_1">
+          <ScalarProperty Name="a1_id" ColumnName="a1_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Address_2">
+      <EntityTypeMapping TypeName="testModel.Address_2">
+        <MappingFragment StoreEntitySet="Address_2">
+          <ScalarProperty Name="a2_id" ColumnName="a2_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="district_name" ColumnName="district_name" />
+          <ScalarProperty Name="a1_id" ColumnName="a1_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Address_3">
+      <EntityTypeMapping TypeName="testModel.Address_3">
+        <MappingFragment StoreEntitySet="Address_3">
+          <ScalarProperty Name="a3_id" ColumnName="a3_id" />
+          <ScalarProperty Name="a1_id" ColumnName="a1_id" />
+          <ScalarProperty Name="a2_id" ColumnName="a2_id" />
+          <ScalarProperty Name="street_name" ColumnName="street_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calendar_Schedule">
+      <EntityTypeMapping TypeName="testModel.Calendar_Schedule">
+        <MappingFragment StoreEntitySet="Calendar_Schedule">
+          <ScalarProperty Name="CS_id" ColumnName="CS_id" />
+          <ScalarProperty Name="CS_time" ColumnName="CS_time" />
+          <ScalarProperty Name="CS_title" ColumnName="CS_title" />
+          <ScalarProperty Name="CS_summary" ColumnName="CS_summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="db_user">
+      <EntityTypeMapping TypeName="testModel.db_user">
+        <MappingFragment StoreEntitySet="db_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="UpdateRight" ColumnName="UpdateRight" />
+          <ScalarProperty Name="DeleteRight" ColumnName="DeleteRight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drink_Order_D">
+      <EntityTypeMapping TypeName="testModel.Drink_Order_D">
+        <MappingFragment StoreEntitySet="Drink_Order_D">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="drink_id" ColumnName="drink_id" />
+          <ScalarProperty Name="drink_name" ColumnName="drink_name" />
+          <ScalarProperty Name="ice_degree" ColumnName="ice_degree" />
+          <ScalarProperty Name="sweet_degree" ColumnName="sweet_degree" />
+          <ScalarProperty Name="drink_no" ColumnName="drink_no" />
+          <ScalarProperty Name="meno" ColumnName="meno" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drink_Order_M">
+      <EntityTypeMapping TypeName="testModel.Drink_Order_M">
+        <MappingFragment StoreEntitySet="Drink_Order_M">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="order_time" ColumnName="order_time" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+          <ScalarProperty Name="memo" ColumnName="memo" />
+          <ScalarProperty Name="have_paid" ColumnName="have_paid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drink_Product">
+      <EntityTypeMapping TypeName="testModel.Drink_Product">
+        <MappingFragment StoreEntitySet="Drink_Product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="drink_class" ColumnName="drink_class" />
+          <ScalarProperty Name="drink_name" ColumnName="drink_name" />
+          <ScalarProperty Name="drink_price" ColumnName="drink_price" />
+          <ScalarProperty Name="drink_cost" ColumnName="drink_cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileUpload_DB">
+      <EntityTypeMapping TypeName="testModel.FileUpload_DB">
+        <MappingFragment StoreEntitySet="FileUpload_DB">
+          <ScalarProperty Name="FileUpload_DB_id" ColumnName="FileUpload_DB_id" />
+          <ScalarProperty Name="FileUpload_time" ColumnName="FileUpload_time" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="FileUpload_FileName" ColumnName="FileUpload_FileName" />
+          <ScalarProperty Name="FileUpload_Memo" ColumnName="FileUpload_Memo" />
+          <ScalarProperty Name="FileUpload_User" ColumnName="FileUpload_User" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food_Calorie">
+      <EntityTypeMapping TypeName="testModel.Food_Calorie">
+        <MappingFragment StoreEntitySet="Food_Calorie">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="food_name" ColumnName="food_name" />
+          <ScalarProperty Name="food_unit" ColumnName="food_unit" />
+          <ScalarProperty Name="food_Calorie1" ColumnName="food_Calorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food_Menu">
+      <EntityTypeMapping TypeName="testModel.Food_Menu">
+        <MappingFragment StoreEntitySet="Food_Menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="food_class" ColumnName="food_class" />
+          <ScalarProperty Name="food_name" ColumnName="food_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_Test">
+      <EntityTypeMapping TypeName="testModel.News_Test">
+        <MappingFragment StoreEntitySet="News_Test">
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="test_guid" ColumnName="test_guid" />
+          <ScalarProperty Name="test_time" ColumnName="test_time" />
+          <ScalarProperty Name="test_class" ColumnName="test_class" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="article" ColumnName="article" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="hit_no" ColumnName="hit_no" />
+          <ScalarProperty Name="get_no" ColumnName="get_no" />
+          <ScalarProperty Name="email_no" ColumnName="email_no" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_Test_Class">
+      <EntityTypeMapping TypeName="testModel.News_Test_Class">
+        <MappingFragment StoreEntitySet="News_Test_Class">
+          <ScalarProperty Name="Test_Class_id" ColumnName="Test_Class_id" />
+          <ScalarProperty Name="test_class" ColumnName="test_class" />
+          <ScalarProperty Name="test_class_1" ColumnName="test_class_1" />
+          <ScalarProperty Name="test_class_2" ColumnName="test_class_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_Test_Talk">
+      <EntityTypeMapping TypeName="testModel.News_Test_Talk">
+        <MappingFragment StoreEntitySet="News_Test_Talk">
+          <ScalarProperty Name="test_talk_id" ColumnName="test_talk_id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="test_time" ColumnName="test_time" />
+          <ScalarProperty Name="article" ColumnName="article" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News_User">
+      <EntityTypeMapping TypeName="testModel.News_User">
+        <MappingFragment StoreEntitySet="News_User">
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="User_Real_Name" ColumnName="User_Real_Name" />
+          <ScalarProperty Name="User_Account" ColumnName="User_Account" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_Rank" ColumnName="User_Rank" />
+          <ScalarProperty Name="User_email" ColumnName="User_email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question_D1">
+      <EntityTypeMapping TypeName="testModel.Question_D1">
+        <MappingFragment StoreEntitySet="Question_D1">
+          <ScalarProperty Name="D1_id" ColumnName="D1_id" />
+          <ScalarProperty Name="M_id" ColumnName="M_id" />
+          <ScalarProperty Name="D1_title" ColumnName="D1_title" />
+          <ScalarProperty Name="D1_summary" ColumnName="D1_summary" />
+          <ScalarProperty Name="D1_type" ColumnName="D1_type" />
+          <ScalarProperty Name="D1_mustKeyin" ColumnName="D1_mustKeyin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question_D2">
+      <EntityTypeMapping TypeName="testModel.Question_D2">
+        <MappingFragment StoreEntitySet="Question_D2">
+          <ScalarProperty Name="D2_id" ColumnName="D2_id" />
+          <ScalarProperty Name="D1_id" ColumnName="D1_id" />
+          <ScalarProperty Name="M_id" ColumnName="M_id" />
+          <ScalarProperty Name="answer1" ColumnName="answer1" />
+          <ScalarProperty Name="answer2" ColumnName="answer2" />
+          <ScalarProperty Name="answer3" ColumnName="answer3" />
+          <ScalarProperty Name="answer4" ColumnName="answer4" />
+          <ScalarProperty Name="answer5" ColumnName="answer5" />
+          <ScalarProperty Name="answer6" ColumnName="answer6" />
+          <ScalarProperty Name="answer7" ColumnName="answer7" />
+          <ScalarProperty Name="answer8" ColumnName="answer8" />
+          <ScalarProperty Name="answer9" ColumnName="answer9" />
+          <ScalarProperty Name="answer10" ColumnName="answer10" />
+          <ScalarProperty Name="answer11" ColumnName="answer11" />
+          <ScalarProperty Name="answer12" ColumnName="answer12" />
+          <ScalarProperty Name="answer13" ColumnName="answer13" />
+          <ScalarProperty Name="answer14" ColumnName="answer14" />
+          <ScalarProperty Name="answer15" ColumnName="answer15" />
+          <ScalarProperty Name="answer_all" ColumnName="answer_all" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question_M">
+      <EntityTypeMapping TypeName="testModel.Question_M">
+        <MappingFragment StoreEntitySet="Question_M">
+          <ScalarProperty Name="M_id" ColumnName="M_id" />
+          <ScalarProperty Name="M_title" ColumnName="M_title" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="M_summary" ColumnName="M_summary" />
+          <ScalarProperty Name="M_enable" ColumnName="M_enable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_class">
+      <EntityTypeMapping TypeName="testModel.student_class">
+        <MappingFragment StoreEntitySet="student_class">
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="sd_id" ColumnName="sd_id" />
+          <ScalarProperty Name="student_year" ColumnName="student_year" />
+          <ScalarProperty Name="student_class1" ColumnName="student_class" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_department">
+      <EntityTypeMapping TypeName="testModel.student_department">
+        <MappingFragment StoreEntitySet="student_department">
+          <ScalarProperty Name="sd_id" ColumnName="sd_id" />
+          <ScalarProperty Name="student_department1" ColumnName="student_department" />
+          <ScalarProperty Name="department_leader" ColumnName="department_leader" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tests">
+      <EntityTypeMapping TypeName="testModel.test">
+        <MappingFragment StoreEntitySet="test">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="test_time" ColumnName="test_time" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="article" ColumnName="article" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="hit_no" ColumnName="hit_no" />
+          <ScalarProperty Name="get_no" ColumnName="get_no" />
+          <ScalarProperty Name="email_no" ColumnName="email_no" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_class">
+      <EntityTypeMapping TypeName="testModel.test_class">
+        <MappingFragment StoreEntitySet="test_class">
+          <ScalarProperty Name="test_class_id" ColumnName="test_class_id" />
+          <ScalarProperty Name="test_class1" ColumnName="test_class" />
+          <ScalarProperty Name="test_class11" ColumnName="test_class1" />
+          <ScalarProperty Name="test_class2" ColumnName="test_class2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_only">
+      <EntityTypeMapping TypeName="testModel.test_only">
+        <MappingFragment StoreEntitySet="test_only">
+          <ScalarProperty Name="test_no" ColumnName="test_no" />
+          <ScalarProperty Name="test_title" ColumnName="test_title" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_talk">
+      <EntityTypeMapping TypeName="testModel.test_talk">
+        <MappingFragment StoreEntitySet="test_talk">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="test_time" ColumnName="test_time" />
+          <ScalarProperty Name="article" ColumnName="article" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_timestamp">
+      <EntityTypeMapping TypeName="testModel.test_timestamp">
+        <MappingFragment StoreEntitySet="test_timestamp">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="test_time" ColumnName="test_time" />
+          <ScalarProperty Name="test_TS" ColumnName="test_TS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test1">
+      <EntityTypeMapping TypeName="testModel.test1">
+        <MappingFragment StoreEntitySet="test1">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="test" ColumnName="test" />
+          <ScalarProperty Name="time_st" ColumnName="time_st" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vote_1">
+      <EntityTypeMapping TypeName="testModel.Vote_1">
+        <MappingFragment StoreEntitySet="Vote_1">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vote_11" ColumnName="vote_1" />
+          <ScalarProperty Name="vote_2" ColumnName="vote_2" />
+          <ScalarProperty Name="vote_3" ColumnName="vote_3" />
+          <ScalarProperty Name="vote_4" ColumnName="vote_4" />
+          <ScalarProperty Name="vote_5" ColumnName="vote_5" />
+          <ScalarProperty Name="vote_6" ColumnName="vote_6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vote_2">
+      <EntityTypeMapping TypeName="testModel.Vote_2">
+        <MappingFragment StoreEntitySet="Vote_2">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vote_id" ColumnName="vote_id" />
+          <ScalarProperty Name="vote_date" ColumnName="vote_date" />
+          <ScalarProperty Name="vote_to" ColumnName="vote_to" />
+          <ScalarProperty Name="vote_ip" ColumnName="vote_ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vote_Auto">
+      <EntityTypeMapping TypeName="testModel.Vote_Auto">
+        <MappingFragment StoreEntitySet="Vote_Auto">
+          <ScalarProperty Name="vote_id" ColumnName="vote_id" />
+          <ScalarProperty Name="Vote_time" ColumnName="Vote_time" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="question_1" ColumnName="question_1" />
+          <ScalarProperty Name="answer_1" ColumnName="answer_1" />
+          <ScalarProperty Name="question_2" ColumnName="question_2" />
+          <ScalarProperty Name="answer_2" ColumnName="answer_2" />
+          <ScalarProperty Name="question_3" ColumnName="question_3" />
+          <ScalarProperty Name="answer_3" ColumnName="answer_3" />
+          <ScalarProperty Name="question_4" ColumnName="question_4" />
+          <ScalarProperty Name="answer_4" ColumnName="answer_4" />
+          <ScalarProperty Name="question_5" ColumnName="question_5" />
+          <ScalarProperty Name="answer_5" ColumnName="answer_5" />
+          <ScalarProperty Name="question_6" ColumnName="question_6" />
+          <ScalarProperty Name="answer_6" ColumnName="answer_6" />
+          <ScalarProperty Name="question_7" ColumnName="question_7" />
+          <ScalarProperty Name="answer_7" ColumnName="answer_7" />
+          <ScalarProperty Name="question_8" ColumnName="question_8" />
+          <ScalarProperty Name="answer_8" ColumnName="answer_8" />
+          <ScalarProperty Name="question_9" ColumnName="question_9" />
+          <ScalarProperty Name="answer_9" ColumnName="answer_9" />
+          <ScalarProperty Name="question_10" ColumnName="question_10" />
+          <ScalarProperty Name="answer_10" ColumnName="answer_10" />
+          <ScalarProperty Name="question_all" ColumnName="question_all" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_ad">
+      <EntityTypeMapping TypeName="testModel.test_ad">
+        <MappingFragment StoreEntitySet="test_ad">
+          <ScalarProperty Name="ad_id" ColumnName="ad_id" />
+          <ScalarProperty Name="ad_time_start" ColumnName="ad_time_start" />
+          <ScalarProperty Name="ad_time_end" ColumnName="ad_time_end" />
+          <ScalarProperty Name="ad_images" ColumnName="ad_images" />
+          <ScalarProperty Name="ad_url" ColumnName="ad_url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Applications">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_Applications">
+        <MappingFragment StoreEntitySet="vw_aspnet_Applications">
+          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+          <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_MembershipUsers">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_MembershipUsers">
+        <MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Profiles">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_Profiles">
+        <MappingFragment StoreEntitySet="vw_aspnet_Profiles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+          <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Roles">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_Roles">
+        <MappingFragment StoreEntitySet="vw_aspnet_Roles">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_Users">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_Users">
+        <MappingFragment StoreEntitySet="vw_aspnet_Users">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_UsersInRoles">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_UsersInRoles">
+        <MappingFragment StoreEntitySet="vw_aspnet_UsersInRoles">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_WebPartState_Paths">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_WebPartState_Paths">
+        <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Paths">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_WebPartState_Shared">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_WebPartState_Shared">
+        <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_Shared">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_aspnet_WebPartState_User">
+      <EntityTypeMapping TypeName="testModel.vw_aspnet_WebPartState_User">
+        <MappingFragment StoreEntitySet="vw_aspnet_WebPartState_User">
+          <ScalarProperty Name="PathId" ColumnName="PathId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DataSize" ColumnName="DataSize" />
+          <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

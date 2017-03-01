@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MyWebApplication2.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="zh">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - 我的 ASP.NET  應用程式 2</title>
+    <asp:PlaceHolder runat="server">     
+          <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>  
+    <webopt:BundleReference runat="server" Path="~/Content/css" /> 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="jquery.ui.combined" />
+        </Scripts>
+    </asp:ScriptManager>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                    <a runat="server" href="~/">Hello World</a>
+                </p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul>
+                                <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">註冊</a></li>
+                                <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">登入</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <p>
+                                Hello, <a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                                    <asp:LoginName runat="server" CssClass="username" /></a>!
+                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="登出" LogoutPageUrl="~/" />
+                            </p>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li><a runat="server" href="~/">首頁</a></li>
+                        <li><a runat="server" href="~/About.aspx">關於</a></li>
+                        <li><a runat="server" href="~/Contact.aspx">連絡</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <asp:HyperLink ID="hlHomePage" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>||
+        <asp:HyperLink ID="hlB2Ch1" runat="server" NavigateUrl="~/Ch01/MasterPageTest.aspx">MasterPage</asp:HyperLink>||
+        <asp:HyperLink ID="hlB2Ch2" runat="server" NavigateUrl="~/Ch02/Ch02_Login.aspx">Login</asp:HyperLink>||
+        <asp:HyperLink ID="h1B2Ch3" runat="server" NavigateUrl="~/Ch03/MainWebForm.aspx">巡覽</asp:HyperLink>||
+        <asp:HyperLink ID="hlB2Ch4" runat="server" NavigateUrl="~/Ch04/ObjectDataSource.aspx">ObjectDataSource</asp:HyperLink>||
+        <asp:HyperLink ID="hlB2Ch5" runat="server" NavigateUrl="~/Ch05/LindDataSource.aspx">LindDataSource</asp:HyperLink>||
+        <asp:HyperLink ID="hlB2Ch7" runat="server" NavigateUrl="~/Ch07/TransactionWebForm.aspx">Transaction</asp:HyperLink>||
+        <asp:HyperLink ID="hlB2Ch8" runat="server" NavigateUrl="~/Ch08/Compute_WebForm.aspx">Web服務</asp:HyperLink>||
+        <asp:HyperLink ID="hlB2Ch12" runat="server" NavigateUrl="~/Ch12/LoginWebForm.aspx">資料驗證</asp:HyperLink>
+        <br/><br/>
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        
+        <%--<section class="content-wrapper main-content clear-fix">--%>
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        <%--</section>--%>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; <%: DateTime.Now.Year %> - 我的 ASP.NET 應用程式</p>
+            </div>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>

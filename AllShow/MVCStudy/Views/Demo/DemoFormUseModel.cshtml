@@ -1,0 +1,22 @@
+﻿@model MVCStudy.Models.ViewModels.ShopProductclassViewModel
+@{
+    ViewBag.Title = "DemoFormUseModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var shops = Model.Shop;
+    var selectItems = shops.Select(x => new SelectListItem
+    {
+        Text = x.shname,
+        Value = x.shno.ToString()
+    });
+}
+
+<h2>DemoFormUseModel</h2>
+@using (Html.BeginForm("DemoProcessFormUseModel", "Demo"))
+{
+    <p>
+        SHOP:@Html.DropDownListFor(model => model.shno, selectItems, "-請選擇-")
+        <input id="Submit3" type="submit" value="送出" />
+    </p>
+}

@@ -1,0 +1,7 @@
+﻿body {
+}
+
+table td, table td * {
+    text-align: left;
+    vertical-align: top;
+}

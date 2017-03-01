@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "DemoInput";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DemoInput</h2>
+<div>
+    @using (Html.BeginForm("CheckInput", "Demo"))
+    {
+        <input type="text" name="name" /><span style="color:red">@TempData["error"]</span>
+        <br />
+        <input type="submit" value="submit" />
+    }  
+</div>
+

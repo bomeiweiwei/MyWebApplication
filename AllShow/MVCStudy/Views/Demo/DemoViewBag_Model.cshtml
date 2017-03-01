@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "DemoViewBaga_Model";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DemoViewBag_Model</h2>
+<ul>
+    @foreach (var item in ViewBag.messages as List<Message>)
+    {
+        <li>@item.times</li>
+    }
+</ul>

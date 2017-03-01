@@ -1,0 +1,82 @@
+﻿@model AllShow.Models.edmx.ANNOUNCEMENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ANNOUNCEMENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.announcementtitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.announcementtitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.announcementtype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.announcementtype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.announcementcontent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.announcementcontent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updatedate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updatedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.startdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enddate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enddate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPLOYEE.empname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPLOYEE.empname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.announcementno }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

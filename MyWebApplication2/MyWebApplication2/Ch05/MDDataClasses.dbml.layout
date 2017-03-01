@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MDDataClasses">
+  <DataContextMoniker Name="/MDDataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="85d3377f-0ea3-40c3-b383-ee677d44fddb" absoluteBounds="0.75, 0.75, 2, 2.8308638509114576">
+      <DataClassMoniker Name="/MDDataClassesDataContext/test" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86c7a4dd-7ee2-476e-95f1-ee651f5d0657" absoluteBounds="0.765, 1.21, 1.9700000000000002, 2.270863850911458" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db48e362-31c7-4be2-ba8d-9452f0e6f1ea" absoluteBounds="3.75, 0.75, 2, 1.9068933105468751">
+      <DataClassMoniker Name="/MDDataClassesDataContext/test_talk" />
+      <nestedChildShapes>
+        <elementListCompartment Id="747db3f7-e053-4506-adde-87c5170caf65" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.346893310546875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.70344665527344); (3.75 : 1.70344665527344)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MDDataClassesDataContext/test/test_test_talk" />
+      <nodes>
+        <classShapeMoniker Id="85d3377f-0ea3-40c3-b383-ee677d44fddb" />
+        <classShapeMoniker Id="db48e362-31c7-4be2-ba8d-9452f0e6f1ea" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

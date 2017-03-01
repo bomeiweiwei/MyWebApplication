@@ -1,0 +1,10 @@
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\LinqStudyConsoleApplication.exe.config
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\LinqStudyConsoleApplication.exe
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\LinqStudyConsoleApplication.pdb
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.csprojResolveAssemblyReference.cache
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.exe
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.pdb
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.dll
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.xml
+D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml

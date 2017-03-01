@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address_1">
+    <Key>
+      <PropertyRef Name="a1_id" />
+    </Key>
+    <Property Name="a1_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Address_2">
+    <Key>
+      <PropertyRef Name="a2_id" />
+    </Key>
+    <Property Name="a2_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="district_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="a1_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Address_3">
+    <Key>
+      <PropertyRef Name="a3_id" />
+    </Key>
+    <Property Name="a3_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="a1_id" Type="Int32" Nullable="false" />
+    <Property Name="a2_id" Type="Int32" Nullable="false" />
+    <Property Name="street_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Calendar_Schedule">
+    <Key>
+      <PropertyRef Name="CS_id" />
+    </Key>
+    <Property Name="CS_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CS_time" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CS_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CS_summary" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="db_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="real_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sex" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rank" Type="Int32" Nullable="false" />
+    <Property Name="UpdateRight" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DeleteRight" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drink_Order_D">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="drink_id" Type="Int32" />
+    <Property Name="drink_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ice_degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sweet_degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="drink_no" Type="Int32" />
+    <Property Name="meno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="approved" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drink_Order_M">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_time" Type="DateTime" Precision="3" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="memo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="have_paid" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drink_Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="drink_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="drink_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="drink_price" Type="Int32" />
+    <Property Name="drink_cost" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FileUpload_DB">
+    <Key>
+      <PropertyRef Name="FileUpload_DB_id" />
+    </Key>
+    <Property Name="FileUpload_DB_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileUpload_time" Type="DateTime" Precision="3" />
+    <Property Name="test_id" Type="Int32" Nullable="false" />
+    <Property Name="FileUpload_FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FileUpload_Memo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FileUpload_User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Food_Calorie">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="food_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="food_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="food_Calorie1" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Food_Menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="food_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="food_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="News_Test">
+    <Key>
+      <PropertyRef Name="test_id" />
+    </Key>
+    <Property Name="test_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="test_guid" Type="Guid" />
+    <Property Name="test_time" Type="DateTime" Precision="3" />
+    <Property Name="test_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="summary" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="article" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hit_no" Type="Int32" Nullable="false" />
+    <Property Name="get_no" Type="Int32" Nullable="false" />
+    <Property Name="email_no" Type="Int32" Nullable="false" />
+    <Property Name="approved" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="News_Test_Class">
+    <Key>
+      <PropertyRef Name="Test_Class_id" />
+    </Key>
+    <Property Name="Test_Class_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="test_class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="test_class_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="test_class_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="News_Test_Talk">
+    <Key>
+      <PropertyRef Name="test_talk_id" />
+    </Key>
+    <Property Name="test_talk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="test_id" Type="Int32" Nullable="false" />
+    <Property Name="test_time" Type="DateTime" Precision="3" />
+    <Property Name="article" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="News_User">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Real_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_Rank" Type="Int32" Nullable="false" />
+    <Property Name="User_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Question_D1">
+    <Key>
+      <PropertyRef Name="D1_id" />
+    </Key>
+    <Property Name="D1_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="M_id" Type="Int32" Nullable="false" />
+    <Property Name="D1_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="D1_summary" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="D1_type" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="D1_mustKeyin" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question_D2">
+    <Key>
+      <PropertyRef Name="D2_id" />
+    </Key>
+    <Property Name="D2_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="D1_id" Type="Int32" Nullable="false" />
+    <Property Name="M_id" Type="Int32" Nullable="false" />
+    <Property Name="answer1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_all" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question_M">
+    <Key>
+      <PropertyRef Name="M_id" />
+    </Key>
+    <Property Name="M_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="M_title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_time" Type="DateTime" Precision="3" />
+    <Property Name="end_time" Type="DateTime" Precision="3" />
+    <Property Name="M_summary" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="M_enable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_class">
+    <Key>
+      <PropertyRef Name="student_id" />
+    </Key>
+    <Property Name="student_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sd_id" Type="Int32" Nullable="false" />
+    <Property Name="student_year" Type="Int32" />
+    <Property Name="student_class1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="student_department">
+    <Key>
+      <PropertyRef Name="sd_id" />
+    </Key>
+    <Property Name="sd_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="student_department1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="department_leader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="test_time" Type="DateTime" Precision="3" />
+    <Property Name="class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="summary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="article" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hit_no" Type="Int32" />
+    <Property Name="get_no" Type="Int32" />
+    <Property Name="email_no" Type="Int32" />
+    <Property Name="approved" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="test_class">
+    <Key>
+      <PropertyRef Name="test_class_id" />
+    </Key>
+    <Property Name="test_class_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="test_class1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="test_class11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="test_class2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="test_only">
+    <Key>
+      <PropertyRef Name="test_no" />
+    </Key>
+    <Property Name="test_no" Type="Int32" Nullable="false" />
+    <Property Name="test_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="test_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="test_talk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="test_id" Type="Int32" Nullable="false" />
+    <Property Name="test_time" Type="DateTime" Precision="3" />
+    <Property Name="article" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="author" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="test_timestamp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="test_time" Type="DateTime" Precision="0" />
+    <Property Name="test_TS" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="test1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="test" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="time_st" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Vote_1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vote_11" Type="Int32" Nullable="false" />
+    <Property Name="vote_2" Type="Int32" Nullable="false" />
+    <Property Name="vote_3" Type="Int32" Nullable="false" />
+    <Property Name="vote_4" Type="Int32" Nullable="false" />
+    <Property Name="vote_5" Type="Int32" Nullable="false" />
+    <Property Name="vote_6" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vote_2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vote_id" Type="Int32" />
+    <Property Name="vote_date" Type="DateTime" Precision="3" />
+    <Property Name="vote_to" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vote_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vote_Auto">
+    <Key>
+      <PropertyRef Name="vote_id" />
+    </Key>
+    <Property Name="vote_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vote_time" Type="DateTime" Precision="3" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="question_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_1" Type="Int32" Nullable="false" />
+    <Property Name="question_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_2" Type="Int32" Nullable="false" />
+    <Property Name="question_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_3" Type="Int32" Nullable="false" />
+    <Property Name="question_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_4" Type="Int32" Nullable="false" />
+    <Property Name="question_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_5" Type="Int32" Nullable="false" />
+    <Property Name="question_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_6" Type="Int32" Nullable="false" />
+    <Property Name="question_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_7" Type="Int32" Nullable="false" />
+    <Property Name="question_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_8" Type="Int32" Nullable="false" />
+    <Property Name="question_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_9" Type="Int32" Nullable="false" />
+    <Property Name="question_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="answer_10" Type="Int32" Nullable="false" />
+    <Property Name="question_all" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="test_ad">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad_time_start" Type="DateTime" Precision="0" />
+    <Property Name="ad_time_end" Type="DateTime" Precision="0" />
+    <Property Name="ad_images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ad_url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationName" />
+      <PropertyRef Name="LoweredApplicationName" />
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoweredApplicationName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_MembershipUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="PasswordFormat" />
+      <PropertyRef Name="IsApproved" />
+      <PropertyRef Name="IsLockedOut" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="LastLoginDate" />
+      <PropertyRef Name="LastPasswordChangedDate" />
+      <PropertyRef Name="LastLockoutDate" />
+      <PropertyRef Name="FailedPasswordAttemptCount" />
+      <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+      <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataSize" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Roles">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="RoleName" />
+      <PropertyRef Name="LoweredRoleName" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoweredUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Paths">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="Path" />
+      <PropertyRef Name="LoweredPath" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="Path" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoweredPath" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_Shared">
+    <Key>
+      <PropertyRef Name="PathId" />
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" Nullable="false" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="vw_aspnet_WebPartState_User">
+    <Key>
+      <PropertyRef Name="LastUpdatedDate" />
+    </Key>
+    <Property Name="PathId" Type="Guid" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="DataSize" Type="Int32" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="testEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Address_1" EntityType="Self.Address_1" />
+    <EntitySet Name="Address_2" EntityType="Self.Address_2" />
+    <EntitySet Name="Address_3" EntityType="Self.Address_3" />
+    <EntitySet Name="Calendar_Schedule" EntityType="Self.Calendar_Schedule" />
+    <EntitySet Name="db_user" EntityType="Self.db_user" />
+    <EntitySet Name="Drink_Order_D" EntityType="Self.Drink_Order_D" />
+    <EntitySet Name="Drink_Order_M" EntityType="Self.Drink_Order_M" />
+    <EntitySet Name="Drink_Product" EntityType="Self.Drink_Product" />
+    <EntitySet Name="FileUpload_DB" EntityType="Self.FileUpload_DB" />
+    <EntitySet Name="Food_Calorie" EntityType="Self.Food_Calorie" />
+    <EntitySet Name="Food_Menu" EntityType="Self.Food_Menu" />
+    <EntitySet Name="News_Test" EntityType="Self.News_Test" />
+    <EntitySet Name="News_Test_Class" EntityType="Self.News_Test_Class" />
+    <EntitySet Name="News_Test_Talk" EntityType="Self.News_Test_Talk" />
+    <EntitySet Name="News_User" EntityType="Self.News_User" />
+    <EntitySet Name="Question_D1" EntityType="Self.Question_D1" />
+    <EntitySet Name="Question_D2" EntityType="Self.Question_D2" />
+    <EntitySet Name="Question_M" EntityType="Self.Question_M" />
+    <EntitySet Name="student_class" EntityType="Self.student_class" />
+    <EntitySet Name="student_department" EntityType="Self.student_department" />
+    <EntitySet Name="tests" EntityType="Self.test" />
+    <EntitySet Name="test_class" EntityType="Self.test_class" />
+    <EntitySet Name="test_only" EntityType="Self.test_only" />
+    <EntitySet Name="test_talk" EntityType="Self.test_talk" />
+    <EntitySet Name="test_timestamp" EntityType="Self.test_timestamp" />
+    <EntitySet Name="test1" EntityType="Self.test1" />
+    <EntitySet Name="Vote_1" EntityType="Self.Vote_1" />
+    <EntitySet Name="Vote_2" EntityType="Self.Vote_2" />
+    <EntitySet Name="Vote_Auto" EntityType="Self.Vote_Auto" />
+    <EntitySet Name="test_ad" EntityType="Self.test_ad" />
+    <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" />
+    <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="Self.vw_aspnet_MembershipUsers" />
+    <EntitySet Name="vw_aspnet_Profiles" EntityType="Self.vw_aspnet_Profiles" />
+    <EntitySet Name="vw_aspnet_Roles" EntityType="Self.vw_aspnet_Roles" />
+    <EntitySet Name="vw_aspnet_Users" EntityType="Self.vw_aspnet_Users" />
+    <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="Self.vw_aspnet_UsersInRoles" />
+    <EntitySet Name="vw_aspnet_WebPartState_Paths" EntityType="Self.vw_aspnet_WebPartState_Paths" />
+    <EntitySet Name="vw_aspnet_WebPartState_Shared" EntityType="Self.vw_aspnet_WebPartState_Shared" />
+    <EntitySet Name="vw_aspnet_WebPartState_User" EntityType="Self.vw_aspnet_WebPartState_User" />
+  </EntityContainer>
+</Schema>

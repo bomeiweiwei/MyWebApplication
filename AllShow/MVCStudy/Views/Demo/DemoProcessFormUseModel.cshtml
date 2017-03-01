@@ -1,0 +1,37 @@
+﻿@model MVCStudy.Models.ViewModels.ShopProductclassViewModel
+@{
+    ViewBag.Title = "DemoProcessFormUseModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DemoProcessFormUseModel</h2>
+@{
+    var shops = Model.Shop;
+    var selectItems = shops.Select(x => new SelectListItem
+    {
+        Text = x.shname,
+        Value = x.shno.ToString()
+    });
+}
+
+<div class="display-field">
+    <table style="border:solid">
+        <tr>
+            <th style="border:dotted">商品名稱</th>
+            <th style="border:dotted">商品類別</th>
+            <th style="border:dotted">商品所屬商店</th>
+            <th style="border:dotted">商品所屬商店SelectList</th>
+        </tr>
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td style="border:dotted">@item.proName</td>
+                <td style="border:dotted">@item.PRODUCTCLASS.proclassname</td>
+                <td style="border:dotted">@item.SHOP.shname</td>
+                <td style="border:dotted">@Html.DropDownListFor(x => Model.shno, selectItems, "-請選擇-")</td>
+            </tr>
+        }
+    </table>
+    <br />
+</div>
+

@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AllShowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADVERTISEMENT">
+    <Key>
+      <PropertyRef Name="adNo" />
+    </Key>
+    <Property Name="adNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="shNo" Type="int" Nullable="false" />
+    <Property Name="empNo" Type="int" Nullable="false" />
+    <Property Name="adTitle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="adApplyDate" Type="date" Nullable="false" />
+    <Property Name="adStartDate" Type="date" Nullable="false" />
+    <Property Name="adTime" Type="float" Nullable="false" />
+    <Property Name="adPrice" Type="float" Nullable="false" />
+    <Property Name="adPic" Type="varchar" MaxLength="200" />
+    <Property Name="adURL" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="adCheckState" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ANNOUNCEMENT">
+    <Key>
+      <PropertyRef Name="announcementno" />
+    </Key>
+    <Property Name="announcementno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empno" Type="int" Nullable="false" />
+    <Property Name="announcementtitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="announcementtype" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="announcementcontent" Type="varchar" MaxLength="2500" Nullable="false" />
+    <Property Name="createdate" Type="date" Nullable="false" />
+    <Property Name="updatedate" Type="date" />
+    <Property Name="startdate" Type="date" Nullable="false" />
+    <Property Name="enddate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AUTHORITY">
+    <Key>
+      <PropertyRef Name="authorityno" />
+      <PropertyRef Name="empno" />
+    </Key>
+    <Property Name="authorityno" Type="int" Nullable="false" />
+    <Property Name="empno" Type="int" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AUTHORITYFUNCTION">
+    <Key>
+      <PropertyRef Name="authorityno" />
+    </Key>
+    <Property Name="authorityno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="authorityname" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="empno" />
+    </Key>
+    <Property Name="empno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empname" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="empaccount" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="emppwd" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMPEMAIL" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="empsex" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="empbirth" Type="date" Nullable="false" />
+    <Property Name="emptel" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="hiredate" Type="date" Nullable="false" />
+    <Property Name="leavedate" Type="date" />
+    <Property Name="empaccountstate" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="FAVORITESHOPLIST">
+    <Key>
+      <PropertyRef Name="memNo" />
+      <PropertyRef Name="shNo" />
+    </Key>
+    <Property Name="memNo" Type="int" Nullable="false" />
+    <Property Name="shNo" Type="int" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MEMBER">
+    <Key>
+      <PropertyRef Name="memno" />
+    </Key>
+    <Property Name="memno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mememail" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="mempwd" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="memdiminutive" Type="varchar" MaxLength="40" />
+    <Property Name="memname" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="memsex" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="memtel" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="memaddress" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="mempic" Type="varchar" MaxLength="200" />
+    <Property Name="memaccountstate" Type="varchar" MaxLength="1" />
+    <Property Name="memchecknumber" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="memcreatedate" Type="date" Nullable="false" />
+    <Property Name="memupdatedate" Type="date" />
+    <Property Name="membirth" Type="date" />
+  </EntityType>
+  <EntityType Name="MEMBERLIST">
+    <Key>
+      <PropertyRef Name="orderNo" />
+    </Key>
+    <Property Name="orderNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="memNo" Type="int" Nullable="false" />
+    <Property Name="orderDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="PostDateTime" Type="datetime" />
+    <Property Name="author" Type="nchar" MaxLength="10" />
+    <Property Name="times" Type="int" />
+    <Property Name="e_mail" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ORDERLIST">
+    <Key>
+      <PropertyRef Name="shoporderNo" />
+      <PropertyRef Name="proNo" />
+    </Key>
+    <Property Name="shoporderNo" Type="int" Nullable="false" />
+    <Property Name="proNo" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="proNo" />
+    </Key>
+    <Property Name="proNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="shNo" Type="int" Nullable="false" />
+    <Property Name="proClassNo" Type="int" Nullable="false" />
+    <Property Name="proName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="proPrice" Type="float" Nullable="false" />
+    <Property Name="proStatement" Type="varchar" MaxLength="400" />
+    <Property Name="proState" Type="varchar" MaxLength="1" />
+    <Property Name="proPic1" Type="varchar" MaxLength="200" />
+    <Property Name="proPic2" Type="varchar" MaxLength="200" />
+    <Property Name="proPic3" Type="varchar" MaxLength="200" />
+    <Property Name="proCreateDate" Type="date" />
+    <Property Name="proUpdateDate" Type="date" />
+    <Property Name="ProOffShelfDate" Type="date" />
+    <Property Name="proPop" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="PRODUCTCLASS">
+    <Key>
+      <PropertyRef Name="proclassno" />
+    </Key>
+    <Property Name="proclassno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="shno" Type="int" Nullable="false" />
+    <Property Name="proclassname" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHCLASS">
+    <Key>
+      <PropertyRef Name="shclassno" />
+    </Key>
+    <Property Name="shclassno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="shclassname" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SHOP">
+    <Key>
+      <PropertyRef Name="shno" />
+    </Key>
+    <Property Name="shno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empno" Type="int" Nullable="false" />
+    <Property Name="shthepic" Type="varchar" MaxLength="200" />
+    <Property Name="shname" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="shclassno" Type="int" />
+    <Property Name="shaccount" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="shpwd" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="shboss" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="shcontact" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="shaddress" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="shtel" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="shemail" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="shabout" Type="varchar" MaxLength="300" />
+    <Property Name="shlogopic" Type="varchar" MaxLength="200" />
+    <Property Name="shurl" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shadstate" Type="varchar" MaxLength="1" />
+    <Property Name="shadtitle" Type="varchar" MaxLength="20" />
+    <Property Name="shadpic" Type="varchar" MaxLength="200" />
+    <Property Name="shpopshop" Type="varchar" MaxLength="1" />
+    <Property Name="shcheckstate" Type="varchar" MaxLength="1" />
+    <Property Name="shstartdate" Type="date" />
+    <Property Name="shenddate" Type="date" />
+    <Property Name="shcheckdate" Type="date" />
+    <Property Name="shpwdstate" Type="varchar" MaxLength="1" />
+    <Property Name="shstoprightstartdate" Type="date" />
+    <Property Name="shstoprightenddate" Type="date" />
+  </EntityType>
+  <EntityType Name="SHOPORDER">
+    <Key>
+      <PropertyRef Name="shoporderNo" />
+    </Key>
+    <Property Name="shoporderNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="orderNo" Type="int" Nullable="false" />
+    <Property Name="shNo" Type="int" Nullable="false" />
+    <Property Name="orderPrice" Type="float" Nullable="false" />
+    <Property Name="referredToDate" Type="date" />
+    <Property Name="transactionDate" Type="date" />
+    <Property Name="orderState" Type="varchar" MaxLength="1" />
+    <Property Name="recipientName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="recipientTel" Type="varchar" MaxLength="10" />
+    <Property Name="recipientAddress" Type="varchar" MaxLength="50" />
+    <Property Name="payType" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK__ADVERTISE__empNo__7E02B4CC">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="ADVERTISEMENT" Type="Self.ADVERTISEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="empno" />
+      </Principal>
+      <Dependent Role="ADVERTISEMENT">
+        <PropertyRef Name="empNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ADVERTISEM__shNo__7EF6D905">
+    <End Role="SHOP" Type="Self.SHOP" Multiplicity="1" />
+    <End Role="ADVERTISEMENT" Type="Self.ADVERTISEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="ADVERTISEMENT">
+        <PropertyRef Name="shNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ANNOUNCEM__EMPNO__7755B73D">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="ANNOUNCEMENT" Type="Self.ANNOUNCEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="empno" />
+      </Principal>
+      <Dependent Role="ANNOUNCEMENT">
+        <PropertyRef Name="empno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AUTHORITY__AUTHO__45BE5BA9">
+    <End Role="AUTHORITYFUNCTION" Type="Self.AUTHORITYFUNCTION" Multiplicity="1" />
+    <End Role="AUTHORITY" Type="Self.AUTHORITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AUTHORITYFUNCTION">
+        <PropertyRef Name="authorityno" />
+      </Principal>
+      <Dependent Role="AUTHORITY">
+        <PropertyRef Name="authorityno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AUTHORITY__EMPNO__46B27FE2">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="AUTHORITY" Type="Self.AUTHORITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="empno" />
+      </Principal>
+      <Dependent Role="AUTHORITY">
+        <PropertyRef Name="empno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FAVORITES__memNo__671F4F74">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="1" />
+    <End Role="FAVORITESHOPLIST" Type="Self.FAVORITESHOPLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="memno" />
+      </Principal>
+      <Dependent Role="FAVORITESHOPLIST">
+        <PropertyRef Name="memNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FAVORITESH__shNo__681373AD">
+    <End Role="SHOP" Type="Self.SHOP" Multiplicity="1" />
+    <End Role="FAVORITESHOPLIST" Type="Self.FAVORITESHOPLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="FAVORITESHOPLIST">
+        <PropertyRef Name="shNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MEMBERLIS__memNo__6AEFE058">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="1" />
+    <End Role="MEMBERLIST" Type="Self.MEMBERLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="memno" />
+      </Principal>
+      <Dependent Role="MEMBERLIST">
+        <PropertyRef Name="memNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDERLIST__proNo__16CE6296">
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="1" />
+    <End Role="ORDERLIST" Type="Self.ORDERLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="proNo" />
+      </Principal>
+      <Dependent Role="ORDERLIST">
+        <PropertyRef Name="proNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDERLIST__shopo__15DA3E5D">
+    <End Role="SHOPORDER" Type="Self.SHOPORDER" Multiplicity="1" />
+    <End Role="ORDERLIST" Type="Self.ORDERLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOPORDER">
+        <PropertyRef Name="shoporderNo" />
+      </Principal>
+      <Dependent Role="ORDERLIST">
+        <PropertyRef Name="shoporderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT__proClas__09746778">
+    <End Role="PRODUCTCLASS" Type="Self.PRODUCTCLASS" Multiplicity="1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTCLASS">
+        <PropertyRef Name="proclassno" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="proClassNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT__shNo__0880433F">
+    <End Role="SHOP" Type="Self.SHOP" Multiplicity="1" />
+    <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="shNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTCLA__SHNO__5CA1C101">
+    <End Role="SHOP" Type="Self.SHOP" Multiplicity="1" />
+    <End Role="PRODUCTCLASS" Type="Self.PRODUCTCLASS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="PRODUCTCLASS">
+        <PropertyRef Name="shno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOP__EMPNO__531856C7">
+    <End Role="EMPLOYEE" Type="Self.EMPLOYEE" Multiplicity="1" />
+    <End Role="SHOP" Type="Self.SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="empno" />
+      </Principal>
+      <Dependent Role="SHOP">
+        <PropertyRef Name="empno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOP__SHCLASSNO__18B6AB08">
+    <End Role="SHCLASS" Type="Self.SHCLASS" Multiplicity="0..1" />
+    <End Role="SHOP" Type="Self.SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHCLASS">
+        <PropertyRef Name="shclassno" />
+      </Principal>
+      <Dependent Role="SHOP">
+        <PropertyRef Name="shclassno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOPORDER__order__12FDD1B2">
+    <End Role="MEMBERLIST" Type="Self.MEMBERLIST" Multiplicity="1" />
+    <End Role="SHOPORDER" Type="Self.SHOPORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBERLIST">
+        <PropertyRef Name="orderNo" />
+      </Principal>
+      <Dependent Role="SHOPORDER">
+        <PropertyRef Name="orderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOPORDER__shNo__1209AD79">
+    <End Role="SHOP" Type="Self.SHOP" Multiplicity="1" />
+    <End Role="SHOPORDER" Type="Self.SHOPORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="SHOPORDER">
+        <PropertyRef Name="shNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AllShowModelStoreContainer">
+    <EntitySet Name="ADVERTISEMENT" EntityType="Self.ADVERTISEMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ANNOUNCEMENT" EntityType="Self.ANNOUNCEMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUTHORITY" EntityType="Self.AUTHORITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUTHORITYFUNCTION" EntityType="Self.AUTHORITYFUNCTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FAVORITESHOPLIST" EntityType="Self.FAVORITESHOPLIST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MEMBERLIST" EntityType="Self.MEMBERLIST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ORDERLIST" EntityType="Self.ORDERLIST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCT" EntityType="Self.PRODUCT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTCLASS" EntityType="Self.PRODUCTCLASS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHCLASS" EntityType="Self.SHCLASS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHOP" EntityType="Self.SHOP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHOPORDER" EntityType="Self.SHOPORDER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ADVERTISE__empNo__7E02B4CC" Association="Self.FK__ADVERTISE__empNo__7E02B4CC">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="ADVERTISEMENT" EntitySet="ADVERTISEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ADVERTISEM__shNo__7EF6D905" Association="Self.FK__ADVERTISEM__shNo__7EF6D905">
+      <End Role="SHOP" EntitySet="SHOP" />
+      <End Role="ADVERTISEMENT" EntitySet="ADVERTISEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ANNOUNCEM__EMPNO__7755B73D" Association="Self.FK__ANNOUNCEM__EMPNO__7755B73D">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="ANNOUNCEMENT" EntitySet="ANNOUNCEMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AUTHORITY__AUTHO__45BE5BA9" Association="Self.FK__AUTHORITY__AUTHO__45BE5BA9">
+      <End Role="AUTHORITYFUNCTION" EntitySet="AUTHORITYFUNCTION" />
+      <End Role="AUTHORITY" EntitySet="AUTHORITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AUTHORITY__EMPNO__46B27FE2" Association="Self.FK__AUTHORITY__EMPNO__46B27FE2">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="AUTHORITY" EntitySet="AUTHORITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FAVORITES__memNo__671F4F74" Association="Self.FK__FAVORITES__memNo__671F4F74">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="FAVORITESHOPLIST" EntitySet="FAVORITESHOPLIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FAVORITESH__shNo__681373AD" Association="Self.FK__FAVORITESH__shNo__681373AD">
+      <End Role="SHOP" EntitySet="SHOP" />
+      <End Role="FAVORITESHOPLIST" EntitySet="FAVORITESHOPLIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MEMBERLIS__memNo__6AEFE058" Association="Self.FK__MEMBERLIS__memNo__6AEFE058">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="MEMBERLIST" EntitySet="MEMBERLIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDERLIST__proNo__16CE6296" Association="Self.FK__ORDERLIST__proNo__16CE6296">
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+      <End Role="ORDERLIST" EntitySet="ORDERLIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDERLIST__shopo__15DA3E5D" Association="Self.FK__ORDERLIST__shopo__15DA3E5D">
+      <End Role="SHOPORDER" EntitySet="SHOPORDER" />
+      <End Role="ORDERLIST" EntitySet="ORDERLIST" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT__proClas__09746778" Association="Self.FK__PRODUCT__proClas__09746778">
+      <End Role="PRODUCTCLASS" EntitySet="PRODUCTCLASS" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT__shNo__0880433F" Association="Self.FK__PRODUCT__shNo__0880433F">
+      <End Role="SHOP" EntitySet="SHOP" />
+      <End Role="PRODUCT" EntitySet="PRODUCT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTCLA__SHNO__5CA1C101" Association="Self.FK__PRODUCTCLA__SHNO__5CA1C101">
+      <End Role="SHOP" EntitySet="SHOP" />
+      <End Role="PRODUCTCLASS" EntitySet="PRODUCTCLASS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOP__EMPNO__531856C7" Association="Self.FK__SHOP__EMPNO__531856C7">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEE" />
+      <End Role="SHOP" EntitySet="SHOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOP__SHCLASSNO__18B6AB08" Association="Self.FK__SHOP__SHCLASSNO__18B6AB08">
+      <End Role="SHCLASS" EntitySet="SHCLASS" />
+      <End Role="SHOP" EntitySet="SHOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOPORDER__order__12FDD1B2" Association="Self.FK__SHOPORDER__order__12FDD1B2">
+      <End Role="MEMBERLIST" EntitySet="MEMBERLIST" />
+      <End Role="SHOPORDER" EntitySet="SHOPORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOPORDER__shNo__1209AD79" Association="Self.FK__SHOPORDER__shNo__1209AD79">
+      <End Role="SHOP" EntitySet="SHOP" />
+      <End Role="SHOPORDER" EntitySet="SHOPORDER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

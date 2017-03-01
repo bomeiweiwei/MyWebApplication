@@ -1,0 +1,42 @@
+﻿@model AllShow.Models.edmx.ORDERLIST
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ORDERLIST</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT.proName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT.proName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHOPORDER.orderState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHOPORDER.orderState)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

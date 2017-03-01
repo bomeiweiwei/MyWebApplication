@@ -1,0 +1,10 @@
+D:\ASPNET\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.csprojResolveAssemblyReference.cache
+D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\AllShowConsoleApplication.exe.config
+D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\AllShowConsoleApplication.exe
+D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\AllShowConsoleApplication.pdb
+D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.dll
+D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.xml
+D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
+D:\ASPNET\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.exe
+D:\ASPNET\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.pdb

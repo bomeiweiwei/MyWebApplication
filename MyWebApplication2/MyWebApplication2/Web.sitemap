@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="我的網站"  description="首頁">
+        <siteMapNode url="~/Ch01/MasterPageTest.aspx" title="主版頁面"  description="主版頁面" />
+        <siteMapNode url="~/Ch02/Ch02_Login.aspx" title="登入頁面"  description="登入" />
+        <siteMapNode url="~/Ch03/MainWebForm.aspx" title="主頁1"  description="主頁1" />
+        <siteMapNode url="~/Ch03/MainWebForm2.aspx" title="主頁2"  description="主頁2" >
+          <siteMapNode url="~/Ch03/SubWebForm/SubWebForm1.aspx" title="子頁面1"  description="子頁面1" />
+          <siteMapNode url="~/Ch03/SubWebForm/SubWebForm2.aspx" title="子頁面2"  description="子頁面2" />
+        </siteMapNode>
+    </siteMapNode>
+</siteMap>

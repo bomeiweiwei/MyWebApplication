@@ -1,0 +1,48 @@
+﻿@model AllShow.Models.edmx.ORDERLIST
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ORDERLIST</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRODUCT.proName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRODUCT.proName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SHOPORDER.orderState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SHOPORDER.orderState)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

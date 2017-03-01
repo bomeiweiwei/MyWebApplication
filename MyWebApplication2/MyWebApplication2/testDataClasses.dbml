@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="test" Class="testDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=MSI\SQLEXPRESS2012;Initial Catalog=test;User ID=dbtest" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="testConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.test" Member="test">
+    <Type Name="test">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="class" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="article" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="hit_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="get_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approved" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test_talk" Member="test_talk">
+    <Type Name="test_talk">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="test_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="article" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

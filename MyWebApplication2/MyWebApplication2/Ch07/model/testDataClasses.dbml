@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="test" Class="testDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=test;User ID=dbtest" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="testConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Address_1" Member="Address_1">
+    <Type Name="Address_1">
+      <Column Name="a1_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="city_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vote_Auto" Member="Vote_Auto">
+    <Type Name="Vote_Auto">
+      <Column Name="vote_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vote_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="question_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_5" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_6" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_7" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_8" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_9" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_10" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="question_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Address_2" Member="Address_2">
+    <Type Name="Address_2">
+      <Column Name="a2_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="city_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="district_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="a1_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Address_3" Member="Address_3">
+    <Type Name="Address_3">
+      <Column Name="a3_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="a1_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="a2_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="street_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Calendar_Schedule" Member="Calendar_Schedule">
+    <Type Name="Calendar_Schedule">
+      <Column Name="CS_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CS_time" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CS_title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CS_summary" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.db_user" Member="db_user">
+    <Type Name="db_user">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="real_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="sex" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="rank" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateRight" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="DeleteRight" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Drink_Order_D" Member="Drink_Order_D">
+    <Type Name="Drink_Order_D">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="drink_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="drink_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ice_degree" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sweet_degree" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="drink_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="meno" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="approved" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Drink_Order_M" Member="Drink_Order_M">
+    <Type Name="Drink_Order_M">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="order_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="user_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="user_phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="memo" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="have_paid" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Drink_Product" Member="Drink_Product">
+    <Type Name="Drink_Product">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="drink_class" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="drink_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="drink_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="drink_cost" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FileUpload_DB" Member="FileUpload_DB">
+    <Type Name="FileUpload_DB">
+      <Column Name="FileUpload_DB_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FileUpload_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="test_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FileUpload_FileName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FileUpload_Memo" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FileUpload_User" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Food_Calorie" Member="Food_Calorie">
+    <Type Name="Food_Calorie">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="food_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="food_unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="food_Calorie" Member="food_Calorie1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Food_Menu" Member="Food_Menu">
+    <Type Name="Food_Menu">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="food_class" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="food_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News_Test" Member="News_Test">
+    <Type Name="News_Test">
+      <Column Name="test_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_guid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="test_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="test_class" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="article" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="hit_no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="get_no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="email_no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="approved" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News_Test_Class" Member="News_Test_Class">
+    <Type Name="News_Test_Class">
+      <Column Name="Test_Class_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_class" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="test_class_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="test_class_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News_Test_Talk" Member="News_Test_Talk">
+    <Type Name="News_Test_Talk">
+      <Column Name="test_talk_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="test_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="article" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News_User" Member="News_User">
+    <Type Name="News_User">
+      <Column Name="User_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Real_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="User_Account" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="User_Rank" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="User_email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Question_D1" Member="Question_D1">
+    <Type Name="Question_D1">
+      <Column Name="D1_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="M_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="D1_title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="D1_summary" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="D1_type" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="D1_mustKeyin" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Question_D2" Member="Question_D2">
+    <Type Name="Question_D2">
+      <Column Name="D2_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="D1_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="M_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="answer1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer13" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer14" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer15" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="answer_all" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Question_M" Member="Question_M">
+    <Type Name="Question_M">
+      <Column Name="M_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="M_title" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="start_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="end_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="M_summary" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="M_enable" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student_class" Member="student_class">
+    <Type Name="student_class">
+      <Column Name="student_id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sd_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="student_year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="student_class" Member="student_class1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student_department" Member="student_department">
+    <Type Name="student_department">
+      <Column Name="sd_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="student_department" Member="student_department1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="department_leader" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student_test" Member="student_test">
+    <Type Name="student_test">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="student_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chinese" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="math" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test" Member="test">
+    <Type Name="test">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="class" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="article" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="hit_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="get_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approved" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test_ad" Member="test_ad">
+    <Type Name="test_ad">
+      <Column Name="ad_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ad_time_start" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ad_time_end" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ad_images" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ad_url" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test_class" Member="test_class">
+    <Type Name="test_class">
+      <Column Name="test_class_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_class" Member="test_class1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="test_class1" Member="test_class11" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="test_class2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test_only" Member="test_only">
+    <Type Name="test_only">
+      <Column Name="test_no" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="test_title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="test_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test_talk" Member="test_talk">
+    <Type Name="test_talk">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="test_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="article" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test_timestamp" Member="test_timestamp">
+    <Type Name="test_timestamp">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="test_time" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="test_TS" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.test1" Member="test1">
+    <Type Name="test1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="test" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="time_st" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vote_1" Member="Vote_1">
+    <Type Name="Vote_1">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vote_1" Member="vote_11" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_3" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_4" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_5" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vote_6" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vote_2" Member="Vote_2">
+    <Type Name="Vote_2">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vote_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vote_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="vote_to" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="vote_ip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

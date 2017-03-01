@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "DemoViewData_Model2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DemoViewData_Model</h2>
+<ul>
+    @foreach (var item in ViewData.Model as List<Message>)
+    {
+        <li>@item.PostDateTime</li>
+    }
+</ul>
+
+

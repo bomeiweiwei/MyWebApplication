@@ -1,0 +1,104 @@
+﻿@model AllShow.Models.edmx.EMPLOYEE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EMPLOYEE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empaccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empaccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emppwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emppwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPEMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPEMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empsex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empsex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empbirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empbirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emptel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emptel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hiredate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hiredate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.leavedate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.leavedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empaccountstate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empaccountstate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,98 @@
+﻿@model AllShow.Models.edmx.EMPLOYEE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMPLOYEE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empaccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empaccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emppwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emppwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMPEMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMPEMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empsex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empsex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empbirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empbirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emptel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emptel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hiredate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hiredate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.leavedate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.leavedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empaccountstate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empaccountstate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.empno }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

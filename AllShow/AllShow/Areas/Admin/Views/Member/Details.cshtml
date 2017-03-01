@@ -1,0 +1,122 @@
+﻿@model AllShow.Models.edmx.MEMBER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MEMBER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mememail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mememail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mempwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mempwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memdiminutive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memdiminutive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memsex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memsex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memtel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memtel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memaddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memaddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mempic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mempic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memaccountstate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memaccountstate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memchecknumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memchecknumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memcreatedate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memcreatedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.memupdatedate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.memupdatedate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.membirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.membirth)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.memno }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
