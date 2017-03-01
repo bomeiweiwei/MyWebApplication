@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch06MasterPage.master.cs" Inherits="MyWebApplication.Ch06.Ch06MasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    第6章-ADO.NET新增修改刪除 
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">            
+        <tr>            
+            <td width="20%">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ch06/Ch06_DBConn.aspx">連結資料庫</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Ch06/Ch06_DetailsView.aspx">DetailsView</asp:HyperLink>
+            </td>   
+            <td width="80%">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>

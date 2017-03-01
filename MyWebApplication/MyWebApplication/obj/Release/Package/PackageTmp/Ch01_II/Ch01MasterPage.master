@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch01MasterPage.master.cs" Inherits="MyWebApplication.Ch01_II.Ch01MasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    第二本第一章-MasterPage
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">            
+        <tr>            
+            <td width="20%">
+                
+            </td>   
+            <td width="80%">
+                <asp:TextBox ID="txt_input1" runat="server">111</asp:TextBox>
+                <asp:TextBox ID="txt_input2" runat="server">222</asp:TextBox>
+                <asp:TextBox ID="txt_input3" runat="server">333</asp:TextBox><br />
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/MyImages/image1.jpg" />
+                <br />
+                <br />
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>

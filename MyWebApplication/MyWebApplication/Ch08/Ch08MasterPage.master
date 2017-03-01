@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch08MasterPage.master.cs" Inherits="MyWebApplication.Ch08.Ch08MasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <p>
+        第8章-GridView自訂樣板</p>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">            
+        <tr>            
+            <td width="20%" >
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ch08/Ch08_GridView.aspx">GridView</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Ch08/Ch08_GridView2.aspx">GridView2</asp:HyperLink>
+            </td>   
+            <td width="80%">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>

@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch16NestedMasterPage.master.cs" Inherits="MyWebApplication.Ch16.Ch16NestedMasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <p>
+        第16章-Session</p>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">            
+        <tr>            
+            <td width="20%" >                
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ch16/UserLoginSesson.aspx">UserLoginSesson</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Ch16/OnlinePeopleNum.aspx">OnlinePeopleNum</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Ch16/ViewStateTest.aspx">ViewStateTest</asp:HyperLink>
+            </td>   
+            <td width="80%">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>

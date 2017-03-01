@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title=""  description="">
+        <siteMapNode url="~/Default.aspx" title="首頁"  description="Home" />
+        <siteMapNode url="~/Ch05/Ch05_SQL.aspx" title="基本SQL語法"  description="Ch05_SQL" />
+    </siteMapNode>
+</siteMap>

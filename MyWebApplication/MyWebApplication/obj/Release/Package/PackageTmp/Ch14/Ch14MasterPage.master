@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch14MasterPage.master.cs" Inherits="MyWebApplication.Ch14.Ch14MasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <p>
+        第14章-ADO.Net</p>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+     <table width="100%">            
+        <tr>            
+            <td width="20%" >                
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ch14/DataToGridview.aspx">DataToGridView</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Ch14/DataToGridview2.aspx">DataToGridView2</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Ch14/SDS_SetDR.aspx">SDS_SetDataReader</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Ch14/SDS_SetDS.aspx">SDS_SetDataSet</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Ch14/SqlParameters.aspx">SqlParameters</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Ch14/WebForm1.aspx">DateSetting</asp:HyperLink>
+            </td>   
+            <td width="80%">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>

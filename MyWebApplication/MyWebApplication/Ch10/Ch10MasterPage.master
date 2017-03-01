@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch10MasterPage.master.cs" Inherits="MyWebApplication.Ch10.Ch10MasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <p>
+        第10章-GridView手動寫</p>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">            
+        <tr>            
+            <td width="20%" >
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ch10/Ch10_GridViewEvent.aspx">GridViewEvent</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Ch10/Ch10_GridView_Mul_PK.aspx">GridView_Mul_PK</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Ch10/Ch10_NoneSqlDataSourceControls.aspx">NoneSqlDataSourceControls</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Ch10/Ch10_FindControls.aspx">FindControls</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Ch10/Ch10_NoneSqlDataSourceControls2.aspx">NoneSqlDataSourceControls2</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Ch10/Ch10_NoneSqlDataSourceControls3.aspx">NoneSqlDataSourceControls3</asp:HyperLink>
+            </td>   
+            <td width="80%">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>

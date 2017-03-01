@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch11MasterPage.master.cs" Inherits="MyWebApplication.Ch11.Ch11MasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <p>
+        第11章-GridView與控制項</p>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">            
+        <tr>            
+            <td width="20%" >
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ch11/Ch11_ExcelByGridView.aspx">ExcelByGridView</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Ch11/Ch11_Excel1.aspx">Excel1</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Ch11/Ch11_Excel2.aspx">Excel2</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Ch11/Ch11_GridViewValueAdd.aspx">GridViewValueAdd</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Ch11/Ch11_RowDataBound.aspx">RowDataBound</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Ch11/Ch11_DSetRowDataBound.aspx">DSetRowDataBound</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Ch11/Ch11_JavaScript.aspx">JavaScript</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Ch11/Ch11_UserControl_UC.aspx">UserControl_UC</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Ch11/Ch11_UserControl_UC2.aspx">UserControl_UC2</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Ch11/Ch11_Master_Detail_UC.aspx">Master_Detail_UC</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Ch11/Ch11_MTableJoin.aspx">MTableJoin</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/Ch11/Ch11_TableColSpan.aspx">TableColSpan</asp:HyperLink><br />
+                <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/Ch11/Ch11_TableRowSpan.aspx">TableRowSpan</asp:HyperLink><br />
+            </td>   
+            <td width="80%">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>

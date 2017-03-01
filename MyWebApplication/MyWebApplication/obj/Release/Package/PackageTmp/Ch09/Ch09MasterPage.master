@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Ch09MasterPage.master.cs" Inherits="MyWebApplication.Ch09.Ch09MasterPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel=stylesheet type="text/css" href="../CSS/MasterPageTable.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <p>
+        第9章-MasterDetail</p>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <table width="100%">            
+        <tr>            
+            <td width="20%" >
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Ch09/Ch09_MasterDetail.aspx">GridView</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Ch09/Ch09_SearchEngine.aspx">SearchEngine</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Ch09/Ch09_MasterDetail_URL.aspx">MasterDetail_URL</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Ch09/Ch09_GridViewDetailsView.aspx">GridViewDetailsView</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Ch09/Ch09_DDLFormView.aspx">DDLFormView</asp:HyperLink><br/>
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Ch09/Ch09_DataBind.aspx">DataBind</asp:HyperLink><br/>
+            </td>   
+            <td width="80%">
+                <asp:ContentPlaceHolder id="ContentPlaceHolderContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>           
+    </table>
+</asp:Content>
