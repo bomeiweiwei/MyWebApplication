@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>廠商登入</title>
+</head>
+<body>
+    <div style="position:absolute;left:40%;top:40%">
+        @using (Html.BeginForm("CheckFirmLogin", "AllShowFirm"))
+    {
+        <table style="width:400px;">
+            <tr>
+                <th>
+                    廠商登入
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    帳號：<input id="Text1" type="text" name="shaccount" value=""/>
+                </td>
+                <td>
+                    <span style="color:red">@TempData["accountError"]</span>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    密碼：<input id="Text2" type="password" name="shpwd"/>
+                </td>
+                <td>
+                    <span style="color:red">@TempData["pwdError"]</span>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <input id="Submit1" type="submit" style="width:130px;" value="送出" />           
+                </td>
+                <td>
+                    <span style="color:red">@TempData["shError"]</span>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    @Html.ActionLink("廠商註冊","FirmRegister")
+                </td>
+            </tr>   
+        </table>
+    }
+    </div>
+</body>
+</html>

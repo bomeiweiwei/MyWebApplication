@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "SendList";
+}
+
+<h2>SendList</h2>
+<div class="display-label">
+    ●Display Shop Products From Controller der List
+</div>
+<div class="display-field">
+    <ul>
+        @foreach (var item in ViewBag.products as List<AllShowMVCApplication.Models.PRODUCT>)
+        {
+            <li>@item.proName</li>    
+        }
+    </ul>
+</div>

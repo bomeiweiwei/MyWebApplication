@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AllShow</title>
+    <link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+     @RenderSection("head")
+</head>
+<body>
+    <div id="big_wrapper">
+        <table>
+            <tr>
+                <td>            
+                    @Html.Action("HeaderEmbed")
+                    @Html.Action("NavEmbed")                   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <aside id="side_menu">
+                        @RenderSection("extra",required:false)
+                    </aside>
+                    <section id="main_section">
+                        @RenderBody()
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Action("FooterEmbed")
+                </td>
+            </tr>       
+        </table>
+    </div>
+    @RenderSection("script",required:false)
+</body>
+</html>

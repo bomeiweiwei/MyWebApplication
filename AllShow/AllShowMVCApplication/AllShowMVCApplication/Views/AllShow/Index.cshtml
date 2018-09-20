@@ -1,0 +1,74 @@
+﻿@model AllShowMVCApplication.Models.ViewModels.ShClassAdvAnnViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MainLayoutPage.cshtml";
+}
+
+@section head
+{
+    <meta charset="utf-8"/>
+    <link href="@Url.Content("~/Content/DefaultPage.css")" rel="stylesheet" type="text/css" />
+    }
+
+@section extra
+{
+    <ul id="extra_menu">
+        @foreach(var item in Model.shClasses)
+        {
+            <li>@Html.ActionLink(@item.shclassname,"ShClass","AllShow", new { val = @item.shclassno }, new { })</li>
+        }
+        @*<li>服飾館</li>
+        <li>3C館</li>
+        <li>美食館</li>
+        <li>鞋子館</li>
+        <li>書店館</li>
+        <li>其他</li>*@
+    </ul>
+    }
+
+<article>
+    <h2>廣告</h2>
+    <hr />
+    @foreach(var item in Model.advertisements)
+    {
+        <header>
+            <hgroup>   
+                <h1>@item.adTitle</h1>
+            </hgroup>
+        </header>
+        <footer><<&nbsp;@item.SHOP.shname&nbsp;>></footer>
+    }
+   
+    @*<header>
+        <hgroup>
+            <h1>廣告標題</h1>
+        </hgroup>
+    </header>
+    <p>Pic</p>
+    <footer>--廠商名稱</footer>*@
+</article>
+<article>
+    <h2>公告</h2>
+    <hr />
+    @foreach(var item in Model.announcements)
+    {
+        <header>
+            <hgroup>
+                <h1>【@item.announcementtype】</h1>
+                <h3>@item.announcementtitle&nbsp;</h3>
+            </hgroup>
+        </header>
+        <p>@item.announcementcontent</p>
+        <footer>-- AllShow --</footer>
+    }
+
+    @*<header>
+        <hgroup>
+            <h1>公告類型</h1>
+            <h3>公告標題</h3>
+        </hgroup>
+    </header>
+    <p>公告內容</p>
+    <footer>--AllShow</footer>*@
+</article>
+

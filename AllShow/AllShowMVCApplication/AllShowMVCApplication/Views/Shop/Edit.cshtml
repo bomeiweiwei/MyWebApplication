@@ -1,0 +1,236 @@
+﻿@model AllShowMVCApplication.Models.SHOP
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SHOP</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shno)
+            @Html.ValidationMessageFor(model => model.shno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.empno, "EMPLOYEE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("empno", String.Empty)
+            @Html.ValidationMessageFor(model => model.empno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shthepic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shthepic)
+            @Html.ValidationMessageFor(model => model.shthepic)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shname)
+            @Html.ValidationMessageFor(model => model.shname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shclassno, "SHCLASS")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("shclassno", String.Empty)
+            @Html.ValidationMessageFor(model => model.shclassno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shaccount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shaccount)
+            @Html.ValidationMessageFor(model => model.shaccount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shpwd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shpwd)
+            @Html.ValidationMessageFor(model => model.shpwd)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shboss)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shboss)
+            @Html.ValidationMessageFor(model => model.shboss)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shcontact)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shcontact)
+            @Html.ValidationMessageFor(model => model.shcontact)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shaddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shaddress)
+            @Html.ValidationMessageFor(model => model.shaddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shtel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shtel)
+            @Html.ValidationMessageFor(model => model.shtel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shemail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shemail)
+            @Html.ValidationMessageFor(model => model.shemail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shabout)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shabout)
+            @Html.ValidationMessageFor(model => model.shabout)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shlogopic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shlogopic)
+            @Html.ValidationMessageFor(model => model.shlogopic)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shurl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shurl)
+            @Html.ValidationMessageFor(model => model.shurl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shadstate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shadstate)
+            @Html.ValidationMessageFor(model => model.shadstate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shadtitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shadtitle)
+            @Html.ValidationMessageFor(model => model.shadtitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shadpic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shadpic)
+            @Html.ValidationMessageFor(model => model.shadpic)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shpopshop)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shpopshop)
+            @Html.ValidationMessageFor(model => model.shpopshop)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shcheckstate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shcheckstate)
+            @Html.ValidationMessageFor(model => model.shcheckstate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shstartdate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shstartdate)
+            @Html.ValidationMessageFor(model => model.shstartdate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shenddate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shenddate)
+            @Html.ValidationMessageFor(model => model.shenddate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shcheckdate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shcheckdate)
+            @Html.ValidationMessageFor(model => model.shcheckdate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shpwdstate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shpwdstate)
+            @Html.ValidationMessageFor(model => model.shpwdstate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shstoprightstartdate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shstoprightstartdate)
+            @Html.ValidationMessageFor(model => model.shstoprightstartdate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shstoprightenddate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.shstoprightenddate)
+            @Html.ValidationMessageFor(model => model.shstoprightenddate)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

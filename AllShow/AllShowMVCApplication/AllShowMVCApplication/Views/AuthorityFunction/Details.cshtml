@@ -1,0 +1,29 @@
+﻿@model AllShowMVCApplication.Models.AUTHORITYFUNCTION
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AUTHORITYFUNCTION</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.authorityno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.authorityno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.authorityname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.authorityname)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.authorityno  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

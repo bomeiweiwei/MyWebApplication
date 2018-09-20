@@ -1,0 +1,44 @@
+﻿@model AllShowMVCApplication.Models.AUTHORITYFUNCTION
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>AUTHORITYFUNCTION</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.authorityno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.authorityno)
+            @Html.ValidationMessageFor(model => model.authorityno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.authorityname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.authorityname)
+            @Html.ValidationMessageFor(model => model.authorityname)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

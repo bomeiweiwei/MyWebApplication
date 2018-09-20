@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "DemoTempDataToKeep";
+    var products=TempData["products"] as List<AllShowMVCApplication.Models.PRODUCT>;
+    TempData.Keep();//沒有這行，重新整理時會GG
+}
+
+<h2>DemoTempDataToKeep</h2>
+<ul>
+@foreach(var item in products)
+{
+    <li>@item.proName</li>
+}
+</ul>

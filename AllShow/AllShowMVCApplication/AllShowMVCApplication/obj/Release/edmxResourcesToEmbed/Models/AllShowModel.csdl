@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AllShowModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AllShowEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADVERTISEMENTs" EntityType="AllShowModel.ADVERTISEMENT" />
+    <EntitySet Name="ANNOUNCEMENTs" EntityType="AllShowModel.ANNOUNCEMENT" />
+    <EntitySet Name="AUTHORITYFUNCTIONs" EntityType="AllShowModel.AUTHORITYFUNCTION" />
+    <EntitySet Name="EMPLOYEEs" EntityType="AllShowModel.EMPLOYEE" />
+    <EntitySet Name="MEMBERs" EntityType="AllShowModel.MEMBER" />
+    <EntitySet Name="MEMBERLISTs" EntityType="AllShowModel.MEMBERLIST" />
+    <EntitySet Name="Messages" EntityType="AllShowModel.Message" />
+    <EntitySet Name="ORDERLISTs" EntityType="AllShowModel.ORDERLIST" />
+    <EntitySet Name="PRODUCTs" EntityType="AllShowModel.PRODUCT" />
+    <EntitySet Name="PRODUCTCLASSes" EntityType="AllShowModel.PRODUCTCLASS" />
+    <EntitySet Name="SHCLASSes" EntityType="AllShowModel.SHCLASS" />
+    <EntitySet Name="SHOPs" EntityType="AllShowModel.SHOP" />
+    <EntitySet Name="SHOPORDERs" EntityType="AllShowModel.SHOPORDER" />
+    <AssociationSet Name="FK__ADVERTISE__empNo__7E02B4CC" Association="AllShowModel.FK__ADVERTISE__empNo__7E02B4CC">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="ADVERTISEMENT" EntitySet="ADVERTISEMENTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ADVERTISEM__shNo__7EF6D905" Association="AllShowModel.FK__ADVERTISEM__shNo__7EF6D905">
+      <End Role="SHOP" EntitySet="SHOPs" />
+      <End Role="ADVERTISEMENT" EntitySet="ADVERTISEMENTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ANNOUNCEM__EMPNO__7755B73D" Association="AllShowModel.FK__ANNOUNCEM__EMPNO__7755B73D">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="ANNOUNCEMENT" EntitySet="ANNOUNCEMENTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOP__EMPNO__531856C7" Association="AllShowModel.FK__SHOP__EMPNO__531856C7">
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+      <End Role="SHOP" EntitySet="SHOPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MEMBERLIS__memNo__6AEFE058" Association="AllShowModel.FK__MEMBERLIS__memNo__6AEFE058">
+      <End Role="MEMBER" EntitySet="MEMBERs" />
+      <End Role="MEMBERLIST" EntitySet="MEMBERLISTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOPORDER__order__12FDD1B2" Association="AllShowModel.FK__SHOPORDER__order__12FDD1B2">
+      <End Role="MEMBERLIST" EntitySet="MEMBERLISTs" />
+      <End Role="SHOPORDER" EntitySet="SHOPORDERs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDERLIST__proNo__16CE6296" Association="AllShowModel.FK__ORDERLIST__proNo__16CE6296">
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+      <End Role="ORDERLIST" EntitySet="ORDERLISTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDERLIST__shopo__15DA3E5D" Association="AllShowModel.FK__ORDERLIST__shopo__15DA3E5D">
+      <End Role="SHOPORDER" EntitySet="SHOPORDERs" />
+      <End Role="ORDERLIST" EntitySet="ORDERLISTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT__proClas__09746778" Association="AllShowModel.FK__PRODUCT__proClas__09746778">
+      <End Role="PRODUCTCLASS" EntitySet="PRODUCTCLASSes" />
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCT__shNo__0880433F" Association="AllShowModel.FK__PRODUCT__shNo__0880433F">
+      <End Role="SHOP" EntitySet="SHOPs" />
+      <End Role="PRODUCT" EntitySet="PRODUCTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRODUCTCLA__SHNO__5CA1C101" Association="AllShowModel.FK__PRODUCTCLA__SHNO__5CA1C101">
+      <End Role="SHOP" EntitySet="SHOPs" />
+      <End Role="PRODUCTCLASS" EntitySet="PRODUCTCLASSes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOP__SHCLASSNO__18B6AB08" Association="AllShowModel.FK__SHOP__SHCLASSNO__18B6AB08">
+      <End Role="SHCLASS" EntitySet="SHCLASSes" />
+      <End Role="SHOP" EntitySet="SHOPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SHOPORDER__shNo__1209AD79" Association="AllShowModel.FK__SHOPORDER__shNo__1209AD79">
+      <End Role="SHOP" EntitySet="SHOPs" />
+      <End Role="SHOPORDER" EntitySet="SHOPORDERs" />
+    </AssociationSet>
+    <AssociationSet Name="AUTHORITY" Association="AllShowModel.AUTHORITY">
+      <End Role="AUTHORITYFUNCTION" EntitySet="AUTHORITYFUNCTIONs" />
+      <End Role="EMPLOYEE" EntitySet="EMPLOYEEs" />
+    </AssociationSet>
+    <AssociationSet Name="FAVORITESHOPLIST" Association="AllShowModel.FAVORITESHOPLIST">
+      <End Role="MEMBER" EntitySet="MEMBERs" />
+      <End Role="SHOP" EntitySet="SHOPs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ADVERTISEMENT">
+    <Key>
+      <PropertyRef Name="adNo" />
+    </Key>
+    <Property Name="adNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shNo" Type="Int32" Nullable="false" />
+    <Property Name="empNo" Type="Int32" Nullable="false" />
+    <Property Name="adTitle" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="adApplyDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="adStartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="adTime" Type="Double" Nullable="false" />
+    <Property Name="adPrice" Type="Double" Nullable="false" />
+    <Property Name="adPic" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="adURL" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="adCheckState" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="AllShowModel.FK__ADVERTISE__empNo__7E02B4CC" FromRole="ADVERTISEMENT" ToRole="EMPLOYEE" />
+    <NavigationProperty Name="SHOP" Relationship="AllShowModel.FK__ADVERTISEM__shNo__7EF6D905" FromRole="ADVERTISEMENT" ToRole="SHOP" />
+  </EntityType>
+  <EntityType Name="ANNOUNCEMENT">
+    <Key>
+      <PropertyRef Name="announcementno" />
+    </Key>
+    <Property Name="announcementno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empno" Type="Int32" Nullable="false" />
+    <Property Name="announcementtitle" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="announcementtype" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="announcementcontent" Type="String" Nullable="false" MaxLength="2500" Unicode="false" FixedLength="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="updatedate" Type="DateTime" Precision="0" />
+    <Property Name="startdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="enddate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="AllShowModel.FK__ANNOUNCEM__EMPNO__7755B73D" FromRole="ANNOUNCEMENT" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="AUTHORITYFUNCTION">
+    <Key>
+      <PropertyRef Name="authorityno" />
+    </Key>
+    <Property Name="authorityno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="authorityname" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="EMPLOYEEs" Relationship="AllShowModel.AUTHORITY" FromRole="AUTHORITYFUNCTION" ToRole="EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="EMPLOYEE">
+    <Key>
+      <PropertyRef Name="empno" />
+    </Key>
+    <Property Name="empno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empname" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="empaccount" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="emppwd" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="EMPEMAIL" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="empsex" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="empbirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="emptel" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="hiredate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="leavedate" Type="DateTime" Precision="0" />
+    <Property Name="empaccountstate" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ADVERTISEMENTs" Relationship="AllShowModel.FK__ADVERTISE__empNo__7E02B4CC" FromRole="EMPLOYEE" ToRole="ADVERTISEMENT" />
+    <NavigationProperty Name="ANNOUNCEMENTs" Relationship="AllShowModel.FK__ANNOUNCEM__EMPNO__7755B73D" FromRole="EMPLOYEE" ToRole="ANNOUNCEMENT" />
+    <NavigationProperty Name="SHOPs" Relationship="AllShowModel.FK__SHOP__EMPNO__531856C7" FromRole="EMPLOYEE" ToRole="SHOP" />
+    <NavigationProperty Name="AUTHORITYFUNCTIONs" Relationship="AllShowModel.AUTHORITY" FromRole="EMPLOYEE" ToRole="AUTHORITYFUNCTION" />
+  </EntityType>
+  <EntityType Name="MEMBER">
+    <Key>
+      <PropertyRef Name="memno" />
+    </Key>
+    <Property Name="memno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mememail" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="mempwd" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="memdiminutive" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="memname" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="memsex" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="memtel" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="memaddress" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="mempic" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="memaccountstate" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="memchecknumber" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="memcreatedate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="memupdatedate" Type="DateTime" Precision="0" />
+    <Property Name="membirth" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="MEMBERLISTs" Relationship="AllShowModel.FK__MEMBERLIS__memNo__6AEFE058" FromRole="MEMBER" ToRole="MEMBERLIST" />
+    <NavigationProperty Name="SHOPs" Relationship="AllShowModel.FAVORITESHOPLIST" FromRole="MEMBER" ToRole="SHOP" />
+  </EntityType>
+  <EntityType Name="MEMBERLIST">
+    <Key>
+      <PropertyRef Name="orderNo" />
+    </Key>
+    <Property Name="orderNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="memNo" Type="Int32" Nullable="false" />
+    <Property Name="orderDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="MEMBER" Relationship="AllShowModel.FK__MEMBERLIS__memNo__6AEFE058" FromRole="MEMBERLIST" ToRole="MEMBER" />
+    <NavigationProperty Name="SHOPORDERs" Relationship="AllShowModel.FK__SHOPORDER__order__12FDD1B2" FromRole="MEMBERLIST" ToRole="SHOPORDER" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PostDateTime" Type="DateTime" Precision="3" />
+    <Property Name="author" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="times" Type="Int32" />
+    <Property Name="e_mail" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="ORDERLIST">
+    <Key>
+      <PropertyRef Name="shoporderNo" />
+      <PropertyRef Name="proNo" />
+    </Key>
+    <Property Name="shoporderNo" Type="Int32" Nullable="false" />
+    <Property Name="proNo" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Double" Nullable="false" />
+    <NavigationProperty Name="PRODUCT" Relationship="AllShowModel.FK__ORDERLIST__proNo__16CE6296" FromRole="ORDERLIST" ToRole="PRODUCT" />
+    <NavigationProperty Name="SHOPORDER" Relationship="AllShowModel.FK__ORDERLIST__shopo__15DA3E5D" FromRole="ORDERLIST" ToRole="SHOPORDER" />
+  </EntityType>
+  <EntityType Name="PRODUCT">
+    <Key>
+      <PropertyRef Name="proNo" />
+    </Key>
+    <Property Name="proNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shNo" Type="Int32" Nullable="false" />
+    <Property Name="proClassNo" Type="Int32" Nullable="false" />
+    <Property Name="proName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="proPrice" Type="Double" Nullable="false" />
+    <Property Name="proStatement" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="proState" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="proPic1" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="proPic2" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="proPic3" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="proCreateDate" Type="DateTime" Precision="0" />
+    <Property Name="proUpdateDate" Type="DateTime" Precision="0" />
+    <Property Name="ProOffShelfDate" Type="DateTime" Precision="0" />
+    <Property Name="proPop" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ORDERLISTs" Relationship="AllShowModel.FK__ORDERLIST__proNo__16CE6296" FromRole="PRODUCT" ToRole="ORDERLIST" />
+    <NavigationProperty Name="PRODUCTCLASS" Relationship="AllShowModel.FK__PRODUCT__proClas__09746778" FromRole="PRODUCT" ToRole="PRODUCTCLASS" />
+    <NavigationProperty Name="SHOP" Relationship="AllShowModel.FK__PRODUCT__shNo__0880433F" FromRole="PRODUCT" ToRole="SHOP" />
+  </EntityType>
+  <EntityType Name="PRODUCTCLASS">
+    <Key>
+      <PropertyRef Name="proclassno" />
+    </Key>
+    <Property Name="proclassno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shno" Type="Int32" Nullable="false" />
+    <Property Name="proclassname" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="PRODUCTs" Relationship="AllShowModel.FK__PRODUCT__proClas__09746778" FromRole="PRODUCTCLASS" ToRole="PRODUCT" />
+    <NavigationProperty Name="SHOP" Relationship="AllShowModel.FK__PRODUCTCLA__SHNO__5CA1C101" FromRole="PRODUCTCLASS" ToRole="SHOP" />
+  </EntityType>
+  <EntityType Name="SHCLASS">
+    <Key>
+      <PropertyRef Name="shclassno" />
+    </Key>
+    <Property Name="shclassno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shclassname" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SHOPs" Relationship="AllShowModel.FK__SHOP__SHCLASSNO__18B6AB08" FromRole="SHCLASS" ToRole="SHOP" />
+  </EntityType>
+  <EntityType Name="SHOP">
+    <Key>
+      <PropertyRef Name="shno" />
+    </Key>
+    <Property Name="shno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empno" Type="Int32" Nullable="false" />
+    <Property Name="shthepic" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="shname" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="shclassno" Type="Int32" />
+    <Property Name="shaccount" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="shpwd" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="shboss" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="shcontact" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="shaddress" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="shtel" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="shemail" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="shabout" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="shlogopic" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="shurl" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="shadstate" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="shadtitle" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="shadpic" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="shpopshop" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="shcheckstate" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="shstartdate" Type="DateTime" Precision="0" />
+    <Property Name="shenddate" Type="DateTime" Precision="0" />
+    <Property Name="shcheckdate" Type="DateTime" Precision="0" />
+    <Property Name="shpwdstate" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="shstoprightstartdate" Type="DateTime" Precision="0" />
+    <Property Name="shstoprightenddate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ADVERTISEMENTs" Relationship="AllShowModel.FK__ADVERTISEM__shNo__7EF6D905" FromRole="SHOP" ToRole="ADVERTISEMENT" />
+    <NavigationProperty Name="EMPLOYEE" Relationship="AllShowModel.FK__SHOP__EMPNO__531856C7" FromRole="SHOP" ToRole="EMPLOYEE" />
+    <NavigationProperty Name="PRODUCTs" Relationship="AllShowModel.FK__PRODUCT__shNo__0880433F" FromRole="SHOP" ToRole="PRODUCT" />
+    <NavigationProperty Name="PRODUCTCLASSes" Relationship="AllShowModel.FK__PRODUCTCLA__SHNO__5CA1C101" FromRole="SHOP" ToRole="PRODUCTCLASS" />
+    <NavigationProperty Name="SHCLASS" Relationship="AllShowModel.FK__SHOP__SHCLASSNO__18B6AB08" FromRole="SHOP" ToRole="SHCLASS" />
+    <NavigationProperty Name="SHOPORDERs" Relationship="AllShowModel.FK__SHOPORDER__shNo__1209AD79" FromRole="SHOP" ToRole="SHOPORDER" />
+    <NavigationProperty Name="MEMBERs" Relationship="AllShowModel.FAVORITESHOPLIST" FromRole="SHOP" ToRole="MEMBER" />
+  </EntityType>
+  <EntityType Name="SHOPORDER">
+    <Key>
+      <PropertyRef Name="shoporderNo" />
+    </Key>
+    <Property Name="shoporderNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orderNo" Type="Int32" Nullable="false" />
+    <Property Name="shNo" Type="Int32" Nullable="false" />
+    <Property Name="orderPrice" Type="Double" Nullable="false" />
+    <Property Name="referredToDate" Type="DateTime" Precision="0" />
+    <Property Name="transactionDate" Type="DateTime" Precision="0" />
+    <Property Name="orderState" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="recipientName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="recipientTel" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="recipientAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="payType" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="MEMBERLIST" Relationship="AllShowModel.FK__SHOPORDER__order__12FDD1B2" FromRole="SHOPORDER" ToRole="MEMBERLIST" />
+    <NavigationProperty Name="ORDERLISTs" Relationship="AllShowModel.FK__ORDERLIST__shopo__15DA3E5D" FromRole="SHOPORDER" ToRole="ORDERLIST" />
+    <NavigationProperty Name="SHOP" Relationship="AllShowModel.FK__SHOPORDER__shNo__1209AD79" FromRole="SHOPORDER" ToRole="SHOP" />
+  </EntityType>
+  <Association Name="FK__ADVERTISE__empNo__7E02B4CC">
+    <End Role="EMPLOYEE" Type="AllShowModel.EMPLOYEE" Multiplicity="1" />
+    <End Role="ADVERTISEMENT" Type="AllShowModel.ADVERTISEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="empno" />
+      </Principal>
+      <Dependent Role="ADVERTISEMENT">
+        <PropertyRef Name="empNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ADVERTISEM__shNo__7EF6D905">
+    <End Role="SHOP" Type="AllShowModel.SHOP" Multiplicity="1" />
+    <End Role="ADVERTISEMENT" Type="AllShowModel.ADVERTISEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="ADVERTISEMENT">
+        <PropertyRef Name="shNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ANNOUNCEM__EMPNO__7755B73D">
+    <End Role="EMPLOYEE" Type="AllShowModel.EMPLOYEE" Multiplicity="1" />
+    <End Role="ANNOUNCEMENT" Type="AllShowModel.ANNOUNCEMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="empno" />
+      </Principal>
+      <Dependent Role="ANNOUNCEMENT">
+        <PropertyRef Name="empno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOP__EMPNO__531856C7">
+    <End Role="EMPLOYEE" Type="AllShowModel.EMPLOYEE" Multiplicity="1" />
+    <End Role="SHOP" Type="AllShowModel.SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLOYEE">
+        <PropertyRef Name="empno" />
+      </Principal>
+      <Dependent Role="SHOP">
+        <PropertyRef Name="empno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MEMBERLIS__memNo__6AEFE058">
+    <End Role="MEMBER" Type="AllShowModel.MEMBER" Multiplicity="1" />
+    <End Role="MEMBERLIST" Type="AllShowModel.MEMBERLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="memno" />
+      </Principal>
+      <Dependent Role="MEMBERLIST">
+        <PropertyRef Name="memNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOPORDER__order__12FDD1B2">
+    <End Role="MEMBERLIST" Type="AllShowModel.MEMBERLIST" Multiplicity="1" />
+    <End Role="SHOPORDER" Type="AllShowModel.SHOPORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBERLIST">
+        <PropertyRef Name="orderNo" />
+      </Principal>
+      <Dependent Role="SHOPORDER">
+        <PropertyRef Name="orderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDERLIST__proNo__16CE6296">
+    <End Role="PRODUCT" Type="AllShowModel.PRODUCT" Multiplicity="1" />
+    <End Role="ORDERLIST" Type="AllShowModel.ORDERLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCT">
+        <PropertyRef Name="proNo" />
+      </Principal>
+      <Dependent Role="ORDERLIST">
+        <PropertyRef Name="proNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDERLIST__shopo__15DA3E5D">
+    <End Role="SHOPORDER" Type="AllShowModel.SHOPORDER" Multiplicity="1" />
+    <End Role="ORDERLIST" Type="AllShowModel.ORDERLIST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOPORDER">
+        <PropertyRef Name="shoporderNo" />
+      </Principal>
+      <Dependent Role="ORDERLIST">
+        <PropertyRef Name="shoporderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT__proClas__09746778">
+    <End Role="PRODUCTCLASS" Type="AllShowModel.PRODUCTCLASS" Multiplicity="1" />
+    <End Role="PRODUCT" Type="AllShowModel.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTCLASS">
+        <PropertyRef Name="proclassno" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="proClassNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCT__shNo__0880433F">
+    <End Role="SHOP" Type="AllShowModel.SHOP" Multiplicity="1" />
+    <End Role="PRODUCT" Type="AllShowModel.PRODUCT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="PRODUCT">
+        <PropertyRef Name="shNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRODUCTCLA__SHNO__5CA1C101">
+    <End Role="SHOP" Type="AllShowModel.SHOP" Multiplicity="1" />
+    <End Role="PRODUCTCLASS" Type="AllShowModel.PRODUCTCLASS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="PRODUCTCLASS">
+        <PropertyRef Name="shno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOP__SHCLASSNO__18B6AB08">
+    <End Role="SHCLASS" Type="AllShowModel.SHCLASS" Multiplicity="0..1" />
+    <End Role="SHOP" Type="AllShowModel.SHOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHCLASS">
+        <PropertyRef Name="shclassno" />
+      </Principal>
+      <Dependent Role="SHOP">
+        <PropertyRef Name="shclassno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SHOPORDER__shNo__1209AD79">
+    <End Role="SHOP" Type="AllShowModel.SHOP" Multiplicity="1" />
+    <End Role="SHOPORDER" Type="AllShowModel.SHOPORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SHOP">
+        <PropertyRef Name="shno" />
+      </Principal>
+      <Dependent Role="SHOPORDER">
+        <PropertyRef Name="shNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AUTHORITY">
+    <End Role="AUTHORITYFUNCTION" Type="AllShowModel.AUTHORITYFUNCTION" Multiplicity="*" />
+    <End Role="EMPLOYEE" Type="AllShowModel.EMPLOYEE" Multiplicity="*" />
+  </Association>
+  <Association Name="FAVORITESHOPLIST">
+    <End Role="MEMBER" Type="AllShowModel.MEMBER" Multiplicity="*" />
+    <End Role="SHOP" Type="AllShowModel.SHOP" Multiplicity="*" />
+  </Association>
+</Schema>
