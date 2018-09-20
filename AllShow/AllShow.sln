@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStudyConsoleApplication
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudy", "MVCStudy\MVCStudy.csproj", "{EE5103F3-5F78-4431-9649-96C0818EFDC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllShowMVCApplication", "AllShowMVCApplication\AllShowMVCApplication\AllShowMVCApplication\AllShowMVCApplication.csproj", "{623DF444-D610-427D-A564-98C9C6046ABD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllShowMVCApplication", "AllShowMVCApplication\AllShowMVCApplication\AllShowMVCApplication.csproj", "{623DF444-D610-427D-A564-98C9C6046ABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

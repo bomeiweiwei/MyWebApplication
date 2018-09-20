@@ -21,13 +21,25 @@ namespace MVCStudy.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AllShowConnectionString", throwIfV1Schema: false)
         {
         }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //這必需在第一行
+            base.OnModelCreating(modelBuilder);
+            //以下依實際情境來調整 table name
+            modelBuilder.Entity<ApplicationUser>().ToTable("CustomUsers");
+            modelBuilder.Entity<IdentityRole>().ToTable("CustomRoles");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("CustomUserRoles");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("CustomUserClaims");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("CustomUserLogins");
         }
     }
 }
