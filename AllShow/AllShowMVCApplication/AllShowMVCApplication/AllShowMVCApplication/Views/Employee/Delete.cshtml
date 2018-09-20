@@ -1,0 +1,96 @@
+﻿@model AllShowMVCApplication.Models.EMPLOYEE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>EMPLOYEE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empaccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empaccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.emppwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.emppwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMPEMAIL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMPEMAIL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empsex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empsex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empbirth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empbirth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.emptel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.emptel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.hiredate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.hiredate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.leavedate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.leavedate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.empaccountstate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.empaccountstate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

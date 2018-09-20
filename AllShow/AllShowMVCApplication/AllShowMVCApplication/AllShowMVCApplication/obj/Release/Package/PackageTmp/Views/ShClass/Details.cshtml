@@ -1,0 +1,29 @@
+﻿@model AllShowMVCApplication.Models.SHCLASS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SHCLASS</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shclassno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shclassno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shclassname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shclassname)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.shclassno  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

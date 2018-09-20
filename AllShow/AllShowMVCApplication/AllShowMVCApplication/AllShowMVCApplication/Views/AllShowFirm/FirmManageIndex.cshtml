@@ -1,0 +1,213 @@
+﻿@model AllShowMVCApplication.Models.SHOP
+
+@{
+    ViewBag.Title = "FirmManageIndex";
+    Layout = "~/Views/Shared/FirmMainLayoutPage.cshtml";
+}
+
+@section head
+{
+    <meta charset="utf-8"/>
+    <link href="@Url.Content("~/Content/DefaultPage.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Table.css" rel="stylesheet" type="text/css" />
+    }
+
+@section extra
+{
+    <ul id="extra_menu">
+        <li>@Html.ActionLink("商店資訊","FirmManageIndex")</li>
+        <li>@Html.ActionLink("商店資料更新","FirmDataUpdate")</li>
+    </ul>
+    }
+
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.shname)</legend>
+    <div style="margin:10px;">
+    <table>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shthepic)
+                </div>
+            </td>
+            <td>
+                @{
+                    string imgPath ="";
+                    string[] pathArr = Model.shthepic.Split('\\');
+                    imgPath = "../../FileUpLoads/" + pathArr[pathArr.Length - 1];
+                    }
+                <div class="display-field">
+                    <img width="200" height="350" src="@imgPath"/>
+                    @*@Html.DisplayFor(model => model.shthepic)*@
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.SHCLASS.shclassname)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.SHCLASS.shclassname)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shboss)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shboss)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shcontact)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shcontact)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shaddress)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shaddress)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shtel)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shtel)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shemail)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shemail)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shabout)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shabout)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shlogopic)
+                </div>
+            </td>
+            <td>
+                @{
+                    imgPath ="";
+                    pathArr = Model.shlogopic.Split('\\');
+                    imgPath = "../../FileUpLoads/" + pathArr[pathArr.Length - 1];
+                    }
+                <div class="display-field">
+                    <img width="200" height="200" src="@imgPath"/>
+                    @*@Html.DisplayFor(model => model.shlogopic)*@
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shurl)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shurl)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shpopshop)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @if (Model.shpopshop == "1")
+                    {
+                        <span>是</span>
+                    }
+                    else
+                    {
+                        <span>否</span>
+                    }
+                    @*@Html.DisplayFor(model => model.shpopshop)*@
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shcheckstate)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @if (Model.shcheckstate == "1")
+                    {
+                        <span>已通過審查</span>
+                    }
+                    else
+                    {
+                        <span>未審查</span>
+                    }
+                    @*@Html.DisplayFor(model => model.shcheckstate)*@
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>    
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.shstartdate)
+                </div>
+            </td>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.shstartdate)
+                </div>   
+            </td>
+        </tr>
+    </table>    
+    </div>   
+</fieldset>

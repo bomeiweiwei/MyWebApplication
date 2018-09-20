@@ -1,0 +1,113 @@
+﻿@model AllShowMVCApplication.Models.PRODUCT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PRODUCT</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SHOP.shthepic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SHOP.shthepic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PRODUCTCLASS.proclassname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PRODUCTCLASS.proclassname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proStatement)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proStatement)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proState)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proState)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proPic1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proPic1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proPic2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proPic2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proPic3)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proPic3)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proCreateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proCreateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proUpdateDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proUpdateDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProOffShelfDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProOffShelfDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proPop)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proPop)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.proNo  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

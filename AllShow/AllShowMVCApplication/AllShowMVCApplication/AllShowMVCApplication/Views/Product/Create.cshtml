@@ -1,0 +1,140 @@
+﻿@model AllShowMVCApplication.Models.PRODUCT
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PRODUCT</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proNo)
+            @Html.ValidationMessageFor(model => model.proNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.shNo, "SHOP")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("shNo", String.Empty)
+            @Html.ValidationMessageFor(model => model.shNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proClassNo, "PRODUCTCLASS")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("proClassNo", String.Empty)
+            @Html.ValidationMessageFor(model => model.proClassNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proName)
+            @Html.ValidationMessageFor(model => model.proName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proPrice)
+            @Html.ValidationMessageFor(model => model.proPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proStatement)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proStatement)
+            @Html.ValidationMessageFor(model => model.proStatement)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proState)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proState)
+            @Html.ValidationMessageFor(model => model.proState)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proPic1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proPic1)
+            @Html.ValidationMessageFor(model => model.proPic1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proPic2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proPic2)
+            @Html.ValidationMessageFor(model => model.proPic2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proPic3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proPic3)
+            @Html.ValidationMessageFor(model => model.proPic3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proCreateDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proCreateDate)
+            @Html.ValidationMessageFor(model => model.proCreateDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proUpdateDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proUpdateDate)
+            @Html.ValidationMessageFor(model => model.proUpdateDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProOffShelfDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProOffShelfDate)
+            @Html.ValidationMessageFor(model => model.ProOffShelfDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.proPop)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.proPop)
+            @Html.ValidationMessageFor(model => model.proPop)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

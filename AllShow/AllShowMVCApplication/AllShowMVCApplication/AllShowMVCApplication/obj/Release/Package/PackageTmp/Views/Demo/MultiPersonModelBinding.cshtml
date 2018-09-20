@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "MultiPersonModelBinding";
+}
+
+<h2>MultiPersonModelBinding</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        <p>男生</p>
+        <p>
+        姓名:<input id="Text1" type="text" name="man.name"/> <br />
+        年紀:<input id="Text2" type="text" name="man.age"/>
+        </p>
+        <p>女生</p>
+        <p>
+        姓名:<input id="Text3" type="text" name="woman.name"/> <br />
+        年紀:<input id="Text4" type="text" name="woman.age"/>
+             <input id="Submit2" type="submit" value="送出" />
+        </p>
+    }
+</div>
+<div>
+    Man:<br />
+    Name:@ViewBag.ManName<br />
+    Age:@ViewBag.ManAge<br />
+    <br />
+    Woman:<br />
+    Name:@ViewBag.WomanName<br />
+    Age:@ViewBag.WomanAge<br />
+    <br />
+</div>

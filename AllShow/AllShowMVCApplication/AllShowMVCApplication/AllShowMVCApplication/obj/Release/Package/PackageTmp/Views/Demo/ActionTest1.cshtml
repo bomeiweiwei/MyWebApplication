@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AllShowMVCApplication.Models.SHCLASS>
+@{
+    Layout = null;
+    string message = "我使用了Html.Action得到了MvcHtmlString型別的結果";//宣告變數
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ActionTest1</title>
+</head>
+<body>
+    <div>
+        @Html.Raw("<h1><font color='red'>message:"+message+"</font></h1>")
+        <br/>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.shclassname</li> 
+            }
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("head")
+</head>
+<body>
+    <div id="big_wrapper">
+        <table>
+            <tr>
+                <td>            
+                     <header id="top_header">
+                        <h1>Welcome AllShow</h1>
+                    </header>
+                    <nav id="top_menu">
+                        <ul id="menu">
+                            <li>@Html.ActionLink("首頁", "Index", "AllShow")</li>
+                            <li>@Html.ActionLink("會員專區", "Index", "AllShowMember")</li>
+                            <li>@Html.ActionLink("廠商專區", "Index", "AllShowFirm")</li>
+                            <li>@Html.ActionLink("關於我們", "Index", "AllShowService")</li>
+                        </ul>
+                    </nav>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <aside id="side_menu">
+                        @RenderSection("extra",required:false)
+                    </aside>
+                    <section id="main_section">
+                        @RenderBody()
+                    </section>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <footer id="the_footer">
+                        &copy;Copyright Mark 2015
+                    </footer>
+                </td>
+            </tr>       
+        </table>
+    </div>
+    @RenderSection("script",required:false)
+</body>
+</html>

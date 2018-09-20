@@ -1,0 +1,111 @@
+﻿@model IEnumerable<AllShowMVCApplication.Models.PRODUCT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.proNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHOP.shthepic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRODUCTCLASS.proclassname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proStatement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proPic1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proPic2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proPic3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proCreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proUpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProOffShelfDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proPop)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.proNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SHOP.shthepic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRODUCTCLASS.proclassname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proStatement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proPic1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proPic2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proPic3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proCreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proUpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProOffShelfDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proPop)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.proNo  }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.proNo  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.proNo  })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "DemoFormCollection";
+}
+
+<h2>DemoFormCollection</h2>
+<div>
+    @using (Html.BeginForm("ProcessForm","Demo"))
+    {
+        <p>
+        姓名:<input id="Text1" type="text" name="name"/> <br />
+        年紀:<input id="Text2" type="text" name="age"/>
+             <input id="Submit1" type="submit" value="送出" />
+        </p>
+    }
+</div>

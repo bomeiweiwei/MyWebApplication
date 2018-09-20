@@ -1,0 +1,140 @@
+﻿@model AllShowMVCApplication.Models.MEMBER
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>MEMBER</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memno)
+            @Html.ValidationMessageFor(model => model.memno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mememail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mememail)
+            @Html.ValidationMessageFor(model => model.mememail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mempwd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mempwd)
+            @Html.ValidationMessageFor(model => model.mempwd)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memdiminutive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memdiminutive)
+            @Html.ValidationMessageFor(model => model.memdiminutive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memname)
+            @Html.ValidationMessageFor(model => model.memname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memsex)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memsex)
+            @Html.ValidationMessageFor(model => model.memsex)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memtel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memtel)
+            @Html.ValidationMessageFor(model => model.memtel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memaddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memaddress)
+            @Html.ValidationMessageFor(model => model.memaddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mempic)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mempic)
+            @Html.ValidationMessageFor(model => model.mempic)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memaccountstate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memaccountstate)
+            @Html.ValidationMessageFor(model => model.memaccountstate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memchecknumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memchecknumber)
+            @Html.ValidationMessageFor(model => model.memchecknumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memcreatedate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memcreatedate)
+            @Html.ValidationMessageFor(model => model.memcreatedate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.memupdatedate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.memupdatedate)
+            @Html.ValidationMessageFor(model => model.memupdatedate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.membirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.membirth)
+            @Html.ValidationMessageFor(model => model.membirth)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

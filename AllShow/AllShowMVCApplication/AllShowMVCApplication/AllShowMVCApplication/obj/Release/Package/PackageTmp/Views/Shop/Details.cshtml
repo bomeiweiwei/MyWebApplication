@@ -1,0 +1,197 @@
+﻿@model AllShowMVCApplication.Models.SHOP
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SHOP</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMPLOYEE.empname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMPLOYEE.empname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shthepic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shthepic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SHCLASS.shclassname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SHCLASS.shclassname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shaccount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shaccount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shpwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shpwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shboss)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shboss)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shcontact)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shcontact)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shaddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shaddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shtel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shtel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shemail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shemail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shabout)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shabout)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shlogopic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shlogopic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shurl)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shurl)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shadstate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shadstate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shadtitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shadtitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shadpic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shadpic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shpopshop)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shpopshop)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shcheckstate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shcheckstate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shstartdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shstartdate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shenddate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shenddate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shcheckdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shcheckdate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shpwdstate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shpwdstate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shstoprightstartdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shstoprightstartdate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shstoprightenddate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shstoprightenddate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.shno  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

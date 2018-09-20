@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AllShowMVCApplication.Models.PRODUCT>
+
+@{
+    ViewBag.Title = "DemoInclude";
+    var shNos = ViewBag.shNo as IEnumerable<AllShowMVCApplication.Models.SHOP>;
+    var selectItems = shNos.Select(x => new SelectListItem
+                                    {
+                                        Text = x.shname,
+                                        Value = x.shno.ToString()
+                                    });
+}
+
+<h2>DemoInclude</h2>
+    <div class="display-label">
+        ●Display Shop Products From Multi Model
+    </div>
+    <div class="display-field">
+        <table style="border:solid">
+            <tr>
+                <th style="border:dotted">商品名稱</th>
+                <th style="border:dotted">商品類別</th>
+                <th style="border:dotted">商品SelectList</th>
+                <th style="border:dotted">商品所屬商店</th>
+                <th style="border:dotted">商品所屬商店SelectList</th>
+            </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="border:dotted">@item.proName</td> 
+                <td style="border:dotted">@item.PRODUCTCLASS.proclassname</td>
+                <td style="border:dotted">@Html.DropDownList("proClassNo",string.Empty)</td>
+                <td style="border:dotted">@item.SHOP.shname</td>
+                <td style="border:dotted">@Html.DropDownListFor(x => item.shNo,selectItems,"-請選擇-")</td>
+            </tr>  
+        }
+        </table>
+    </div>
+

@@ -1,0 +1,92 @@
+﻿@model AllShowMVCApplication.Models.SHOPORDER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SHOPORDER</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.shoporderNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.shoporderNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MEMBERLIST.orderNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MEMBERLIST.orderNo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SHOP.shthepic)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SHOP.shthepic)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.orderPrice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.orderPrice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.referredToDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.referredToDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.transactionDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.transactionDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.orderState)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.orderState)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.recipientName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.recipientName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.recipientTel)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.recipientTel)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.recipientAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.recipientAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.payType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.payType)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.shoporderNo  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h2>Message:</h2> @ViewData["Message"]、@ViewBag.Message
+<hr />
+<h2>Razor:</h2> @Html.ActionLink("請點我", "RazorTest", "Demo")
+<hr />
+<h2>網址傳參數:</h2>@Html.ActionLink("請點我", "RedirectWithQueryString", "Demo")
+<hr />
+<h2>Form:</h2>@Html.ActionLink("請點我", "BasicModelBiding", "Demo")
+<hr />
+<h2>Form use FormCollection:</h2>@Html.ActionLink("請點我", "DemoFormCollection", "Demo")
+<hr />
+<h2>Form Submit Model Biding:</h2>@Html.ActionLink("請點我", "PersonModelBinding", "Demo")
+<hr />
+<h2>Form Submit Model Biding 2:</h2>@Html.ActionLink("請點我", "MultiPersonModelBinding", "Demo")
+<hr />
+<h2>Form Submit Model Biding 3:</h2>@Html.ActionLink("請點我", "ViewModelBinding", "Demo")
+<hr />
+<h2>傳送List:</h2>@Html.ActionLink("請點我", "SendList", "Demo")
+<hr />
+<h2>檢查輸入:</h2>@Html.ActionLink("請點我", "DemoInput", "Demo")
+<hr />
+<h2>保留資料:</h2>@Html.ActionLink("請點我", "DemoTempDataProduct", "Demo")
+<hr />
+<h2>多Model傳送(相關聯用Include):</h2>@Html.ActionLink("請點我", "DemoInclude", "Demo")
+<hr />
+<h2>多Model傳送(不相關聯):</h2>@Html.ActionLink("請點我", "DemoViewModel", "Demo")
+<hr />
+<h2>程式Shop GetAll</h2>@Html.ActionLink("請點我", "ShopGetAll", "Demo")
+<hr />
+<h2>AJAX 呼叫WebService的Function</h2>
+MVC專案要去RouteConfig.cs加入routes.IgnoreRoute blabla()<br />
+參考http://stackoverflow.com/questions/17057386/http-404-error-while-invoking-a-local-webservice-in-net-mvc4/17058251#17058251<br />
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    </script>
+
+    <script>
+        function HelloWorld() {
+            try {
+                alert("@Url.Content("~/WebService1.asmx/HelloWorld")");
+                var options = {
+                    type: "POST",
+                    url: "@Url.Content("~/WebService1.asmx/HelloWorld")" ,
+                    data: null,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    if (msg.d != "") {
+                        alert(msg.d);
+                    }
+                    else {
+                        return false;
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + "  " + thrownError + "  " + ajaxOptions);
+                }
+            };
+
+            $.ajax(options);
+        }
+        catch (ex) {
+            alert("Error");
+        }
+        return false;
+        }
+</script>
+<input id="Button1" type="button" value="button" onclick="HelloWorld()"/>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AllShowMVCApplication.Models.authority.Authority>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Authorityno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empno)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Authorityno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empno)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.Authorityno ,id2=item.Empno  }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.Authorityno ,id2=item.Empno  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.Authorityno ,id2=item.Empno })
+        </td>
+    </tr>
+}
+
+</table>

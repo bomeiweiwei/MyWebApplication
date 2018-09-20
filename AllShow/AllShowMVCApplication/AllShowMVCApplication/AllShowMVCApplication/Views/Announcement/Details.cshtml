@@ -1,0 +1,78 @@
+﻿@model AllShowMVCApplication.Models.ANNOUNCEMENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ANNOUNCEMENT</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.announcementno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.announcementno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMPLOYEE.empname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMPLOYEE.empname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.announcementtitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.announcementtitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.announcementtype)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.announcementtype)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.announcementcontent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.announcementcontent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.createdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.createdate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.updatedate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.updatedate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.startdate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.startdate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.enddate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.enddate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.announcementno  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

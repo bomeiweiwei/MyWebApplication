@@ -1,0 +1,26 @@
+﻿@model AllShowMVCApplication.Models.ViewModels.MemberProductViewModel
+@{
+    ViewBag.Title = "DemoViewModel";
+}
+
+<h2>DemoViewModel</h2>
+
+<div>
+    <ul>
+        <li>@Model.MemName</li>
+        <li>@Model.ProName</li>
+    </ul>
+    <br/>
+    <ul>
+        @foreach(var item in Model.products)
+        {
+            <li>@item.proName</li>
+        }
+    </ul>
+    <ul>
+        @foreach(var item in Model.members)
+        {
+            <li>@item.memname</li>
+        }
+    </ul>
+</div>
