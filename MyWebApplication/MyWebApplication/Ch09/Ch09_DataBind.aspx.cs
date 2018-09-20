@@ -18,7 +18,7 @@ namespace MyWebApplication.Ch09
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridView gv = (GridView)sender;
-            SqlConnection conn = new SqlConnection("server=MSI\\SQLEXPRESS2012;Initial Catalog=test;User ID=dbtest;Password=dbtest0000");
+            SqlConnection conn = new SqlConnection("server=.\\SQLEXPRESS;Initial Catalog=test;User ID=dbtest;Password=dbtest0000");
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT [title], [summary], [article], [author], [hit_no] FROM [test] WHERE ([id] = @id)", conn);
             cmd.Parameters.AddWithValue("id", gv.SelectedValue);

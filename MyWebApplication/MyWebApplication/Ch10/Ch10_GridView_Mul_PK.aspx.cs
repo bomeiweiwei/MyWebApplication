@@ -41,7 +41,7 @@ namespace MyWebApplication.Ch10
             lbllblSelectDKeyPK2.Text = "GridView1.SelectedDataKeyPK2=" + Convert.ToString(GridView1.SelectedDataKey.Values[1]);
 
             GridView gv = (GridView)sender;
-            SqlConnection conn = new SqlConnection("server=MSI\\SQLEXPRESS2012;Initial Catalog=test;User ID=dbtest;Password=dbtest0000");
+            SqlConnection conn = new SqlConnection("server=.\\SQLEXPRESS;Initial Catalog=test;User ID=dbtest;Password=dbtest0000");
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT [title], [summary], [article], [author], [hit_no] FROM [test] WHERE ([id] = @id) AND ([title] = @title)", conn);
             cmd.Parameters.AddWithValue("id", gv.SelectedDataKey.Values[0]);
