@@ -1,0 +1,85 @@
+﻿@model IEnumerable<MVCStudy.Models.employee.Employee>
+@{
+    ViewBag.Title = "員工列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>員工列表(自己寫類別封裝再利用驗證資料)</h2>
+
+<p>
+    @Html.ActionLink("新增員工","Create")
+</p>
+
+@if (Model.Count() == 0)
+{
+<p>無員工紀錄</p>
+}
+else
+{   
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.empaccount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emppwd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMPEMAIL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empsex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empbirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emptel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hiredate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.leavedate)
+            </th>
+            <th>
+                
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.empaccount
+            </td>
+            <td>
+                ****
+            </td>
+            <td>
+                @item.empname
+            </td>
+            <td>
+                @item.EMPEMAIL
+            </td>
+            <td>
+                @item.empsex
+            </td>
+            <td>
+                @item.empbirth
+            </td>
+            <td>
+                @item.emptel
+            </td>
+            <td>
+                @item.hiredate
+            </td>
+            <td>
+                @item.leavedate
+            </td>
+        </tr>
+        }
+    </table>
+}

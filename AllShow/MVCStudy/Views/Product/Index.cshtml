@@ -1,0 +1,238 @@
+﻿@model MVCStudy.Models.PRODUCT
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>商品列表</h2>
+
+<script>
+
+    $(document).ready(function () {
+        var apiurl = "http://localhost:35461/api/ProductApi";
+
+        $("#btnCreate").on("click", ProductCreate);
+        $("#DDL_shops").on("change", LoadProClass);
+        $("#btnEdit").on("click", ProductEdit);
+        $("#btnDelete").on("click", ProductDelete);
+
+        LoadProductData();
+
+        //載入所有資料
+        function LoadProductData() {
+            $.ajax({
+                url: apiurl,
+                type: 'GET',
+                success: function (data) {
+                    $("#tableshow").empty();
+
+                    $("#tableshow").append
+                        (
+                        "<tr>" +
+                        "<th>商品名稱</th>" +
+                        "<th>商品單價金額</th>" +
+                        "<th>商品新增日期</th>" +
+                        "<th>商品狀態</th>" +
+                        "<th>選取</th>" +
+                        "</tr>"
+                        );
+
+                    for (var i = 0; i < data.length; i++) {
+                        var state = '';
+                        if (data[i].proState = 0) {
+                            state = '上架';
+                        }
+                        else {
+                            state = '下架';
+                        }
+                        $("#tableshow").append
+                            (
+                            "<tr>" +
+                            "<td>" + data[i].proName + "</td>" +
+                            "<td>" + data[i].proPrice + "</td>" +
+                            "<td>" + data[i].proCreateDate + "</td>" +
+                            "<td>" + state + "</td>" +
+                            "<td><input type='button' value='選取' id='btn_select" + i + "' class='btn btn-info'/></td>" +
+                            "</tr>"
+                            );
+                        $("#btn_select" + i).on("click", { prono: data[i].proNo }, SelectProductData);
+                    }
+                    $("#proName").val("");
+                    $("#proPrice").val("");
+                }
+            });
+        }
+
+        function SelectProductData(event) {
+            var proNo = event.data.prono;
+            //alert(apiurl + "?proNo=" + encodeURI(proNo));
+            $.ajax({
+                url: apiurl + "?proNo=" + encodeURI(proNo),
+                type: 'GET',
+                success: function (data) {
+                    $("#proNo").val(data.proNo);
+                    $("#DDL_shops").val(data.shNo);
+                    $("#DDL_proClasses").val(data.proClassNo);
+                    $("#proName").val(data.proName);
+                    $("#proPrice").val(data.proPrice);
+                    $("input[name=proState]:checked").val(data.proState);
+                    $("input[name=proPop]:checked").val(data.proPop);
+                }
+            });
+        }
+
+        //新增資料
+        function ProductCreate() {           
+            var shNo, proClassNo, proName, proPrice, proState, proPop;
+            shNo = $("#DDL_shops").val();
+            proClassNo = $("#DDL_proClasses").val();
+            proName = $("#proName").val();
+            proPrice = $("#proPrice").val();
+            proState = $("input[name=proState]:checked").val();
+            proPop = $("input[name=proPop]:checked").val();
+            var data = "?shNo=" + shNo + "&proClassNo=" + proClassNo + "&proName=" + proName + "&proPrice=" + proPrice + "&proState=" + proState + "&proPop=" + proPop;
+            //alert(apiurl + encodeURI(data));
+            $.ajax({
+                url: apiurl + encodeURI(data),
+                type: 'POST',
+                success: function (result) {
+                    if (result != 0) {
+                        if (result == 1) {
+                            alert('新增成功');
+                            LoadProductData();
+                        } else {
+                            alert("新增失敗=>"+result);
+                        }
+                        
+                    } else {
+                        alert('新增失敗');
+                    }
+                }
+            });
+        }
+
+        //透過WebAPI更新下拉選單
+        function LoadProClass() {
+            var pclass_apiuri = 'http://localhost:35461/api/ProductClassApi';
+            //alert($('#DDL_shops').val());
+            $('#DDL_proClasses').empty();
+            var shNo = $("#DDL_shops").val();
+            var data = "?shNo=" + shNo;
+            $.ajax({
+                url: pclass_apiuri + encodeURI(data),
+                type: 'GET',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var x = document.getElementById("DDL_proClasses");
+                        var option = document.createElement("option");
+                        option.text = data[i].proclassname;
+                        option.value = data[i].proclassno;
+                        x.add(option);
+                    }
+                }
+            });
+        }
+
+        //修改資料
+        function ProductEdit() {
+            var proNo, shNo, proClassNo, proName, proPrice, proState, proPop;
+            proNo = $("#proNo").val();
+            shNo = $("#DDL_shops").val();
+            proClassNo = $("#DDL_proClasses").val();
+            proName = $("#proName").val();
+            proPrice = $("#proPrice").val();
+            proState = $("input[name=proState]:checked").val();
+            proPop = $("input[name=proPop]:checked").val();
+            var data = "?proNo=" + proNo + "&shNo=" + shNo + "&proClassNo=" + proClassNo + "&proName=" + proName + "&proPrice=" + proPrice + "&proState=" + proState + "&proPop=" + proPop;
+            //alert(apiurl + encodeURI(data));
+            $.ajax({
+                url: apiurl + encodeURI(data),
+                type: 'PUT',
+                success: function (result) {
+                    if (result != 0) {
+                        if (result == 1) {
+                            alert('修改成功');
+                            LoadProductData();
+                        } else {
+                            alert("修改失敗=>" + result);
+                        }
+
+                    } else {
+                        alert('修改失敗');
+                    }
+                }
+            });
+        }
+
+        function ProductDelete() {
+            var proNo;
+            proNo = $("#proNo").val();
+            $.ajax({
+                url: apiurl + "?proNo=" + encodeURI(proNo),
+                type: 'DELETE',
+                success: function (result) {
+                    if (result != 0) {
+                        if (result == 1) {
+                            alert('刪除成功');
+                            LoadProductData();
+                        } else {
+                            alert("刪除失敗=>" + result);
+                        }
+
+                    } else {
+                        alert('刪除失敗');
+                    }
+                }
+            });
+        }
+
+    });
+
+    
+</script>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">商品管理</div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label for="proNo">商品編號</label>
+            <input type="text" class="form-control" id="proNo" readonly>
+        </div>
+        <div class="form-group">
+            <label for="shNo">商店</label>&nbsp;&nbsp;
+            @Html.DropDownList("DDL_shops", (IEnumerable<SelectListItem>)ViewBag.shops)
+            @*<input type="text" class="form-control" id="shNo" required>*@
+        </div>
+        <div class="form-group">
+            <label for="proClassNo">商品類別</label>&nbsp;&nbsp;
+            @Html.DropDownList("DDL_proClasses", (IEnumerable<SelectListItem>)ViewBag.proClasses)
+            @*<input type="text" class="form-control" id="proClassNo" required>*@
+        </div>
+        <div class="form-group">
+            <label for="proName">商品名稱</label>
+            <input type="text" class="form-control" id="proName" required>
+        </div>
+        <div class="form-group">
+            <label for="proPrice">商品單價金額</label>
+            <input type="text" class="form-control" id="proPrice" required>
+        </div>
+        <div class="form-group">
+            <label for="proState">商品狀態</label>
+            <input type="radio" name="proState" value="0" checked>上架
+            <input type="radio" name="proState" value="1">下架
+            @*<input type="text" class="form-control" id="proState" required>*@
+        </div>
+        <div class="form-group">
+            <label for="proPop">熱門商品</label>
+            <input type="radio" name="proPop" value="0" checked>是
+            <input type="radio" name="proPop" value="1">否
+            @*<input type="text" class="form-control" id="proPop" required>*@
+        </div>
+        <input type="button" value="新增" id="btnCreate" class="btn btn-primary" />
+        <input type="button" value="修改" id="btnEdit" class="btn btn-success" />
+        <input type="button" value="刪除" id="btnDelete" class="btn btn-danger" />
+    </div>
+</div>
+
+<table class="table" id="tableshow"></table>

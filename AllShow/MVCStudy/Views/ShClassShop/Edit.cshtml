@@ -1,0 +1,252 @@
+﻿@model MVCStudy.Models.SHOP
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+        function PreviewImage1(imgFile) {
+            var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;
+            if (!pattern.test(imgFile.value)) {
+                alert("只支援jpg/jpeg/png/gif/bmp之格式檔案");
+                imgFile.focus();
+            }
+            else {
+                var path;
+                if (document.all) {//IE
+                    imgFile.select();
+                    path = document.selection.createRange().text;
+                    document.getElementById("imgPreview1").innerHTML = "";
+                    document.getElementById("imgPreview1").style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\"" + path + "\")";
+                }
+                else//FF
+                {
+                    path = URL.createObjectURL(imgFile.files[0]);
+                    document.getElementById("imgPreview1").innerHTML = "<img src='" + path + " '  width='100' height='100'/>";
+                }
+            }
+        }
+</script>
+
+<h2>編輯商店</h2>
+<form method="post" action="@Url.Action("Edit")" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2">審查人員</label>
+            <div class="col-md-10">
+                @Html.DropDownList("empno", String.Empty)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shclassno" class="control-label col-md-2">商店類別</label>
+            <div class="col-md-10">
+                @Html.DropDownList("shclassno", String.Empty)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shthepic" class="control-label col-md-2">佈景主題圖示</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shthepic, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.shthepic,"", new {  @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shname" class="control-label col-md-2">商店名稱</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shname, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shaccount" class="control-label col-md-2">廠商帳號</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shaccount, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shaccount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shpwd" class="control-label col-md-2">廠商密碼</label>
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.shpwd, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                <span style="color:red">@ViewBag.ErrMsg</span >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shboss" class="control-label col-md-2">負責人</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shboss, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shboss, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shcontact" class="control-label col-md-2">聯絡人</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shcontact, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shcontact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shaddress" class="control-label col-md-2">地址</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shaddress, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shaddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shtel" class="control-label col-md-2">廠商電話</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shtel, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shtel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shemail" class="control-label col-md-2">聯絡人信箱</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shemail, new { htmlAttributes = new { @class = "form-control", type = "email", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shemail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shabout" class="control-label col-md-2">關於我們</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shabout, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.shabout, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shlogopic" class="control-label col-md-2">LOGO圖片</label>
+            <div class="col-md-10">
+                <div id="imgPreview1">
+                    <img width="100" height="100" src="#">
+                </div>
+                <input type="file" name="file" onchange="PreviewImage1(this)">
+                @*<input type="text" id="shlogopic" name="shlogopic" class="form-control" />*@
+                @Html.Hidden("shlogopic", Model.shlogopic)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shurl" class="control-label col-md-2">商店Url</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shurl, new { htmlAttributes = new { @class = "form-control", type = "url", required = "required" } })
+                @Html.ValidationMessageFor(model => model.shurl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shadstate" class="control-label col-md-2">店內廣告狀態</label>
+            <div class="col-md-10">
+                @Html.RadioButtonFor(m => m.shadstate, "0") 未顯示
+                @Html.RadioButtonFor(m => m.shadstate, "1") 顯示
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shadtitle" class="control-label col-md-2">店內廣告標題</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shadtitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.shadtitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shadpic" class="control-label col-md-2">店內廣告圖片</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.shadpic, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.shadpic, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shpopshop" class="control-label col-md-2">熱門商店</label>
+            <div class="col-md-10">
+                @Html.RadioButtonFor(m => m.shpopshop, "0") 否
+                @Html.RadioButtonFor(m => m.shpopshop, "1") 是
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shcheckstate" class="control-label col-md-2">審核狀態</label>
+            <div class="col-md-10">
+                @Html.RadioButtonFor(m => m.shcheckstate, "0") 未審查
+                @Html.RadioButtonFor(m => m.shcheckstate, "1") 已通過審查
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shstartdate" class="control-label col-md-2">商店營業日期</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.shstartdate, new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(model => model.shstartdate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shenddate" class="control-label col-md-2">商店結束日期</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.shenddate, new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(model => model.shenddate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shcheckdate" class="control-label col-md-2">審核通過日</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.shcheckdate, new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(model => model.shcheckdate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shpwdstate" class="control-label col-md-2">廠商帳號狀態</label>
+            <div class="col-md-10">
+                @Html.RadioButtonFor(m => m.shpwdstate, "0") 啟用
+                @Html.RadioButtonFor(m => m.shpwdstate, "1") 停用
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shstoprightstartdate" class="control-label col-md-2">停權起始日</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.shstoprightstartdate, new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(model => model.shstoprightstartdate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="shstoprightenddate" class="control-label col-md-2">停權截止日</label>
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.shstoprightenddate, new { @class = "form-control", type = "date" })
+                @Html.ValidationMessageFor(model => model.shstoprightenddate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="儲存" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.shno)
+</form>
+@Html.ActionLink("返回商店列表", "Index", null, new { @class = "btn btn-info" })
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

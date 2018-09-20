@@ -1,0 +1,67 @@
+﻿@model MVCStudy.Models.ViewModels.ShClassShopViewModel
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet"/>
+
+<h2>@ViewBag.shclassName </h2>
+
+<div class="row">
+    <div class="col-xs-4">
+        @foreach (var item in Model.shClasses)
+        {
+            <p>
+                @Html.ActionLink(item.shclassname,"Index",new { shclassno=item.shclassno})
+            </p>
+        }
+    </div>
+    <div class="col-xs-8">
+        @Html.ActionLink("新增商店", "Create", null, new { @class = "btn btn-info" })
+        <table class="table">
+            <tr>
+                <th>
+                    商店LOGO
+                </th>
+                <th>
+                    商店名稱
+                </th>
+                <th>
+                    商店地址
+                </th>
+                <th>
+                    商店電話
+                </th>
+                <th>
+                    聯絡人信箱
+                </th>
+                <th>
+                </th>
+            </tr>
+            @foreach (var item in Model.shops)
+            {
+                <tr>
+                    <td><img src="~/images/@item.shlogopic" width="32"/></td>
+                    <td>@item.shname</td>
+                    <td>@item.shaddress</td>
+                    <td>@item.shtel</td>
+                    <td>@item.shemail</td>
+                    <td>
+                        @Html.ActionLink("編輯", "Edit", new { shno = item.shno }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("刪除", "Delete", new { shno = item.shno }, new { onclick = "return confirm('確定刪除嗎?');", @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="5">
+                    @Html.PagedListPager(Model.SHOPs,page=>Url.Action("Index",new { @ViewBag.shclassno, page }))
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+</div>
+

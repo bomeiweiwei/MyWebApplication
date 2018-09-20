@@ -1,0 +1,207 @@
+﻿@model MVCStudy.Models.MEMBER
+
+@{
+    ViewBag.Title = "會員資料修改";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+        function PreviewImage1(imgFile) {
+            var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;
+            if (!pattern.test(imgFile.value)) {
+                alert("只支援jpg/jpeg/png/gif/bmp之格式檔案");
+                imgFile.focus();
+            }
+            else {
+                var path;
+                if (document.all) {//IE
+                    imgFile.select();
+                    path = document.selection.createRange().text;
+                    document.getElementById("imgPreview1").innerHTML = "";
+                    document.getElementById("imgPreview1").style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\"" + path + "\")";
+                }
+                else//FF
+                {
+                    path = URL.createObjectURL(imgFile.files[0]);
+                    document.getElementById("imgPreview1").innerHTML = "<img src='" + path + " '  width='100' height='100'/>";
+                }
+            }
+        }
+</script>
+
+<h2>會員資料修改</h2>
+
+@using (Html.BeginForm("Edit", "Member", FormMethod.Post, new { enctype = "multipart/form-data" } ))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @*<h4>MEMBER</h4>*@
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.memno)
+
+    <div class="form-group">
+        <label class="control-label col-md-2">信箱</label>
+        @*@Html.LabelFor(model => model.mememail, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.mememail, new { htmlAttributes = new { @class = "form-control", type = "email", required = "required" } })
+            @Html.ValidationMessageFor(model => model.mememail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">會員密碼</label>
+        @*@Html.LabelFor(model => model.mempwd, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.mempwd, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.mempwd, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">會員暱稱</label>
+        @*@Html.LabelFor(model => model.memdiminutive, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.memdiminutive, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.memdiminutive, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">會員姓名</label>
+        @*@Html.LabelFor(model => model.memname, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.memname, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.memname, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">性別</label>
+        @*@Html.LabelFor(model => model.memsex, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @*<table>
+                <tr>
+                    <td>*@
+                        @Html.RadioButtonFor(m => m.memsex, "0") 男
+                        @Html.RadioButtonFor(m => m.memsex, "1") 女
+                   @*</td>
+                </tr>
+            </table>*@
+            @*@Html.EditorFor(model => model.memsex, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.memsex, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">生日</label>
+        @*@Html.LabelFor(model => model.membirth, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.membirth, new { @class = "form-control", type = "date", required = "required" } )
+            @Html.ValidationMessageFor(model => model.membirth, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">電話</label>
+        @*@Html.LabelFor(model => model.memtel, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.memtel, new { htmlAttributes = new { @class = "form-control", type = "tel", required = "required" } })
+            @Html.ValidationMessageFor(model => model.memtel, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">地址</label>
+        @*@Html.LabelFor(model => model.memaddress, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.memaddress, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.memaddress, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">照片</label>
+        @*@Html.LabelFor(model => model.mempic, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            <table>
+                <tr>
+                    <th>舊</th>
+                    <th>新</th>
+                </tr>
+                <tr>
+                    <td>
+                        @{
+                            string imgPath = "../../images/"+ Model.mempic;
+                        }
+                        <img width="100" height="100" src="@imgPath">
+                        @Html.HiddenFor(model => model.mempic)
+                    </td>
+                    <td>
+                        <div id="imgPreview1">
+                            <img width="100" height="100" src="#">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" name="file" onchange="PreviewImage1(this)">
+                    </td>
+                </tr>
+            </table>
+            @*@Html.EditorFor(model => model.mempic, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.mempic, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">會員帳號狀態</label>
+        @*@Html.LabelFor(model => model.memaccountstate, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.memaccountstate, "0") 啟用
+            @Html.RadioButtonFor(model => model.memaccountstate, "1") 停用
+            @*@Html.EditorFor(model => model.memaccountstate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.memaccountstate, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.memcreatedate)
+    @Html.HiddenFor(model => model.memupdatedate)
+    @Html.HiddenFor(model => model.memchecknumber)
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.memchecknumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.memchecknumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.memchecknumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.memcreatedate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.memcreatedate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.memcreatedate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.memupdatedate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.memupdatedate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.memupdatedate, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("返回會員列表", "Index")
+</div>

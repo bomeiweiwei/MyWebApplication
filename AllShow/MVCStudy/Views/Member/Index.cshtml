@@ -1,0 +1,152 @@
+﻿@using PagedList.Mvc
+@using PagedList
+@*@model IEnumerable<MVCStudy.Models.MEMBER>*@
+@model IPagedList<MVCStudy.Models.MEMBER>
+
+@{
+    ViewBag.Title = "會員";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet">
+
+<h2>會員列表</h2>
+
+<p>
+    @Html.ActionLink("新增會員", "Create")
+</p>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>
+            信箱
+            @*@Html.DisplayNameFor(model => model.mememail)*@
+        </th>
+        <th>
+            會員密碼
+            @*@Html.DisplayNameFor(model => model.mempwd)*@
+        </th>
+        <th>
+            會員暱稱
+            @*@Html.DisplayNameFor(model => model.memdiminutive)*@
+        </th>
+        <th>
+            會員姓名
+            @*@Html.DisplayNameFor(model => model.memname)*@
+        </th>
+        <th>
+            性別
+            @*@Html.DisplayNameFor(model => model.memsex)*@
+        </th>
+        <th>
+            生日
+            @*@Html.DisplayNameFor(model => model.membirth)*@
+        </th>
+        <th>
+            電話
+            @*@Html.DisplayNameFor(model => model.memtel)*@
+        </th>
+        <th>
+            地址
+            @*@Html.DisplayNameFor(model => model.memaddress)*@
+        </th>
+        <th>
+            照片
+            @*@Html.DisplayNameFor(model => model.mempic)*@
+        </th>
+        <th>
+            會員帳號狀態
+            @*@Html.DisplayNameFor(model => model.memaccountstate)*@
+        </th>
+        <th>
+            會員驗證碼
+            @*@Html.DisplayNameFor(model => model.memchecknumber)*@
+        </th>
+        <th>
+            建立日期
+            @*@Html.DisplayNameFor(model => model.memcreatedate)*@
+        </th>
+        <th>
+            更新日期
+            @*@Html.DisplayNameFor(model => model.memupdatedate)*@
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.mememail)
+            </td>
+            <td>
+                ****
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memdiminutive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memname)
+            </td>
+            <td>
+                @if (item.memsex == "0")
+                {
+                    <p>男</p>
+                }
+                else if (item.memsex == "1")
+                {
+                    <p>女</p>
+                }
+                @*@Html.DisplayFor(modelItem => item.memsex)*@
+            </td>
+            <td>
+                @DateTime.Parse(item.membirth.ToString()).ToShortDateString()
+                @*@Html.DisplayFor(modelItem => item.membirth)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memtel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memaddress)
+            </td>
+            <td>
+                <img src="~/images/@item.mempic" width="32">
+                @*@Html.DisplayFor(modelItem => item.mempic)*@
+            </td>
+            <td>
+                @if (item.memaccountstate == "0")
+                {
+                    <p>啟用</p>
+                }
+                else if (item.memsex == "1")
+                {
+                    <p>停用</p>
+                }
+                @*@Html.DisplayFor(modelItem => item.memaccountstate)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.memchecknumber)
+            </td>
+            <td>
+                @DateTime.Parse(item.memcreatedate.ToString()).ToShortDateString()
+                @*@Html.DisplayFor(modelItem => item.memcreatedate)*@
+            </td>
+            <td>
+                @DateTime.Parse(item.memupdatedate.ToString()).ToShortDateString()
+                @*@Html.DisplayFor(modelItem => item.memupdatedate)*@
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.memno }) |
+                @Html.ActionLink("Details", "Details", new { id = item.memno }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.memno }, new { onclick = "return confirm('確定要刪除嗎?')" })
+            </td>
+        </tr>
+    }
+
+    <tr>
+        <td colspan="14">
+            @Html.PagedListPager(Model,page=>Url.Action("Index",new { page }))
+        </td>
+    </tr>
+</table>

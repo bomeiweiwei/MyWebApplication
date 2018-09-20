@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AllShowModelStoreContainer" CdmEntityContainer="AllShowEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="AllShowModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADVERTISEMENTs">
+      <EntityTypeMapping TypeName="AllShowModel.ADVERTISEMENT">
+        <MappingFragment StoreEntitySet="ADVERTISEMENT">
+          <ScalarProperty Name="adNo" ColumnName="adNo" />
+          <ScalarProperty Name="shNo" ColumnName="shNo" />
+          <ScalarProperty Name="empNo" ColumnName="empNo" />
+          <ScalarProperty Name="adTitle" ColumnName="adTitle" />
+          <ScalarProperty Name="adApplyDate" ColumnName="adApplyDate" />
+          <ScalarProperty Name="adStartDate" ColumnName="adStartDate" />
+          <ScalarProperty Name="adTime" ColumnName="adTime" />
+          <ScalarProperty Name="adPrice" ColumnName="adPrice" />
+          <ScalarProperty Name="adPic" ColumnName="adPic" />
+          <ScalarProperty Name="adURL" ColumnName="adURL" />
+          <ScalarProperty Name="adCheckState" ColumnName="adCheckState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ANNOUNCEMENTs">
+      <EntityTypeMapping TypeName="AllShowModel.ANNOUNCEMENT">
+        <MappingFragment StoreEntitySet="ANNOUNCEMENT">
+          <ScalarProperty Name="announcementno" ColumnName="announcementno" />
+          <ScalarProperty Name="empno" ColumnName="empno" />
+          <ScalarProperty Name="announcementtitle" ColumnName="announcementtitle" />
+          <ScalarProperty Name="announcementtype" ColumnName="announcementtype" />
+          <ScalarProperty Name="announcementcontent" ColumnName="announcementcontent" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="updatedate" ColumnName="updatedate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AUTHORITies">
+      <EntityTypeMapping TypeName="AllShowModel.AUTHORITY">
+        <MappingFragment StoreEntitySet="AUTHORITY">
+          <ScalarProperty Name="authorityno" ColumnName="authorityno" />
+          <ScalarProperty Name="empno" ColumnName="empno" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AUTHORITYFUNCTIONs">
+      <EntityTypeMapping TypeName="AllShowModel.AUTHORITYFUNCTION">
+        <MappingFragment StoreEntitySet="AUTHORITYFUNCTION">
+          <ScalarProperty Name="authorityno" ColumnName="authorityno" />
+          <ScalarProperty Name="authorityname" ColumnName="authorityname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEs">
+      <EntityTypeMapping TypeName="AllShowModel.EMPLOYEE">
+        <MappingFragment StoreEntitySet="EMPLOYEE">
+          <ScalarProperty Name="empno" ColumnName="empno" />
+          <ScalarProperty Name="empname" ColumnName="empname" />
+          <ScalarProperty Name="empaccount" ColumnName="empaccount" />
+          <ScalarProperty Name="emppwd" ColumnName="emppwd" />
+          <ScalarProperty Name="EMPEMAIL" ColumnName="EMPEMAIL" />
+          <ScalarProperty Name="empsex" ColumnName="empsex" />
+          <ScalarProperty Name="empbirth" ColumnName="empbirth" />
+          <ScalarProperty Name="emptel" ColumnName="emptel" />
+          <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+          <ScalarProperty Name="leavedate" ColumnName="leavedate" />
+          <ScalarProperty Name="empaccountstate" ColumnName="empaccountstate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEs1">
+      <EntityTypeMapping TypeName="AllShowModel.EMPLOYEE1">
+        <MappingFragment StoreEntitySet="EMPLOYEEs">
+          <ScalarProperty Name="empno" ColumnName="empno" />
+          <ScalarProperty Name="empname" ColumnName="empname" />
+          <ScalarProperty Name="empaccount" ColumnName="empaccount" />
+          <ScalarProperty Name="emppwd" ColumnName="emppwd" />
+          <ScalarProperty Name="EMPEMAIL" ColumnName="EMPEMAIL" />
+          <ScalarProperty Name="empsex" ColumnName="empsex" />
+          <ScalarProperty Name="empbirth" ColumnName="empbirth" />
+          <ScalarProperty Name="emptel" ColumnName="emptel" />
+          <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+          <ScalarProperty Name="leavedate" ColumnName="leavedate" />
+          <ScalarProperty Name="empaccountstate" ColumnName="empaccountstate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAVORITESHOPLISTs">
+      <EntityTypeMapping TypeName="AllShowModel.FAVORITESHOPLIST">
+        <MappingFragment StoreEntitySet="FAVORITESHOPLIST">
+          <ScalarProperty Name="memNo" ColumnName="memNo" />
+          <ScalarProperty Name="shNo" ColumnName="shNo" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEMBERs">
+      <EntityTypeMapping TypeName="AllShowModel.MEMBER">
+        <MappingFragment StoreEntitySet="MEMBER">
+          <ScalarProperty Name="memno" ColumnName="memno" />
+          <ScalarProperty Name="mememail" ColumnName="mememail" />
+          <ScalarProperty Name="mempwd" ColumnName="mempwd" />
+          <ScalarProperty Name="memdiminutive" ColumnName="memdiminutive" />
+          <ScalarProperty Name="memname" ColumnName="memname" />
+          <ScalarProperty Name="memsex" ColumnName="memsex" />
+          <ScalarProperty Name="memtel" ColumnName="memtel" />
+          <ScalarProperty Name="memaddress" ColumnName="memaddress" />
+          <ScalarProperty Name="mempic" ColumnName="mempic" />
+          <ScalarProperty Name="memaccountstate" ColumnName="memaccountstate" />
+          <ScalarProperty Name="memchecknumber" ColumnName="memchecknumber" />
+          <ScalarProperty Name="memcreatedate" ColumnName="memcreatedate" />
+          <ScalarProperty Name="memupdatedate" ColumnName="memupdatedate" />
+          <ScalarProperty Name="membirth" ColumnName="membirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEMBERLISTs">
+      <EntityTypeMapping TypeName="AllShowModel.MEMBERLIST">
+        <MappingFragment StoreEntitySet="MEMBERLIST">
+          <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+          <ScalarProperty Name="memNo" ColumnName="memNo" />
+          <ScalarProperty Name="orderDate" ColumnName="orderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="AllShowModel.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="PostDateTime" ColumnName="PostDateTime" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="times" ColumnName="times" />
+          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDERLISTs">
+      <EntityTypeMapping TypeName="AllShowModel.ORDERLIST">
+        <MappingFragment StoreEntitySet="ORDERLIST">
+          <ScalarProperty Name="shoporderNo" ColumnName="shoporderNo" />
+          <ScalarProperty Name="proNo" ColumnName="proNo" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTs">
+      <EntityTypeMapping TypeName="AllShowModel.PRODUCT">
+        <MappingFragment StoreEntitySet="PRODUCT">
+          <ScalarProperty Name="proNo" ColumnName="proNo" />
+          <ScalarProperty Name="shNo" ColumnName="shNo" />
+          <ScalarProperty Name="proClassNo" ColumnName="proClassNo" />
+          <ScalarProperty Name="proName" ColumnName="proName" />
+          <ScalarProperty Name="proPrice" ColumnName="proPrice" />
+          <ScalarProperty Name="proStatement" ColumnName="proStatement" />
+          <ScalarProperty Name="proState" ColumnName="proState" />
+          <ScalarProperty Name="proPic1" ColumnName="proPic1" />
+          <ScalarProperty Name="proPic2" ColumnName="proPic2" />
+          <ScalarProperty Name="proPic3" ColumnName="proPic3" />
+          <ScalarProperty Name="proCreateDate" ColumnName="proCreateDate" />
+          <ScalarProperty Name="proUpdateDate" ColumnName="proUpdateDate" />
+          <ScalarProperty Name="ProOffShelfDate" ColumnName="ProOffShelfDate" />
+          <ScalarProperty Name="proPop" ColumnName="proPop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTCLASSes">
+      <EntityTypeMapping TypeName="AllShowModel.PRODUCTCLASS">
+        <MappingFragment StoreEntitySet="PRODUCTCLASS">
+          <ScalarProperty Name="proclassno" ColumnName="proclassno" />
+          <ScalarProperty Name="shno" ColumnName="shno" />
+          <ScalarProperty Name="proclassname" ColumnName="proclassname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHCLASSes">
+      <EntityTypeMapping TypeName="AllShowModel.SHCLASS">
+        <MappingFragment StoreEntitySet="SHCLASS">
+          <ScalarProperty Name="shclassno" ColumnName="shclassno" />
+          <ScalarProperty Name="shclassname" ColumnName="shclassname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHOPs">
+      <EntityTypeMapping TypeName="AllShowModel.SHOP">
+        <MappingFragment StoreEntitySet="SHOP">
+          <ScalarProperty Name="shno" ColumnName="shno" />
+          <ScalarProperty Name="empno" ColumnName="empno" />
+          <ScalarProperty Name="shthepic" ColumnName="shthepic" />
+          <ScalarProperty Name="shname" ColumnName="shname" />
+          <ScalarProperty Name="shclassno" ColumnName="shclassno" />
+          <ScalarProperty Name="shaccount" ColumnName="shaccount" />
+          <ScalarProperty Name="shpwd" ColumnName="shpwd" />
+          <ScalarProperty Name="shboss" ColumnName="shboss" />
+          <ScalarProperty Name="shcontact" ColumnName="shcontact" />
+          <ScalarProperty Name="shaddress" ColumnName="shaddress" />
+          <ScalarProperty Name="shtel" ColumnName="shtel" />
+          <ScalarProperty Name="shemail" ColumnName="shemail" />
+          <ScalarProperty Name="shabout" ColumnName="shabout" />
+          <ScalarProperty Name="shlogopic" ColumnName="shlogopic" />
+          <ScalarProperty Name="shurl" ColumnName="shurl" />
+          <ScalarProperty Name="shadstate" ColumnName="shadstate" />
+          <ScalarProperty Name="shadtitle" ColumnName="shadtitle" />
+          <ScalarProperty Name="shadpic" ColumnName="shadpic" />
+          <ScalarProperty Name="shpopshop" ColumnName="shpopshop" />
+          <ScalarProperty Name="shcheckstate" ColumnName="shcheckstate" />
+          <ScalarProperty Name="shstartdate" ColumnName="shstartdate" />
+          <ScalarProperty Name="shenddate" ColumnName="shenddate" />
+          <ScalarProperty Name="shcheckdate" ColumnName="shcheckdate" />
+          <ScalarProperty Name="shpwdstate" ColumnName="shpwdstate" />
+          <ScalarProperty Name="shstoprightstartdate" ColumnName="shstoprightstartdate" />
+          <ScalarProperty Name="shstoprightenddate" ColumnName="shstoprightenddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHOPORDERs">
+      <EntityTypeMapping TypeName="AllShowModel.SHOPORDER">
+        <MappingFragment StoreEntitySet="SHOPORDER">
+          <ScalarProperty Name="shoporderNo" ColumnName="shoporderNo" />
+          <ScalarProperty Name="orderNo" ColumnName="orderNo" />
+          <ScalarProperty Name="shNo" ColumnName="shNo" />
+          <ScalarProperty Name="orderPrice" ColumnName="orderPrice" />
+          <ScalarProperty Name="referredToDate" ColumnName="referredToDate" />
+          <ScalarProperty Name="transactionDate" ColumnName="transactionDate" />
+          <ScalarProperty Name="orderState" ColumnName="orderState" />
+          <ScalarProperty Name="recipientName" ColumnName="recipientName" />
+          <ScalarProperty Name="recipientTel" ColumnName="recipientTel" />
+          <ScalarProperty Name="recipientAddress" ColumnName="recipientAddress" />
+          <ScalarProperty Name="payType" ColumnName="payType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

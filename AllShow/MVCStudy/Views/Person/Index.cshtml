@@ -1,0 +1,37 @@
+﻿@using PagedList.Mvc
+@using PagedList
+@*@model IEnumerable<MVCStudy.Models.Person.Person>*@
+@model IPagedList<MVCStudy.Models.Person.Person>
+
+@{
+    ViewBag.Title = "人員資料";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<h2>人員資料列表</h2>
+
+<table class="table">
+    <tr>
+        <th>編號</th>
+        <th>姓名</th>
+        <th>年紀</th>
+        <th>圖像</th>
+        <th>歷史</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.ID</td>
+        <td>@Html.DisplayFor(m => item.Name)</td>
+        <td>@Html.DisplayFor(m => item.Age)</td>
+        <td><img src="../images/@item.ImgName" width="60" class="img-rounded"></td>
+        <td>
+            <a href="https://zh.wikipedia.org/wiki/@item.Name" class="btn btn-info">人物資料</a>
+        </td>
+    </tr>
+    }
+</table>
+
+@Html.PagedListPager(Model,page=>Url.Action("Index",new { page}))
