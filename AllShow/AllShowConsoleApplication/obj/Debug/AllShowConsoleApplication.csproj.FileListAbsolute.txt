@@ -8,3 +8,17 @@ D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.xml
 D:\ASPNET\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
 D:\ASPNET\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.exe
 D:\ASPNET\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.pdb
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\AllShowConsoleApplication.exe.config
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\AllShowConsoleApplication.exe
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\AllShowConsoleApplication.pdb
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.xml
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.csprojAssemblyReference.cache
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.csproj.CoreCompileInputs.cache
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.csproj.CopyComplete
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.exe
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\AllShowConsoleApplication\obj\Debug\AllShowConsoleApplication.pdb

@@ -8,3 +8,17 @@ D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.dll
 D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
 D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.xml
 D:\ASPNET\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\LinqStudyConsoleApplication.exe.config
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\LinqStudyConsoleApplication.exe
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\LinqStudyConsoleApplication.pdb
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.SqlServer.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.xml
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\EntityFramework.SqlServer.xml
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.csprojAssemblyReference.cache
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.csproj.CoreCompileInputs.cache
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.csproj.CopyComplete
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.exe
+D:\Csharp\MyWebProj\MyWebApplication\AllShow\LinqStudyConsoleApplication\obj\Debug\LinqStudyConsoleApplication.pdb
