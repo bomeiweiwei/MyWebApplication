@@ -10,7 +10,8 @@ namespace MVCStudy.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            //return View();
+            return RedirectToAction("Index", "Demo");
         }
 
         public ActionResult About()

@@ -7,3 +7,27 @@
 <h2>DemoViewData</h2>
 Name:@ViewData["name"]
 
+<br />
+
+@{
+    string name = "Mark";
+    @:Hello @ViewData["name"],我是 @name
+}
+
+<br />
+
+@if (ViewData["data"] != null)
+{
+    @:有您的資料了，正
+    <span>
+        幫您加入會員
+    </span>
+}
+else
+{
+    @:沒有您的資料，請
+    <span>
+        填寫資料表
+    </span>
+}
+

@@ -16,7 +16,7 @@ namespace MVCStudy.Models
     {
         public int memNo { get; set; }
         public int shNo { get; set; }
-        public string note { get; set; }
+        public string comment { get; set; }
     
         public virtual MEMBER MEMBER { get; set; }
         public virtual SHOP SHOP { get; set; }

@@ -25,11 +25,13 @@ namespace MVCStudy.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<ADVERTISEMENT> ADVERTISEMENTs { get; set; }
         public virtual DbSet<ANNOUNCEMENT> ANNOUNCEMENTs { get; set; }
         public virtual DbSet<AUTHORITY> AUTHORITies { get; set; }
         public virtual DbSet<AUTHORITYFUNCTION> AUTHORITYFUNCTIONs { get; set; }
         public virtual DbSet<EMPLOYEE> EMPLOYEEs { get; set; }
+        public virtual DbSet<EMPLOYEE1> EMPLOYEEs1 { get; set; }
         public virtual DbSet<FAVORITESHOPLIST> FAVORITESHOPLISTs { get; set; }
         public virtual DbSet<MEMBER> MEMBERs { get; set; }
         public virtual DbSet<MEMBERLIST> MEMBERLISTs { get; set; }

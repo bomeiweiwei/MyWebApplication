@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="AllShowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
         <EntityType Name="ADVERTISEMENT">
           <Key>
             <PropertyRef Name="adNo" />
@@ -42,7 +52,7 @@
           </Key>
           <Property Name="authorityno" Type="int" Nullable="false" />
           <Property Name="empno" Type="int" Nullable="false" />
-          <Property Name="note" Type="nvarchar" MaxLength="50" />
+          <Property Name="comment" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="AUTHORITYFUNCTION">
           <Key>
@@ -67,6 +77,22 @@
           <Property Name="leavedate" Type="date" />
           <Property Name="empaccountstate" Type="varchar" MaxLength="1" />
         </EntityType>
+        <EntityType Name="EMPLOYEEs">
+          <Key>
+            <PropertyRef Name="empno" />
+          </Key>
+          <Property Name="empno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empname" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="empaccount" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="emppwd" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EMPEMAIL" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="empsex" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="empbirth" Type="datetime" Nullable="false" />
+          <Property Name="emptel" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="hiredate" Type="datetime" Nullable="false" />
+          <Property Name="leavedate" Type="datetime" />
+          <Property Name="empaccountstate" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="FAVORITESHOPLIST">
           <Key>
             <PropertyRef Name="memNo" />
@@ -74,7 +100,7 @@
           </Key>
           <Property Name="memNo" Type="int" Nullable="false" />
           <Property Name="shNo" Type="int" Nullable="false" />
-          <Property Name="note" Type="nvarchar" MaxLength="50" />
+          <Property Name="comment" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MEMBER">
           <Key>
@@ -410,11 +436,13 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="AllShowModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADVERTISEMENT" EntityType="Self.ADVERTISEMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ANNOUNCEMENT" EntityType="Self.ANNOUNCEMENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AUTHORITY" EntityType="Self.AUTHORITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AUTHORITYFUNCTION" EntityType="Self.AUTHORITYFUNCTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EMPLOYEEs" EntityType="Self.EMPLOYEEs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FAVORITESHOPLIST" EntityType="Self.FAVORITESHOPLIST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MEMBERLIST" EntityType="Self.MEMBERLIST" Schema="dbo" store:Type="Tables" />
@@ -499,6 +527,16 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AllShowModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="ADVERTISEMENT">
           <Key>
             <PropertyRef Name="adNo" />
@@ -539,7 +577,7 @@
           </Key>
           <Property Name="authorityno" Type="Int32" Nullable="false" />
           <Property Name="empno" Type="Int32" Nullable="false" />
-          <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AUTHORITYFUNCTION" Relationship="Self.FK__AUTHORITY__AUTHO__45BE5BA9" FromRole="AUTHORITY" ToRole="AUTHORITYFUNCTION" />
           <NavigationProperty Name="EMPLOYEE" Relationship="Self.FK__AUTHORITY__EMPNO__46B27FE2" FromRole="AUTHORITY" ToRole="EMPLOYEE" />
         </EntityType>
@@ -571,6 +609,22 @@
           <NavigationProperty Name="AUTHORITies" Relationship="Self.FK__AUTHORITY__EMPNO__46B27FE2" FromRole="EMPLOYEE" ToRole="AUTHORITY" />
           <NavigationProperty Name="SHOPs" Relationship="Self.FK__SHOP__EMPNO__531856C7" FromRole="EMPLOYEE" ToRole="SHOP" />
         </EntityType>
+        <EntityType Name="EMPLOYEE1">
+          <Key>
+            <PropertyRef Name="empno" />
+          </Key>
+          <Property Name="empno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empaccount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="emppwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMPEMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empsex" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empbirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="emptel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="hiredate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="leavedate" Type="DateTime" Precision="3" />
+          <Property Name="empaccountstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="FAVORITESHOPLIST">
           <Key>
             <PropertyRef Name="memNo" />
@@ -578,7 +632,7 @@
           </Key>
           <Property Name="memNo" Type="Int32" Nullable="false" />
           <Property Name="shNo" Type="Int32" Nullable="false" />
-          <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="MEMBER" Relationship="Self.FK__FAVORITES__memNo__671F4F74" FromRole="FAVORITESHOPLIST" ToRole="MEMBER" />
           <NavigationProperty Name="SHOP" Relationship="Self.FK__FAVORITESH__shNo__681373AD" FromRole="FAVORITESHOPLIST" ToRole="SHOP" />
         </EntityType>
@@ -938,11 +992,13 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="AllShowEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
           <EntitySet Name="ADVERTISEMENTs" EntityType="Self.ADVERTISEMENT" />
           <EntitySet Name="ANNOUNCEMENTs" EntityType="Self.ANNOUNCEMENT" />
           <EntitySet Name="AUTHORITies" EntityType="Self.AUTHORITY" />
           <EntitySet Name="AUTHORITYFUNCTIONs" EntityType="Self.AUTHORITYFUNCTION" />
           <EntitySet Name="EMPLOYEEs" EntityType="Self.EMPLOYEE" />
+          <EntitySet Name="EMPLOYEEs1" EntityType="Self.EMPLOYEE1" />
           <EntitySet Name="FAVORITESHOPLISTs" EntityType="Self.FAVORITESHOPLIST" />
           <EntitySet Name="MEMBERs" EntityType="Self.MEMBER" />
           <EntitySet Name="MEMBERLISTs" EntityType="Self.MEMBERLIST" />
@@ -1028,6 +1084,16 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="AllShowModelStoreContainer" CdmEntityContainer="AllShowEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="AllShowModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ADVERTISEMENTs">
             <EntityTypeMapping TypeName="AllShowModel.ADVERTISEMENT">
               <MappingFragment StoreEntitySet="ADVERTISEMENT">
@@ -1065,7 +1131,7 @@
               <MappingFragment StoreEntitySet="AUTHORITY">
                 <ScalarProperty Name="authorityno" ColumnName="authorityno" />
                 <ScalarProperty Name="empno" ColumnName="empno" />
-                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1094,12 +1160,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="EMPLOYEEs1">
+            <EntityTypeMapping TypeName="AllShowModel.EMPLOYEE1">
+              <MappingFragment StoreEntitySet="EMPLOYEEs">
+                <ScalarProperty Name="empno" ColumnName="empno" />
+                <ScalarProperty Name="empname" ColumnName="empname" />
+                <ScalarProperty Name="empaccount" ColumnName="empaccount" />
+                <ScalarProperty Name="emppwd" ColumnName="emppwd" />
+                <ScalarProperty Name="EMPEMAIL" ColumnName="EMPEMAIL" />
+                <ScalarProperty Name="empsex" ColumnName="empsex" />
+                <ScalarProperty Name="empbirth" ColumnName="empbirth" />
+                <ScalarProperty Name="emptel" ColumnName="emptel" />
+                <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+                <ScalarProperty Name="leavedate" ColumnName="leavedate" />
+                <ScalarProperty Name="empaccountstate" ColumnName="empaccountstate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="FAVORITESHOPLISTs">
             <EntityTypeMapping TypeName="AllShowModel.FAVORITESHOPLIST">
               <MappingFragment StoreEntitySet="FAVORITESHOPLIST">
                 <ScalarProperty Name="memNo" ColumnName="memNo" />
                 <ScalarProperty Name="shNo" ColumnName="shNo" />
-                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

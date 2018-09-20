@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AllShowModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
   <EntityType Name="ADVERTISEMENT">
     <Key>
       <PropertyRef Name="adNo" />
@@ -37,7 +47,7 @@
     </Key>
     <Property Name="authorityno" Type="int" Nullable="false" />
     <Property Name="empno" Type="int" Nullable="false" />
-    <Property Name="note" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="AUTHORITYFUNCTION">
     <Key>
@@ -62,6 +72,22 @@
     <Property Name="leavedate" Type="date" />
     <Property Name="empaccountstate" Type="varchar" MaxLength="1" />
   </EntityType>
+  <EntityType Name="EMPLOYEEs">
+    <Key>
+      <PropertyRef Name="empno" />
+    </Key>
+    <Property Name="empno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="empaccount" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="emppwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EMPEMAIL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="empsex" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="empbirth" Type="datetime" Nullable="false" />
+    <Property Name="emptel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="hiredate" Type="datetime" Nullable="false" />
+    <Property Name="leavedate" Type="datetime" />
+    <Property Name="empaccountstate" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="FAVORITESHOPLIST">
     <Key>
       <PropertyRef Name="memNo" />
@@ -69,7 +95,7 @@
     </Key>
     <Property Name="memNo" Type="int" Nullable="false" />
     <Property Name="shNo" Type="int" Nullable="false" />
-    <Property Name="note" Type="nvarchar" MaxLength="50" />
+    <Property Name="comment" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="MEMBER">
     <Key>
@@ -405,11 +431,13 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="AllShowModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADVERTISEMENT" EntityType="Self.ADVERTISEMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ANNOUNCEMENT" EntityType="Self.ANNOUNCEMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AUTHORITY" EntityType="Self.AUTHORITY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AUTHORITYFUNCTION" EntityType="Self.AUTHORITYFUNCTION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EMPLOYEE" EntityType="Self.EMPLOYEE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLOYEEs" EntityType="Self.EMPLOYEEs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FAVORITESHOPLIST" EntityType="Self.FAVORITESHOPLIST" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MEMBERLIST" EntityType="Self.MEMBERLIST" Schema="dbo" store:Type="Tables" />

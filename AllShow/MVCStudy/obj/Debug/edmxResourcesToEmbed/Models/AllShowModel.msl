@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AllShowModelStoreContainer" CdmEntityContainer="AllShowEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="AllShowModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ADVERTISEMENTs">
       <EntityTypeMapping TypeName="AllShowModel.ADVERTISEMENT">
         <MappingFragment StoreEntitySet="ADVERTISEMENT">
@@ -38,7 +48,7 @@
         <MappingFragment StoreEntitySet="AUTHORITY">
           <ScalarProperty Name="authorityno" ColumnName="authorityno" />
           <ScalarProperty Name="empno" ColumnName="empno" />
-          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -67,12 +77,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEEs1">
+      <EntityTypeMapping TypeName="AllShowModel.EMPLOYEE1">
+        <MappingFragment StoreEntitySet="EMPLOYEEs">
+          <ScalarProperty Name="empno" ColumnName="empno" />
+          <ScalarProperty Name="empname" ColumnName="empname" />
+          <ScalarProperty Name="empaccount" ColumnName="empaccount" />
+          <ScalarProperty Name="emppwd" ColumnName="emppwd" />
+          <ScalarProperty Name="EMPEMAIL" ColumnName="EMPEMAIL" />
+          <ScalarProperty Name="empsex" ColumnName="empsex" />
+          <ScalarProperty Name="empbirth" ColumnName="empbirth" />
+          <ScalarProperty Name="emptel" ColumnName="emptel" />
+          <ScalarProperty Name="hiredate" ColumnName="hiredate" />
+          <ScalarProperty Name="leavedate" ColumnName="leavedate" />
+          <ScalarProperty Name="empaccountstate" ColumnName="empaccountstate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="FAVORITESHOPLISTs">
       <EntityTypeMapping TypeName="AllShowModel.FAVORITESHOPLIST">
         <MappingFragment StoreEntitySet="FAVORITESHOPLIST">
           <ScalarProperty Name="memNo" ColumnName="memNo" />
           <ScalarProperty Name="shNo" ColumnName="shNo" />
-          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

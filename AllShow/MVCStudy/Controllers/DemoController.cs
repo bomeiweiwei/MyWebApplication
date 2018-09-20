@@ -8,6 +8,7 @@ using MVCStudy.Models;
 using System.Data.Entity;
 
 using MVCStudy.Models.ViewModels;
+using System.IO;
 
 namespace MVCStudy.Controllers
 {
@@ -20,9 +21,45 @@ namespace MVCStudy.Controllers
             return View();
         }
 
+        public string ShowArr()
+        {
+            int[] arr = new int[] { 55, 66, 33, 44, 11 };
+            string numStr = "陣列值:<br/>";
+            foreach (int num in arr)
+            {
+                numStr += num + "<br/>";
+            }
+
+            int index = 0;
+            var result = arr.OrderByDescending(m => m);
+            numStr += "遞減排序 : ";
+            foreach (var m in result)
+            {
+                numStr += m;
+                index++;
+                if (index <= result.Count() - 1)
+                {
+                    numStr += ",";
+                }
+            }
+            numStr += "<br/>平均:"+result.Average();
+            return numStr;
+        }
+
+        public string ShowImages()
+        {
+            string imgStr = "";
+            for (int i = 0; i < 8; i++)
+            {
+                imgStr += String.Format("<img src='../images/{0}.jpg' width='60'>", i);
+            }
+            return imgStr;
+        }
+
         public ActionResult DemoViewData()
         {
             ViewData["name"] = "Bruce";
+            ViewData["data"] = "Bruce5566";
             return View();
         }
 

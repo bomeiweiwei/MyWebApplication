@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AllShowModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="ADVERTISEMENT">
     <Key>
       <PropertyRef Name="adNo" />
@@ -40,7 +50,7 @@
     </Key>
     <Property Name="authorityno" Type="Int32" Nullable="false" />
     <Property Name="empno" Type="Int32" Nullable="false" />
-    <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AUTHORITYFUNCTION" Relationship="Self.FK__AUTHORITY__AUTHO__45BE5BA9" FromRole="AUTHORITY" ToRole="AUTHORITYFUNCTION" />
     <NavigationProperty Name="EMPLOYEE" Relationship="Self.FK__AUTHORITY__EMPNO__46B27FE2" FromRole="AUTHORITY" ToRole="EMPLOYEE" />
   </EntityType>
@@ -72,6 +82,22 @@
     <NavigationProperty Name="AUTHORITies" Relationship="Self.FK__AUTHORITY__EMPNO__46B27FE2" FromRole="EMPLOYEE" ToRole="AUTHORITY" />
     <NavigationProperty Name="SHOPs" Relationship="Self.FK__SHOP__EMPNO__531856C7" FromRole="EMPLOYEE" ToRole="SHOP" />
   </EntityType>
+  <EntityType Name="EMPLOYEE1">
+    <Key>
+      <PropertyRef Name="empno" />
+    </Key>
+    <Property Name="empno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="empname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="empaccount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="emppwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMPEMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="empsex" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="empbirth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="emptel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="hiredate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="leavedate" Type="DateTime" Precision="3" />
+    <Property Name="empaccountstate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="FAVORITESHOPLIST">
     <Key>
       <PropertyRef Name="memNo" />
@@ -79,7 +105,7 @@
     </Key>
     <Property Name="memNo" Type="Int32" Nullable="false" />
     <Property Name="shNo" Type="Int32" Nullable="false" />
-    <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="comment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="MEMBER" Relationship="Self.FK__FAVORITES__memNo__671F4F74" FromRole="FAVORITESHOPLIST" ToRole="MEMBER" />
     <NavigationProperty Name="SHOP" Relationship="Self.FK__FAVORITESH__shNo__681373AD" FromRole="FAVORITESHOPLIST" ToRole="SHOP" />
   </EntityType>
@@ -439,11 +465,13 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="AllShowEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
     <EntitySet Name="ADVERTISEMENTs" EntityType="Self.ADVERTISEMENT" />
     <EntitySet Name="ANNOUNCEMENTs" EntityType="Self.ANNOUNCEMENT" />
     <EntitySet Name="AUTHORITies" EntityType="Self.AUTHORITY" />
     <EntitySet Name="AUTHORITYFUNCTIONs" EntityType="Self.AUTHORITYFUNCTION" />
     <EntitySet Name="EMPLOYEEs" EntityType="Self.EMPLOYEE" />
+    <EntitySet Name="EMPLOYEEs1" EntityType="Self.EMPLOYEE1" />
     <EntitySet Name="FAVORITESHOPLISTs" EntityType="Self.FAVORITESHOPLIST" />
     <EntitySet Name="MEMBERs" EntityType="Self.MEMBER" />
     <EntitySet Name="MEMBERLISTs" EntityType="Self.MEMBERLIST" />

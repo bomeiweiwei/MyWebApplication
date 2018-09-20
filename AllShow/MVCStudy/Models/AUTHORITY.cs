@@ -16,7 +16,7 @@ namespace MVCStudy.Models
     {
         public int authorityno { get; set; }
         public int empno { get; set; }
-        public string note { get; set; }
+        public string comment { get; set; }
     
         public virtual AUTHORITYFUNCTION AUTHORITYFUNCTION { get; set; }
         public virtual EMPLOYEE EMPLOYEE { get; set; }
