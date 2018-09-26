@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(document).ready(
+        function() {
+            var apiurl = 'http://localhost:49952/api/FavoriteshoplistApi';
+
+            fnLoadData();
+
+            function fnLoadData() {
+                //alert("fnLoadData");
+                $.ajax({
+                    url: apiurl,
+                    type: 'GET',
+                    success: function (data) {
+                        $("#tableshow").empty();
+
+                        $("#tableshow").append
+                            (
+                            "<tr>" +
+                            "<th></th>" +
+                            "<th>商店名稱</th>" +
+                            "<th colspan='2'>功能</th>" +
+                            "</tr>"
+                            );
+
+                        for (var i = 0; i < data.length; i++) {
+                            $("#tableshow").append
+                                (
+                                "<tr>" +
+                                "<td width='60' height='65'><img src='../../images/" + data[i].shlogopic.trim() + "' width='60' /></td>" +
+                                "<td>" + data[i].shname + "</td>" +
+                                "<td><input type='button' value='進入商店' id='btn_GoTo" + i + "' class='btn btn-info' /></td>" +
+                                "<td><input type='button' value='刪除' id='btn_Delete" + i + "' class='btn btn-danger'/></td>" +
+                                "</tr>"
+                                );
+                            $("#btn_GoTo" + i).on("click", { shno: data[i].shno }, fnGoToShop);
+                            $("#btn_Delete" + i).on("click", { shno: data[i].shno }, fnDelFavorShop);
+                        }
+                    }
+                })
+            }
+
+            function fnGoToShop(event) {
+                var shno = event.data.shno;
+                window.location.href = "/ProductClass/Index?shno=" + shno + "&proclassno=1";
+            }
+
+            function fnDelFavorShop(event) {
+                var shno = event.data.shno;
+                var r = confirm('確定刪除嗎?');
+                if (r == true) {
+                    $.ajax({
+                        url: apiurl + "/" + encodeURI(shno),
+                        type: 'DELETE',
+                        success: function (result) {
+                            if (result != 0) {
+                                if (result == 1) {
+                                    alert('刪除成功');
+                                    fnLoadData();
+                                }
+                                else
+                                    alert('刪除失敗');
+                            } else {
+                                alert('刪除失敗');
+                            }
+                        }
+                    });
+                }
+            }
+
+        });
+</script>
+
+<h2>最愛商店</h2>
+<table class="table" id="tableshow"></table>

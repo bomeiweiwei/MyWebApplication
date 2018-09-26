@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudy", "MVCStudy\MVCStu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllShowMVCApplication", "AllShowMVCApplication\AllShowMVCApplication\AllShowMVCApplication.csproj", "{623DF444-D610-427D-A564-98C9C6046ABD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllShow_WebSite", "AllShow_WebSite\AllShow_WebSite.csproj", "{AD139139-F0C3-4121-B204-D96691F5389D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{623DF444-D610-427D-A564-98C9C6046ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{623DF444-D610-427D-A564-98C9C6046ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{623DF444-D610-427D-A564-98C9C6046ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD139139-F0C3-4121-B204-D96691F5389D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD139139-F0C3-4121-B204-D96691F5389D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD139139-F0C3-4121-B204-D96691F5389D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD139139-F0C3-4121-B204-D96691F5389D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

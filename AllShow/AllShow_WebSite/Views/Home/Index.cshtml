@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AllShow_WebSite.Models.shclass.Shclass>
+
+@{
+    ViewBag.Title = "首頁";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section extra{
+    @foreach (var item in Model)
+    {
+        <p>
+            @Html.ActionLink(item.shclassname, "Index" , "ShClassShop" , new { shclassno = item.shclassno } , null)
+        </p>
+    }
+}
+
+<article>
+
+    <h3>廣告</h3>
+    <table class="table">
+        @foreach (var item in ViewBag.advertise as List<AllShow_WebSite.Models.other.ShopAdvertise>)
+        {
+            <tr>
+                <td>
+                    <header>
+                        <hgroup>
+                            <h4>@item.aditle</h4>
+                        </hgroup>
+                    </header>
+                    <footer> << &nbsp; @Html.ActionLink(@item.shName, "Index", "ProductClass", new { shno = item.shNo, proclassno = 1 }, null) &nbsp; >> </footer>
+                </td>
+            </tr>
+        }
+    </table>
+</article>
+
+<hr />
+
+<article>
+
+    <h3>公告</h3>
+    <table class="table">
+        @foreach (var item in ViewBag.announce as List<AllShow_WebSite.Models.other.Announce>)
+        {
+            <tr>
+                <td>
+                    <header>
+                        <hgroup>
+                            <h4>【@item.announcementtype】</h4>
+                            <h5>@item.announcementtitle</h5>
+                        </hgroup>
+                    </header>
+                    <footer>@item.announcementcontent</footer>
+                </td>
+            </tr>
+        }
+    </table>
+</article>
+
+
+
+

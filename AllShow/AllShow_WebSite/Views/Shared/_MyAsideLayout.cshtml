@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head
+{
+    @RenderSection("head", required: false)
+}
+@section scripts{@RenderSection("script", required: false)}
+
+<div class="aside">
+    @RenderSection("beforeMenu", required: false)
+    @RenderSection("afterMenu", required: false)
+</div>
+
+@RenderBody()

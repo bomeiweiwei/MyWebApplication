@@ -1,0 +1,170 @@
+﻿@model AllShow_WebSite.Models.IndexViewModel
+@{
+    ViewBag.Title = "管理";    
+}
+
+<script>
+
+    $(document).ready(function () {
+        var apiurl = "http://localhost:49952/api/MemberApi/@ViewBag.memid";
+        
+        LoadProductData();
+
+        //載入所有資料
+        function LoadProductData() {
+            $.ajax({
+                url: apiurl,
+                type: 'GET',
+                success: function (data) {
+
+                    var sex = '';
+                    if (data.memsex == 0) {
+                        sex = '男';
+                    }
+                    else {
+                        sex = '女';
+                    }
+
+                    var date = new Date(data.membirth);
+                    //alert((date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear());
+
+                    $("#detail_mempic").attr("src", "../../images/" + data.mempic);
+                    $('#detail_memdiminutive').html(data.memdiminutive);
+                    $('#detail_memname').html(data.memname);
+                    $('#detail_memsex').html(sex);
+                    $('#detail_membirth').html(date.getFullYear() + ' / ' + (date.getMonth() + 1) + ' / ' + date.getDate());
+                    $('#detail_memtel').html(data.memtel);
+                    $('#detail_memaddress').html(data.memaddress);
+                }
+            });
+        }       
+    });
+
+
+</script>
+
+<h2>@ViewBag.Title.</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        會員資料
+    </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <table class="table">
+                    <tr>
+                        <td>照片</td>
+                        <td><img id='detail_mempic' width='100' /></td>
+                    </tr>
+                    <tr>
+                        <td>會員暱稱</td>
+                        <td id='detail_memdiminutive'></td>
+                    </tr>
+                    <tr>
+                        <td>會員姓名</td>
+                        <td id='detail_memname'></td>
+                    </tr>
+                    <tr>
+                        <td>性別</td>
+                        <td id='detail_memsex'></td>
+                    </tr>
+                    <tr>
+                        <td>生日</td>
+                        <td id='detail_membirth'></td>
+                    </tr>
+                    <tr>
+                        <td>電話</td>
+                        <td id='detail_memtel'></td>
+                    </tr>
+                    <tr>
+                        <td>地址</td>
+                        <td id='detail_memaddress'></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</div>
+
+<hr />
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>變更帳戶設定</h4>
+    <hr />
+    <dl class="dl-horizontal">        
+        <dt>密碼:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("變更密碼", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("建立", "SetPassword")
+            }
+            ]
+        </dd>
+        <dt>其他資訊:</dt>
+        <dd>
+            @Html.ActionLink("更新會員資訊", "ChangeInfo")
+        </dd>
+        <dt>外部登入:</dt>
+        <dd>
+            @Model.Logins.Count [
+            @Html.ActionLink("管理", "ManageLogins") ]
+        </dd>
+        @*
+        電話號碼可以當做雙因素驗證系統中的第二個驗證因素。
+
+         請參閱<a href="http://go.microsoft.com/fwlink/?LinkId=403804">此文章</a>
+            以了解設定此 ASP.NET 應用程式以支援使用 SMS 進行雙因素驗證的詳細資料。
+
+        雙因素驗證設定完成之後，請取消註解以下區塊
+        *@
+        @*
+        <dt>電話號碼:</dt>
+        <dd>
+            @(Model.PhoneNumber ?? "None") [
+            @if (Model.PhoneNumber != null)
+            {
+                @Html.ActionLink("變更", "AddPhoneNumber")
+                @: &nbsp;|&nbsp;
+                @Html.ActionLink("移除", "RemovePhoneNumber")
+            }
+            else
+            {
+                @Html.ActionLink("新增", "AddPhoneNumber")
+            }
+            ]
+        </dd>
+        *@
+        <dt>雙因素驗證:</dt>
+        <dd>
+            <p>
+                並未設定雙因素驗證提供者。請參閱<a href="http://go.microsoft.com/fwlink/?LinkId=403804">此文章</a>
+                以了解設定此 ASP.NET 應用程式以支援雙因素驗證的詳細資料。
+            </p>
+            @*@if (Model.TwoFactor)
+            {
+                using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>已啟用
+                    <input type="submit" value="停用" class="btn btn-link" />
+                    </text>
+                }
+            }
+            else
+            {
+                using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <text>已停用
+                    <input type="submit" value="啟用" class="btn btn-link" />
+                    </text>
+                }
+            }*@
+        </dd>
+    </dl>
+</div>

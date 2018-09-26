@@ -53,8 +53,8 @@ D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\bin\DotNe
 D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\bin\zh-Hant\EntityFramework.resources.dll
 D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\bin\zh-Hant\System.Web.Providers.resources.dll
 D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\bin\zh-Hant\Microsoft.AspNet.Membership.OpenAuth.resources.dll
-D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\obj\Debug\MyWebApplication.csprojResolveAssemblyReference.cache
 D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\obj\Debug\MyWebApplication.csproj.CoreCompileInputs.cache
 D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\obj\Debug\MyWebApplication.csproj.CopyComplete
 D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\obj\Debug\MyWebApplication.dll
 D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\obj\Debug\MyWebApplication.pdb
+D:\Csharp\MyWebProj\MyWebApplication\MyWebApplication\MyWebApplication\obj\Debug\MyWebApplication.csprojAssemblyReference.cache

@@ -1,0 +1,74 @@
+﻿@model AllShow_WebSite.Models.ViewModels.ProductClassProductViewModel
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "商品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+}
+
+@section extra{
+    @if (Model.productClasses.Count() == 0)
+    {
+        <p>
+            無商品類別
+        </p>
+    }
+    else
+    {
+        foreach (var item in Model.productClasses)
+        {
+            <p>
+                @Html.ActionLink(item.proclassname, "Index", new { shno = item.shno, proclassno = item.proclassno })
+            </p>
+        }
+    }
+    @Html.ActionLink("返回商店列表", "Index", "ShClassShop", new { shclassno = ViewBag.shclassno }, null)
+}
+
+<article>
+    <table class="table">
+        <tr>
+            <th colspan="4">
+                <h3>@ViewBag.shName 商品列表</h3>
+            </th>
+        </tr>
+        @foreach (var item in Model.products)
+        {
+            <tr>
+                <td>
+                    @{ 
+                        string pic="";
+                        if (item.proPic1 == null || item.proPic1 == "")
+                        {
+                            pic = "NoProduct.png";
+                        }
+                        else
+                        {
+                            pic = item.proPic1;
+                        }
+                    }
+                    <img src="~/images/@pic" width="60" />
+                </td>
+                <td>
+                    @item.proName
+                </td>
+                <td>
+                    @item.proStatement
+                </td>
+                <td>
+                    <input type="button" value="新增至購物車" class="btn btn-primary" />
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="5">
+                @Html.PagedListPager(Model.PRODUCTs, page => Url.Action("Index", new { @ViewBag.shno , @ViewBag.proclssno, page }))
+            </td>
+        </tr>
+    </table>
+</article>

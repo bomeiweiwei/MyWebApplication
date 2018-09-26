@@ -1,0 +1,104 @@
+﻿@model AllShow_WebSite.Models.ViewModels.ShClassShopViewModel
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "商店";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section head{
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<script>
+
+    var apiurl = 'http://localhost:49952/api/FavoriteshoplistApi';
+    function AddFavor(shno) {
+        var data = "?shno=" + shno;
+        $.ajax({
+            url: apiurl + encodeURI(data),
+            type: 'POST',
+            success: function (result) {
+                if (result != 0) {
+                    if (result == 1) {
+                        alert('新增成功');
+                    } else {
+                        alert('--新增失敗--');
+                    }
+                } else {
+                    alert('新增失敗');
+                }
+            }
+        });
+    }
+
+</script>
+}
+
+@*<h2>@ViewBag.shclassName </h2>*@
+
+@section extra{
+    @foreach (var item in Model.shClasses)
+    {
+        <p>
+            @Html.ActionLink(item.shclassname, "Index", new { shclassno = item.shclassno })
+        </p>
+    }
+}
+
+        <article>
+            <table class="table">
+                <tr>
+                    <th>
+
+                    </th>
+                    <th>
+                        商店名稱
+                    </th>
+                    <th>
+                        加入最愛商店
+                    </th>
+                    <th></th>
+                </tr>
+
+                @*@for (int i = 0; i < Model.shops.Count(); i++)
+                {
+                    var shop = Model.shops.ElementAt(i);
+                    <tr>
+                        <td><img src="~/images/@shop.shlogopic" width="32" /></td>
+                        <td>@shop.shname</td>
+                        <td><input type="button" value="新增" class="btn btn-primary"/></td>
+                        <td><input type="button" /></td>
+                    </tr>
+                }*@
+
+                @foreach (var item in Model.shops)
+                {
+                    <tr>
+                        @{ 
+                        string pic="";
+                        if (item.shlogopic == null || item.shlogopic == "")
+                        {
+                            pic = "NoShop.png";
+                        }
+                        else
+                        {
+                            pic = item.shlogopic;
+                        }
+                    }
+                        <td><img src="~/images/@pic" width="60" /></td>
+                        <td>@item.shname</td>
+                        <td><input type="button" value="新增" class="btn btn-primary" onclick="AddFavor(@item.shno)"/></td>
+                        <td>
+                            @*<input type="button" value="進入商店" class="btn btn-info" />*@
+                            @Html.ActionLink("進入商店", "Index", "ProductClass", new { shno = item.shno , proclassno = 1 }, new { @class = "btn btn-info" })
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="5">
+                        @Html.PagedListPager(Model.SHOPs, page => Url.Action("Index", new { @ViewBag.shclassno, page }))
+                    </td>
+                </tr>
+            </table>
+        </article>
+
